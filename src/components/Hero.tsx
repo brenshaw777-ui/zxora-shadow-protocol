@@ -13,33 +13,8 @@ const Hero = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Subtle Background Elements */}
-      <div className="absolute inset-0 bg-grid opacity-100" />
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl animate-subtle-float" />
       <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-primary/8 rounded-full blur-3xl animate-subtle-float" style={{ animationDelay: "4s" }} />
-      
-      {/* Binary Data Streams - Slower and More Coverage */}
-      {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={`stream-${i}`}
-          className="absolute top-0 font-mono text-xs text-soft-steel/15 pointer-events-none"
-          style={{ left: `${(i + 1) * 5}%` }}
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ 
-            y: "100vh", 
-            opacity: [0, 0.25, 0.25, 0] 
-          }}
-          transition={{
-            duration: 15 + Math.random() * 10,
-            repeat: Infinity,
-            delay: Math.random() * 5,
-            ease: "linear"
-          }}
-        >
-          {Array.from({ length: 20 }, () => Math.random() > 0.5 ? '1' : '0').join('\n').split('\n').map((char, idx) => (
-            <div key={idx} className="leading-6">{char}</div>
-          ))}
-        </motion.div>
-      ))}
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

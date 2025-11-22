@@ -72,8 +72,6 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
-    background: radial-gradient(circle at top, rgba(255,255,255,0.04), transparent 60%), 
-                linear-gradient(180deg, hsl(var(--deep-black)) 0%, hsl(var(--section-panel)) 50%, hsl(var(--deep-black)) 100%);
   }
   
   h1, h2, h3, h4, h5, h6 {
