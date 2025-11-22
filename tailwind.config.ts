@@ -92,6 +92,10 @@ export default {
           from: { strokeDashoffset: "1000" },
           to: { strokeDashoffset: "0" },
         },
+        "metallic-shimmer": {
+          "0%": { backgroundPosition: "-200% center" },
+          "100%": { backgroundPosition: "200% center" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -102,6 +106,7 @@ export default {
         "slide-up": "slide-up 0.4s ease-out",
         "draw-line": "draw-line 2s ease-in-out forwards",
         "pan-gradient": "pan-gradient 60s ease infinite",
+        "metallic-shimmer": "metallic-shimmer 8s linear infinite",
       },
     },
   },
