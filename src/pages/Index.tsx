@@ -8,22 +8,29 @@ import Roadmap from "@/components/Roadmap";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import DataStreamBackground from "@/components/DataStreamBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navigation />
-      <main>
-        <Hero />
-        <Story />
-        <HowItWorks />
-        <Features />
-        <AnimationsShowcase />
-        <Roadmap />
-        <FAQ />
-        <CTA />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-gradient-to-b from-[#020307] via-[#050811] to-[#020307] text-foreground relative">
+      {/* Global Data Stream Background */}
+      <DataStreamBackground />
+      
+      {/* Main Content - Sits Above Data Stream */}
+      <div className="relative z-10">
+        <Navigation />
+        <main>
+          <Hero />
+          <Story />
+          <HowItWorks />
+          <Features />
+          <AnimationsShowcase />
+          <Roadmap />
+          <FAQ />
+          <CTA />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };
