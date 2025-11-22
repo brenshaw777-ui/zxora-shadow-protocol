@@ -108,9 +108,11 @@ All colors MUST be HSL.
   
   .metallic-heading {
     background: var(--heading-metallic);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: metallic-shimmer 8s linear infinite;
   }
   
   .bg-grid {
