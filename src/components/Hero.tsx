@@ -48,7 +48,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="p-8 lg:p-10 rounded-2xl bg-card/5 border border-primary/20 shadow-[0_0_50px_rgba(108,77,255,0.15)]"
+            className="p-8 lg:p-10 rounded-2xl bg-[rgba(5,8,17,0.94)] border border-gradient-to-br from-primary/30 via-accent/20 to-primary/30 shadow-[0_0_50px_rgba(108,77,255,0.15),inset_0_0_30px_rgba(108,77,255,0.05)]"
           >
             <div className="space-y-8">
               <motion.div
@@ -108,177 +108,143 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Right Side - Visual */}
+          {/* Right Side - Zxora Browser Mock */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
             className="relative"
           >
-            <div className="relative aspect-square max-w-lg mx-auto">
-              {/* Central Gate - Minimal HUD Style */}
-              <div className="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border border-gunmetal flex items-center justify-center">
-                <div className="absolute inset-0 rounded-full bg-accent/5 animate-pulse-glow" />
-                <div className="absolute inset-2 rounded-full border border-primary/20" />
-                <Shield className="w-16 h-16 text-foreground z-10" strokeWidth={1} />
-                <span className="absolute -bottom-10 font-mono text-xs text-soft-steel tracking-widest">THE GATE</span>
+            <div className="relative max-w-lg mx-auto">
+              {/* Browser Window Container */}
+              <div className="rounded-2xl bg-gradient-to-b from-[#050811] to-[#0A101B] border border-gunmetal/50 shadow-[0_20px_60px_rgba(0,0,0,0.4)] overflow-hidden">
+                
+                {/* Top Bar - Browser Chrome */}
+                <div className="flex items-center justify-between px-4 py-3 border-b border-gunmetal/40 bg-[#0C0F18]/80">
+                  {/* Window Controls */}
+                  <div className="flex gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-gunmetal/60" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-gunmetal/60" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-gunmetal/60" />
+                  </div>
+                  
+                  {/* URL Bar */}
+                  <div className="flex-1 mx-4 px-4 py-1.5 rounded-lg bg-[#05070D] border border-gunmetal/30 flex items-center gap-2">
+                    <Shield className="w-3 h-3 text-primary" strokeWidth={2} />
+                    <span className="font-mono text-xs text-soft-steel/70">zxora://dapp/session</span>
+                  </div>
+                  
+                  {/* Shield Icon */}
+                  <Shield className="w-4 h-4 text-primary" strokeWidth={1.5} />
+                </div>
+
+                {/* Main Content - Layered View */}
+                <div className="relative h-80 overflow-hidden">
+                  
+                  {/* Back Layer - Shield/Protection Visual */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    {/* Radial Glow - Protected Zone */}
+                    <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
+                    
+                    {/* Vertical Code Streams */}
+                    {[...Array(8)].map((_, i) => (
+                      <motion.div
+                        key={`code-${i}`}
+                        className="absolute top-0 font-mono text-[10px] text-soft-steel/10 pointer-events-none leading-5"
+                        style={{ left: `${12 + i * 12}%` }}
+                        initial={{ y: -100 }}
+                        animate={{ y: "100%" }}
+                        transition={{
+                          duration: 20 + Math.random() * 10,
+                          repeat: Infinity,
+                          delay: Math.random() * 5,
+                          ease: "linear"
+                        }}
+                      >
+                        {Array.from({ length: 30 }, () => 
+                          ['zk', 'tx', '0x', 'fn', 'db'][Math.floor(Math.random() * 5)]
+                        ).map((code, idx) => (
+                          <div key={idx}>{code}</div>
+                        ))}
+                      </motion.div>
+                    ))}
+                    
+                    {/* Node Diagram: YOU → MASK → GATE → dApp */}
+                    <svg className="absolute inset-0 w-full h-full opacity-20">
+                      {/* Connection Lines */}
+                      <line x1="20%" y1="50%" x2="35%" y2="50%" stroke="hsl(var(--primary))" strokeWidth="1" strokeDasharray="2,3" opacity="0.4" />
+                      <line x1="35%" y1="50%" x2="50%" y2="50%" stroke="hsl(var(--primary))" strokeWidth="1" strokeDasharray="2,3" opacity="0.4" />
+                      <line x1="50%" y1="50%" x2="65%" y2="50%" stroke="hsl(var(--accent))" strokeWidth="1" strokeDasharray="2,3" opacity="0.4" />
+                      
+                      {/* Nodes */}
+                      <circle cx="20%" cy="50%" r="3" fill="hsl(var(--soft-steel))" opacity="0.6" />
+                      <circle cx="35%" cy="50%" r="4" fill="hsl(var(--primary))" opacity="0.6" />
+                      <circle cx="50%" cy="50%" r="5" fill="hsl(var(--primary))" opacity="0.8" />
+                      <circle cx="65%" cy="50%" r="3" fill="hsl(var(--accent))" opacity="0.5" />
+                    </svg>
+                    
+                    {/* Pulsing Shield Effect */}
+                    <motion.div
+                      className="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full border border-primary/20"
+                      initial={{ scale: 1, opacity: 0 }}
+                      animate={{ 
+                        scale: [1, 1.8],
+                        opacity: [0.3, 0]
+                      }}
+                      transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeOut"
+                      }}
+                    />
+                  </div>
+
+                  {/* Front Layer - dApp View (Blurred/Ghosted) */}
+                  <div className="absolute inset-0 p-6 opacity-30 blur-[1px]">
+                    {/* Chart Area */}
+                    <div className="h-32 rounded-lg border border-soft-steel/20 bg-card/20 mb-4 flex items-end gap-1 p-3">
+                      {[...Array(12)].map((_, i) => (
+                        <div 
+                          key={i} 
+                          className="flex-1 bg-soft-steel/30 rounded-sm"
+                          style={{ height: `${30 + Math.random() * 60}%` }}
+                        />
+                      ))}
+                    </div>
+                    
+                    {/* Button/Input Wireframes */}
+                    <div className="space-y-3">
+                      <div className="h-10 rounded border border-soft-steel/20 bg-card/20" />
+                      <div className="flex gap-3">
+                        <div className="flex-1 h-10 rounded border border-soft-steel/20 bg-card/20" />
+                        <div className="w-24 h-10 rounded border border-soft-steel/20 bg-card/20" />
+                      </div>
+                      <div className="h-10 rounded border border-soft-steel/20 bg-card/20" />
+                    </div>
+                  </div>
+
+                  {/* Shield Animation Overlay */}
+                  <motion.div
+                    className="absolute inset-4 rounded-lg border-2 border-primary/0 pointer-events-none"
+                    initial={{ borderColor: "hsl(var(--primary) / 0)" }}
+                    animate={{ 
+                      borderColor: ["hsl(var(--primary) / 0)", "hsl(var(--primary) / 0.3)", "hsl(var(--primary) / 0)"]
+                    }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                </div>
               </div>
 
-              {/* User Node - Top */}
-              <motion.div
-                animate={{ y: [0, -3, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border border-gunmetal bg-card flex items-center justify-center"
-              >
-                <div className="absolute inset-0 rounded-full border border-soft-steel/10" />
-                <span className="font-mono text-xs text-soft-steel tracking-wider">YOU</span>
-              </motion.div>
-
-              {/* Mask Node - Left */}
-              <motion.div
-                animate={{ x: [0, -3, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-20 h-20 rounded-full border border-primary/40 bg-card flex items-center justify-center"
-              >
-                <div className="absolute inset-1 rounded-full border border-primary/20" />
-                <span className="font-mono text-xs text-primary tracking-wider z-10">MASK</span>
-              </motion.div>
-
-              {/* dApp Nodes - Right */}
-              <motion.div
-                animate={{ x: [0, 3, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                className="absolute right-4 top-1/3 w-14 h-14 rounded-full border border-gunmetal bg-card flex items-center justify-center"
-              >
-                <span className="font-mono text-xs text-muted-foreground tracking-wider">dApp</span>
-              </motion.div>
-
-              <motion.div
-                animate={{ x: [0, 3, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
-                className="absolute right-4 bottom-1/3 w-14 h-14 rounded-full border border-gunmetal bg-card flex items-center justify-center"
-              >
-                <span className="font-mono text-xs text-muted-foreground tracking-wider">dApp</span>
-              </motion.div>
-
-              {/* Animated Data Flow Particles */}
-              <svg className="absolute inset-0 w-full h-full" style={{ zIndex: -1 }}>
-                {/* Connection Lines (Static) */}
-                <line x1="50%" y1="16%" x2="50%" y2="42%" stroke="hsl(var(--gunmetal))" strokeWidth="1" opacity="0.3" strokeDasharray="3,3" />
-                <line x1="23%" y1="50%" x2="42%" y2="50%" stroke="hsl(var(--primary))" strokeWidth="1" opacity="0.3" strokeDasharray="3,3" />
-                <line x1="58%" y1="50%" x2="75%" y2="38%" stroke="hsl(var(--gunmetal))" strokeWidth="1" opacity="0.3" strokeDasharray="3,3" />
-                <line x1="58%" y1="50%" x2="75%" y2="62%" stroke="hsl(var(--gunmetal))" strokeWidth="1" opacity="0.3" strokeDasharray="3,3" />
-                
-                {/* Flowing Particles - YOU to GATE */}
-                <motion.circle
-                  cx="50%"
-                  cy="16%"
-                  r="2"
-                  fill="hsl(var(--primary))"
-                  initial={{ cy: "16%", opacity: 0 }}
-                  animate={{ 
-                    cy: ["16%", "42%"],
-                    opacity: [0, 0.8, 0.8, 0]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                />
-                
-                {/* Flowing Particles - MASK to GATE */}
-                <motion.circle
-                  cx="23%"
-                  cy="50%"
-                  r="2"
-                  fill="hsl(var(--primary))"
-                  initial={{ cx: "23%", opacity: 0 }}
-                  animate={{ 
-                    cx: ["23%", "42%"],
-                    opacity: [0, 0.8, 0.8, 0]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    delay: 1,
-                    ease: "linear"
-                  }}
-                />
-                
-                {/* Flowing Particles - GATE to dApp 1 */}
-                <motion.circle
-                  cx="58%"
-                  cy="50%"
-                  r="2"
-                  fill="hsl(var(--accent))"
-                  initial={{ opacity: 0 }}
-                  animate={{ 
-                    cx: ["58%", "75%"],
-                    cy: ["50%", "38%"],
-                    opacity: [0, 0.6, 0.6, 0]
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    delay: 2,
-                    ease: "linear"
-                  }}
-                />
-                
-                {/* Flowing Particles - GATE to dApp 2 */}
-                <motion.circle
-                  cx="58%"
-                  cy="50%"
-                  r="2"
-                  fill="hsl(var(--accent))"
-                  initial={{ opacity: 0 }}
-                  animate={{ 
-                    cx: ["58%", "75%"],
-                    cy: ["50%", "62%"],
-                    opacity: [0, 0.6, 0.6, 0]
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    delay: 3.5,
-                    ease: "linear"
-                  }}
-                />
-              </svg>
-              
-              {/* Pulsing Scan Rings from Gate */}
-              <motion.div
-                className="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border border-primary/20 pointer-events-none"
-                initial={{ scale: 1, opacity: 0 }}
-                animate={{ 
-                  scale: [1, 2.5],
-                  opacity: [0.3, 0]
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeOut"
-                }}
-              />
-              <motion.div
-                className="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border border-primary/20 pointer-events-none"
-                initial={{ scale: 1, opacity: 0 }}
-                animate={{ 
-                  scale: [1, 2.5],
-                  opacity: [0.3, 0]
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  delay: 2,
-                  ease: "easeOut"
-                }}
-              />
-
-              {/* Outer Rings */}
-              <div className="absolute inset-0 rounded-full border border-gunmetal/30" />
-              <div className="absolute inset-8 rounded-full border border-gunmetal/20" />
+              {/* Label */}
+              <div className="absolute -bottom-8 right-0">
+                <span className="font-mono text-[10px] text-soft-steel/50 tracking-widest uppercase">
+                  Zxora client visualization · Conceptual
+                </span>
+              </div>
             </div>
           </motion.div>
         </div>
