@@ -12,7 +12,55 @@ interface CodeLine {
   isWarning?: boolean;
 }
 
+// Scrambled text animation hook
+const useScrambleText = (finalText: string, duration: number = 1800) => {
+  const [displayText, setDisplayText] = useState("");
+  const [isComplete, setIsComplete] = useState(false);
+  
+  useEffect(() => {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&@?";
+    const finalChars = finalText.split("");
+    const steps = 60;
+    let currentStep = 0;
+    
+    const interval = setInterval(() => {
+      currentStep++;
+      const progress = currentStep / steps;
+      
+      const newText = finalChars.map((char, index) => {
+        if (char === " ") return " ";
+        
+        const charProgress = (progress - (index / finalChars.length) * 0.3) / 0.7;
+        
+        if (charProgress >= 1) {
+          return char;
+        } else if (charProgress > 0) {
+          return Math.random() > charProgress 
+            ? chars[Math.floor(Math.random() * chars.length)]
+            : char;
+        } else {
+          return chars[Math.floor(Math.random() * chars.length)];
+        }
+      }).join("");
+      
+      setDisplayText(newText);
+      
+      if (currentStep >= steps) {
+        clearInterval(interval);
+        setDisplayText(finalText);
+        setIsComplete(true);
+      }
+    }, duration / steps);
+    
+    return () => clearInterval(interval);
+  }, [finalText, duration]);
+  
+  return { displayText, isComplete };
+};
+
 const Hero = () => {
+  const { displayText, isComplete } = useScrambleText("NAVIGATE IN THE SHADOW LAYER", 1800);
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -103,28 +151,15 @@ const Hero = () => {
             <div className="absolute inset-0 -inset-x-12 -inset-y-8 bg-gradient-radial from-[rgba(5,8,17,0.7)] via-[rgba(5,8,17,0.4)] to-transparent rounded-3xl blur-2xl -z-10" />
             
             <div className="space-y-8 relative">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-                className="inline-block"
-              >
-                <span className="px-4 py-2 rounded-full bg-card/60 backdrop-blur-sm border border-primary/25 text-xs font-mono text-primary tracking-wider">
-                  ZK-POWERED SHADOW CLIENT
-                </span>
-              </motion.div>
-
+              {/* Headline with encrypted → decrypted animation */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-                className="relative"
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="relative mb-8"
               >
-                {/* Headline with enhanced metallic gradient and pulse */}
-                <motion.h1
-                  animate={{ scale: [1, 1.005, 1] }}
-                  transition={{ duration: 6, repeat: Infinity, repeatDelay: 2 }}
-                  className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.08] tracking-[0.04em] uppercase relative"
+                <h1
+                  className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.05] tracking-[0.04em] uppercase relative"
                   style={{
                     background: 'linear-gradient(135deg, hsl(230, 12%, 48%), hsl(230, 10%, 58%), hsl(235, 15%, 42%), hsl(230, 8%, 55%))',
                     backgroundSize: '200% 200%',
@@ -135,9 +170,9 @@ const Hero = () => {
                   }}
                 >
                   <motion.span
-                    animate={{
+                    animate={isComplete ? {
                       backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
-                    }}
+                    } : {}}
                     transition={{
                       duration: 8,
                       repeat: Infinity,
@@ -151,15 +186,15 @@ const Hero = () => {
                       WebkitTextFillColor: 'transparent',
                     }}
                   >
-                    OPERATE IN THE SHADOW LAYER
+                    {displayText}
                   </motion.span>
-                </motion.h1>
+                </h1>
               </motion.div>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
                 className="text-lg leading-relaxed max-w-xl font-body text-[#A5AFC3]"
               >
                 Zxora shields your identity, device fingerprint, routing patterns, approvals, and wallet behavior—every action passes through an autonomous ZK-powered defense layer.
@@ -168,7 +203,7 @@ const Hero = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.4 }}
+                transition={{ delay: 0.7, duration: 0.4 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
                 <Button
