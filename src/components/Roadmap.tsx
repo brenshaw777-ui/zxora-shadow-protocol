@@ -50,9 +50,6 @@ const Roadmap = () => {
 
   return (
     <section id="roadmap" ref={ref} className="py-24 relative overflow-hidden">
-      {/* Subtle radial gradient for depth */}
-      <div className="absolute inset-0 bg-gradient-radial from-primary/3 via-transparent to-transparent opacity-40" />
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
