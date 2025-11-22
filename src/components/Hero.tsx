@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Shield } from "lucide-react";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -11,13 +11,13 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Subtle radial glow behind Shadow Core */}
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-accent/8 rounded-full blur-3xl" />
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 pb-24">
+      {/* Subtle radial glows */}
+      <div className="absolute top-1/2 right-1/3 -translate-y-1/2 w-[700px] h-[700px] bg-accent/6 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-primary/4 rounded-full blur-3xl" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Left Column - Hero Text in Glass/Metal HUD Panel */}
           <motion.div
@@ -26,14 +26,11 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="p-8 lg:p-10 rounded-2xl bg-[rgba(5,8,17,0.92)] backdrop-blur-sm border border-transparent shadow-[0_0_1px_rgba(199,204,216,0.3),inset_0_1px_0_rgba(255,255,255,0.03),inset_0_-1px_0_rgba(0,0,0,0.3)] relative overflow-hidden">
-              
-              {/* Metallic border gradient overlay */}
-              <div className="absolute inset-0 rounded-2xl border border-transparent bg-gradient-to-br from-gunmetal/60 via-primary/10 to-accent/20 pointer-events-none" style={{ 
-                mask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
-                maskComposite: 'exclude'
-              }} />
-              
+            <div className="p-8 lg:p-10 rounded-2xl bg-[rgba(5,8,17,0.94)] backdrop-blur-md border shadow-[0_8px_32px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.04)] relative overflow-hidden"
+              style={{
+                borderImage: 'linear-gradient(135deg, rgba(60,66,83,0.8), rgba(108,77,255,0.15), rgba(255,122,60,0.1), rgba(60,66,83,0.6)) 1'
+              }}
+            >
               <div className="space-y-8 relative z-10">
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -41,7 +38,7 @@ const Hero = () => {
                   transition={{ delay: 0.2 }}
                   className="inline-block"
                 >
-                  <span className="px-4 py-2 rounded-full bg-card/80 backdrop-blur-sm border border-primary/30 text-xs font-mono text-primary tracking-wider">
+                  <span className="px-4 py-2 rounded-full bg-card/90 backdrop-blur-sm border border-primary/35 text-xs font-mono text-primary tracking-wider shadow-lg">
                     ZK-POWERED SHADOW CLIENT
                   </span>
                 </motion.div>
@@ -50,7 +47,7 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
-                  className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.1] tracking-[0.06em] uppercase"
+                  className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.08] tracking-[0.04em] uppercase"
                   style={{ color: '#E3E8F4' }}
                 >
                   OPERATE IN THE SHADOW LAYER
@@ -64,8 +61,7 @@ const Hero = () => {
                   style={{ color: '#A5AFC3' }}
                 >
                   Zxora sits between you and every dApp, wallet, and website. It masks your identity, 
-                  randomizes your fingerprint, and routes every interaction through a hardened Gate 
-                  so who you are is never on the table.
+                  randomizes your fingerprint, and routes every interaction through a hardened Gate.
                 </motion.p>
 
                 <motion.div
@@ -95,188 +91,179 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Right Column - Shadow Core Visual */}
+          {/* Right Column - Shadow Browser Window */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            initial={{ opacity: 0, scale: 0.1, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="relative aspect-square max-w-lg mx-auto">
-              
-              {/* Shadow Core - Main Circular Element */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64"
+            <motion.div
+              animate={{ y: [0, -2, 0] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              className="relative max-w-2xl mx-auto"
+            >
+              {/* Shadow Browser Window Frame */}
+              <div className="rounded-2xl overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.7),0_0_1px_rgba(199,204,216,0.3)] relative"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(28,32,42,0.95), rgba(12,15,24,0.98))',
+                }}
               >
-                {/* Core disc with metallic gradient */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#1A1D28] via-[#0A0C14] to-[#1A1D28] border border-gunmetal/60 shadow-[0_0_40px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.03)]" />
                 
-                {/* Inner grid overlay */}
-                <div className="absolute inset-8 rounded-full opacity-20 bg-[linear-gradient(to_right,rgba(199,204,216,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(199,204,216,0.1)_1px,transparent_1px)] bg-[size:16px_16px]" />
-                
-                {/* Concentric rings */}
-                <div className="absolute inset-0 rounded-full border border-gunmetal/40" />
-                <div className="absolute inset-12 rounded-full border border-gunmetal/30" />
-                <div className="absolute inset-20 rounded-full border border-primary/20" />
-                
-                {/* Center glow */}
-                <div className="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary/10 blur-xl" />
-              </motion.div>
-
-              {/* Orbiting particles */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72"
-              >
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-primary/60" />
-              </motion.div>
-              
-              <motion.div
-                animate={{ rotate: -360 }}
-                transition={{ duration: 50, repeat: Infinity, ease: "linear", delay: 5 }}
-                className="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72"
-              >
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-accent/60" />
-              </motion.div>
-
-              {/* YOU Node - Top */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.8, duration: 0.4 }}
-                className="absolute top-0 left-1/2 -translate-x-1/2 flex flex-col items-center"
-              >
-                <div className="w-12 h-12 rounded-full border border-gunmetal bg-[rgba(5,8,17,0.95)] flex items-center justify-center relative">
-                  <div className="absolute inset-3 rounded-full border border-gunmetal/40" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                </div>
-                <span className="mt-3 font-mono text-[10px] text-soft-steel/70 tracking-widest uppercase">You</span>
-              </motion.div>
-
-              {/* MASK Node - Left */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1, duration: 0.4 }}
-                className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col items-center"
-              >
-                <div className="w-14 h-14 rounded-full border border-primary/40 bg-[rgba(5,8,17,0.95)] flex items-center justify-center relative">
-                  <div className="absolute inset-3 rounded-full border border-primary/30" />
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                </div>
-                <span className="mt-3 font-mono text-[10px] text-primary/80 tracking-widest uppercase">Mask</span>
-              </motion.div>
-
-              {/* THE GATE Node - Bottom */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.2, duration: 0.4 }}
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center"
-              >
-                <span className="mb-3 font-mono text-[10px] text-primary tracking-widest uppercase">The Gate</span>
-                <div className="w-16 h-16 rounded-full border-2 border-primary/50 bg-[rgba(5,8,17,0.95)] flex items-center justify-center relative">
-                  <div className="absolute inset-3 rounded-full border border-primary/30" />
-                  <div className="absolute inset-0 rounded-full bg-primary/5" />
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                </div>
-              </motion.div>
-
-              {/* DAPP/CHAIN Node - Right */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.4, duration: 0.4 }}
-                className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col items-center"
-              >
-                <div className="w-12 h-12 rounded-full border border-gunmetal bg-[rgba(5,8,17,0.95)] flex items-center justify-center relative">
-                  <div className="absolute inset-3 rounded-full border border-gunmetal/40" />
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent/60" />
-                </div>
-                <span className="mt-3 font-mono text-[10px] text-soft-steel/70 tracking-widest uppercase">dApp</span>
-              </motion.div>
-
-              {/* Connection Lines with Data Flow */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                {/* YOU → MASK */}
-                <line x1="50%" y1="15%" x2="18%" y2="45%" stroke="hsl(var(--gunmetal))" strokeWidth="1" opacity="0.4" strokeDasharray="3,3" />
-                
-                {/* MASK → THE GATE */}
-                <line x1="20%" y1="55%" x2="48%" y2="82%" stroke="hsl(var(--primary))" strokeWidth="1" opacity="0.5" strokeDasharray="3,3" />
-                
-                {/* THE GATE → DAPP */}
-                <line x1="52%" y1="82%" x2="82%" y2="52%" stroke="hsl(var(--gunmetal))" strokeWidth="1" opacity="0.4" strokeDasharray="3,3" />
-                
-                {/* Flowing data packet - YOU to MASK */}
-                <motion.circle
-                  cx="50%"
-                  cy="15%"
-                  r="2"
-                  fill="hsl(var(--primary))"
-                  initial={{ opacity: 0 }}
-                  animate={{ 
-                    cx: ["50%", "18%"],
-                    cy: ["15%", "45%"],
-                    opacity: [0, 0.8, 0.8, 0]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "linear"
+                {/* Metallic bezel with subtle iris accent at corners */}
+                <div className="absolute inset-0 rounded-2xl pointer-events-none"
+                  style={{
+                    border: '1.5px solid transparent',
+                    borderImage: 'linear-gradient(135deg, rgba(199,204,216,0.4), rgba(108,77,255,0.15), rgba(199,204,216,0.3)) 1'
                   }}
                 />
                 
-                {/* Flowing data packet - MASK to GATE */}
-                <motion.circle
-                  cx="20%"
-                  cy="55%"
-                  r="2"
-                  fill="hsl(var(--primary))"
-                  initial={{ opacity: 0 }}
-                  animate={{ 
-                    cx: ["20%", "48%"],
-                    cy: ["55%", "82%"],
-                    opacity: [0, 0.8, 0.8, 0]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    delay: 1.5,
-                    ease: "linear"
-                  }}
-                />
-                
-                {/* Flowing data packet - GATE to DAPP */}
-                <motion.circle
-                  cx="52%"
-                  cy="82%"
-                  r="2"
-                  fill="hsl(var(--accent))"
-                  initial={{ opacity: 0 }}
-                  animate={{ 
-                    cx: ["52%", "82%"],
-                    cy: ["82%", "52%"],
-                    opacity: [0, 0.6, 0.6, 0]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    delay: 3,
-                    ease: "linear"
-                  }}
-                />
-              </svg>
+                {/* Corner accent glows */}
+                <div className="absolute top-0 left-0 w-20 h-20 bg-accent/10 rounded-tl-2xl blur-xl" />
+                <div className="absolute bottom-0 right-0 w-20 h-20 bg-accent/10 rounded-br-2xl blur-xl" />
 
-              {/* Label */}
-              <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-full text-center">
+                {/* Top Bar - Browser Chrome */}
+                <div className="relative px-6 py-4 border-b border-gunmetal/40 bg-gradient-to-b from-[rgba(20,23,32,0.9)] to-[rgba(12,15,24,0.8)] backdrop-blur-sm">
+                  
+                  {/* Metallic shine sweep on load */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent"
+                    initial={{ x: '-100%' }}
+                    animate={{ x: '200%' }}
+                    transition={{ duration: 2, delay: 1.2, ease: "easeInOut" }}
+                  />
+                  
+                  <div className="flex items-center justify-between relative z-10">
+                    {/* Window Control Dots */}
+                    <div className="flex gap-2">
+                      <div className="w-3 h-3 rounded-full bg-gradient-to-br from-gunmetal/70 to-gunmetal/40 border border-gunmetal/30" />
+                      <div className="w-3 h-3 rounded-full bg-gradient-to-br from-gunmetal/70 to-gunmetal/40 border border-gunmetal/30" />
+                      <div className="w-3 h-3 rounded-full bg-gradient-to-br from-gunmetal/70 to-gunmetal/40 border border-gunmetal/30" />
+                    </div>
+                    
+                    {/* URL Bar */}
+                    <div className="flex-1 mx-6 px-5 py-2 rounded-lg bg-[rgba(5,7,13,0.6)] border border-gunmetal/30 backdrop-blur-sm">
+                      <div className="flex items-center gap-3">
+                        <Shield className="w-3.5 h-3.5 text-primary/70" strokeWidth={2} />
+                        <span className="font-mono text-xs text-soft-steel/60 tracking-wide">zxora://shadow/session</span>
+                      </div>
+                    </div>
+                    
+                    {/* Shield Icon Indicator */}
+                    <Shield className="w-4 h-4 text-primary/50" strokeWidth={1.5} />
+                  </div>
+                </div>
+
+                {/* Inner Window Content Area */}
+                <div className="relative h-96 overflow-hidden">
+                  
+                  {/* Liquid Metal Background Layer */}
+                  <div className="absolute inset-0">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0A0C14] via-[#141820] to-[#0A0C14]" />
+                    
+                    {/* Liquid metal swirls */}
+                    <motion.div
+                      className="absolute inset-0 opacity-30"
+                      style={{
+                        background: 'radial-gradient(circle at 30% 40%, rgba(108,77,255,0.08), transparent 50%), radial-gradient(circle at 70% 60%, rgba(255,122,60,0.06), transparent 50%)',
+                      }}
+                      animate={{
+                        background: [
+                          'radial-gradient(circle at 30% 40%, rgba(108,77,255,0.08), transparent 50%), radial-gradient(circle at 70% 60%, rgba(255,122,60,0.06), transparent 50%)',
+                          'radial-gradient(circle at 40% 50%, rgba(108,77,255,0.08), transparent 50%), radial-gradient(circle at 60% 50%, rgba(255,122,60,0.06), transparent 50%)',
+                          'radial-gradient(circle at 30% 40%, rgba(108,77,255,0.08), transparent 50%), radial-gradient(circle at 70% 60%, rgba(255,122,60,0.06), transparent 50%)',
+                        ]
+                      }}
+                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    />
+                    
+                    {/* Distorted grid */}
+                    <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,rgba(199,204,216,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(199,204,216,0.08)_1px,transparent_1px)] bg-[size:40px_40px]" 
+                      style={{
+                        transform: 'perspective(500px) rotateX(2deg)',
+                        transformOrigin: 'center center'
+                      }}
+                    />
+                  </div>
+
+                  {/* Vertical Data Veil (Encrypted Code) */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    {[...Array(6)].map((_, i) => (
+                      <motion.div
+                        key={`veil-${i}`}
+                        className="absolute top-0 font-mono text-[8px] text-soft-steel/8 leading-4"
+                        style={{ left: `${15 + i * 14}%` }}
+                        initial={{ y: '-100%' }}
+                        animate={{ y: '100%' }}
+                        transition={{
+                          duration: 35 + Math.random() * 15,
+                          repeat: Infinity,
+                          delay: Math.random() * 5,
+                          ease: "linear"
+                        }}
+                      >
+                        {Array.from({ length: 50 }, (_, idx) => (
+                          <div key={idx}>
+                            {['zk', 'tx', '0x', '||', '--'][Math.floor(Math.random() * 5)]}
+                          </div>
+                        ))}
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Shield Glimmer Effect */}
+                  <motion.div
+                    className="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 flex items-center justify-center"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 0.15, 0] }}
+                    transition={{ duration: 1.2, repeat: Infinity, repeatDelay: 4 }}
+                  >
+                    <Shield className="w-32 h-32 text-primary/30" strokeWidth={0.5} />
+                  </motion.div>
+
+                  {/* Ghosted UI Elements (Front Layer) */}
+                  <div className="absolute inset-0 p-8 opacity-25 blur-[0.5px]">
+                    {/* Chart outline */}
+                    <div className="h-32 rounded-lg border border-soft-steel/15 bg-card/10 mb-6 flex items-end gap-2 p-4">
+                      {[...Array(10)].map((_, i) => (
+                        <div 
+                          key={i} 
+                          className="flex-1 bg-soft-steel/20 rounded-sm"
+                          style={{ height: `${40 + Math.random() * 50}%` }}
+                        />
+                      ))}
+                    </div>
+                    
+                    {/* UI blocks */}
+                    <div className="space-y-4">
+                      <div className="h-12 rounded-lg border border-soft-steel/15 bg-card/10" />
+                      <div className="grid grid-cols-3 gap-4">
+                        <div className="h-12 rounded-lg border border-soft-steel/15 bg-card/10 col-span-2" />
+                        <div className="h-12 rounded-lg border border-soft-steel/15 bg-card/10" />
+                      </div>
+                      
+                      {/* Table grid */}
+                      <div className="space-y-2 mt-6">
+                        {[...Array(4)].map((_, i) => (
+                          <div key={i} className="grid grid-cols-4 gap-2">
+                            {[...Array(4)].map((_, j) => (
+                              <div key={j} className="h-6 rounded border border-soft-steel/10 bg-card/5" />
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Caption */}
+              <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-full text-center">
                 <span className="font-mono text-[9px] text-soft-steel/40 tracking-widest uppercase">
-                  Shadow Core · Zxora architecture (conceptual)
+                  Shadow Browser Window · Zxora Client (Conceptual)
                 </span>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
