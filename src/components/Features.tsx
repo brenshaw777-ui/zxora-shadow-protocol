@@ -57,9 +57,8 @@ const Features = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 tracking-wide">
-            BUILT FOR OPERATORS{" "}
-            <span className="text-primary">WHO CAN'T AFFORD MISTAKES</span>
+          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 tracking-[0.08em] leading-[1.15] metallic-heading">
+            BUILT FOR OPERATORS WHO CAN'T AFFORD MISTAKES
           </h2>
         </motion.div>
 
@@ -72,23 +71,20 @@ const Features = () => {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="p-8 rounded-2xl metal-card hover:border-primary/30 transition-all duration-300 h-full">
+              <div className="p-8 rounded-2xl metal-card hover:border-primary/40 hover:shadow-[0_0_12px_rgba(255,107,60,0.06)] transition-all duration-300 h-full">
                 <div className="mb-6">
-                  <div className="w-14 h-14 rounded-lg flex items-center justify-center bg-primary/5 border border-primary/20 group-hover:bg-primary/10 group-hover:border-primary/40 transition-all duration-300">
-                    <feature.icon className="w-7 h-7 text-foreground" strokeWidth={1.5} />
+                  <div className="w-14 h-14 rounded-lg flex items-center justify-center border border-gunmetal group-hover:border-primary/30 transition-all duration-300">
+                    <feature.icon className="w-7 h-7 text-soft-steel" strokeWidth={1} />
                   </div>
                 </div>
                 
-                <h3 className="font-display font-semibold text-lg mb-3 group-hover:text-primary transition-colors duration-300 tracking-wide">
+                <h3 className="font-display font-semibold text-lg mb-3 tracking-wide text-foreground">
                   {feature.title}
                 </h3>
                 
                 <p className="text-muted-foreground leading-relaxed text-sm font-body">
                   {feature.description}
                 </p>
-
-                {/* Subtle hover effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </div>
             </motion.div>
           ))}

@@ -36,9 +36,8 @@ const Story = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 tracking-wide">
-            WHY ZXORA{" "}
-            <span className="text-primary">EXISTS</span>
+          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-12 text-center tracking-[0.08em] leading-[1.15] metallic-heading">
+            WHY ZXORA EXISTS
           </h2>
         </motion.div>
 
@@ -95,14 +94,14 @@ const Story = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                className="p-6 rounded-2xl metal-card hover:border-primary/30 transition-all duration-300 group"
+                className="p-6 rounded-2xl metal-card hover:border-primary/40 hover:shadow-[0_0_12px_rgba(255,107,60,0.06)] transition-all duration-300 group"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <card.icon className="w-6 h-6 text-primary" />
+                  <div className="p-3 rounded-lg border border-gunmetal group-hover:border-primary/30 transition-colors">
+                    <card.icon className="w-6 h-6 text-soft-steel" strokeWidth={1} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-xl font-display font-semibold mb-2 group-hover:text-primary transition-colors">
+                    <h4 className="text-xl font-display font-semibold mb-2 text-foreground">
                       {card.title}
                     </h4>
                     <p className="text-muted-foreground leading-relaxed">

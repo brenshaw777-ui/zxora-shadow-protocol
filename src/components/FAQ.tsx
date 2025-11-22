@@ -54,9 +54,8 @@ const FAQ = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 tracking-wide">
-            QUESTIONS,{" "}
-            <span className="text-primary">ANSWERED</span>
+          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 text-center tracking-[0.08em] leading-[1.15] metallic-heading">
+            QUESTIONS, ANSWERED
           </h2>
         </motion.div>
 
@@ -70,9 +69,9 @@ const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border border-border rounded-2xl px-6 metal-card hover:border-primary/30 transition-all duration-300"
+                className="border border-border rounded-2xl px-6 metal-card hover:border-primary/40 hover:shadow-[0_0_12px_rgba(255,107,60,0.06)] transition-all duration-300 data-[state=open]:border-l-2 data-[state=open]:border-l-primary"
               >
-                <AccordionTrigger className="font-display text-lg hover:text-primary hover:no-underline">
+                <AccordionTrigger className="font-display text-lg text-foreground hover:no-underline tracking-wide">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed">

@@ -54,8 +54,8 @@ const Roadmap = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 tracking-wide">
-            <span className="text-primary">ROADMAP</span>
+          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 text-center tracking-[0.08em] leading-[1.15] metallic-heading">
+            ROADMAP
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Building in the shadows, shipping in phases
@@ -66,7 +66,7 @@ const Roadmap = () => {
         <div className="hidden lg:block relative">
           <div className="flex justify-between items-start relative pb-12">
             {/* Timeline Line */}
-            <div className="absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-accent" />
+            <div className="absolute top-16 left-0 right-0 h-px bg-gunmetal" />
 
             {phases.map((phase, index) => (
               <motion.div
@@ -78,39 +78,27 @@ const Roadmap = () => {
               >
                 <div className="flex flex-col items-center">
                   {/* Icon Circle */}
-                  <div className={`
-                    w-32 h-32 rounded-full flex items-center justify-center mb-6
-                    bg-gradient-to-br ${
-                      phase.color === "primary" ? "from-primary to-primary/50" :
-                      phase.color === "secondary" ? "from-secondary to-secondary/50" :
-                      "from-accent to-accent/50"
-                    }
-                    border-glow-magenta relative z-10
-                  `}>
-                    <phase.icon className="w-16 h-16 text-white" />
+                  <div className="w-20 h-20 rounded-full border border-gunmetal bg-card flex items-center justify-center mb-6 relative z-10 group-hover:border-primary/30 transition-all duration-300">
+                    <div className="absolute inset-2 rounded-full border border-primary/10" />
+                    <div className="absolute inset-0 rounded-full bg-primary/5" />
+                    <phase.icon className="w-10 h-10 text-soft-steel z-10" strokeWidth={1} />
+                    <div className="absolute w-2 h-2 rounded-full bg-primary top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20" />
                   </div>
 
                   {/* Content Card */}
-                  <div className="p-6 rounded-lg bg-card border border-border w-full max-w-sm">
-                    <div className={`
-                      inline-block px-3 py-1 rounded-full text-xs font-mono mb-3
-                      ${
-                        phase.color === "primary" ? "bg-primary/20 text-primary" :
-                        phase.color === "secondary" ? "bg-secondary/20 text-secondary" :
-                        "bg-accent/20 text-accent"
-                      }
-                    `}>
+                  <div className="p-6 rounded-lg metal-card w-full max-w-sm hover:border-primary/40 hover:shadow-[0_0_12px_rgba(255,107,60,0.06)] transition-all duration-300">
+                    <div className="inline-block px-3 py-1 rounded-full border border-gunmetal text-xs font-mono mb-3 text-soft-steel">
                       {phase.phase}
                     </div>
                     
-                    <h3 className="font-display font-semibold text-xl mb-4">
+                    <h3 className="font-display font-semibold text-xl mb-4 text-foreground tracking-wide">
                       {phase.title}
                     </h3>
 
                     <ul className="space-y-2">
                       {phase.items.map((item, i) => (
-                        <li key={i} className="text-sm text-muted-foreground flex items-start">
-                          <span className="text-primary mr-2">•</span>
+                        <li key={i} className="text-sm text-muted-foreground flex items-start font-body">
+                          <span className="text-primary mr-2 mt-0.5">•</span>
                           {item}
                         </li>
                       ))}
@@ -125,7 +113,7 @@ const Roadmap = () => {
         {/* Mobile: Vertical Timeline */}
         <div className="lg:hidden space-y-12 relative">
           {/* Vertical Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent" />
+          <div className="absolute left-8 top-0 bottom-0 w-px bg-gunmetal" />
 
           {phases.map((phase, index) => (
             <motion.div
@@ -136,39 +124,27 @@ const Roadmap = () => {
               className="flex items-start space-x-6 relative"
             >
               {/* Icon Circle */}
-              <div className={`
-                w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0
-                bg-gradient-to-br ${
-                  phase.color === "primary" ? "from-primary to-primary/50" :
-                  phase.color === "secondary" ? "from-secondary to-secondary/50" :
-                  "from-accent to-accent/50"
-                }
-                border-glow-magenta relative z-10
-              `}>
-                <phase.icon className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 rounded-full border border-gunmetal bg-card flex items-center justify-center flex-shrink-0 relative z-10">
+                <div className="absolute inset-2 rounded-full border border-primary/10" />
+                <div className="absolute inset-0 rounded-full bg-primary/5" />
+                <phase.icon className="w-8 h-8 text-soft-steel z-10" strokeWidth={1} />
+                <div className="absolute w-1.5 h-1.5 rounded-full bg-primary top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20" />
               </div>
 
               {/* Content Card */}
-              <div className="flex-1 p-6 rounded-lg bg-card border border-border">
-                <div className={`
-                  inline-block px-3 py-1 rounded-full text-xs font-mono mb-3
-                  ${
-                    phase.color === "primary" ? "bg-primary/20 text-primary" :
-                    phase.color === "secondary" ? "bg-secondary/20 text-secondary" :
-                    "bg-accent/20 text-accent"
-                  }
-                `}>
+              <div className="flex-1 p-6 rounded-lg metal-card">
+                <div className="inline-block px-3 py-1 rounded-full border border-gunmetal text-xs font-mono mb-3 text-soft-steel">
                   {phase.phase}
                 </div>
                 
-                <h3 className="font-display font-semibold text-xl mb-4">
+                <h3 className="font-display font-semibold text-xl mb-4 text-foreground tracking-wide">
                   {phase.title}
                 </h3>
 
                 <ul className="space-y-2">
                   {phase.items.map((item, i) => (
-                    <li key={i} className="text-sm text-muted-foreground flex items-start">
-                      <span className="text-primary mr-2">•</span>
+                    <li key={i} className="text-sm text-muted-foreground flex items-start font-body">
+                      <span className="text-primary mr-2 mt-0.5">•</span>
                       {item}
                     </li>
                   ))}

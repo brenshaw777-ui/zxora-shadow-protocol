@@ -32,7 +32,7 @@ const Hero = () => {
               transition={{ delay: 0.2 }}
               className="inline-block"
             >
-              <span className="px-4 py-2 rounded-full bg-graphite border border-primary/40 text-xs font-mono text-primary tracking-wider">
+              <span className="px-4 py-2 rounded-full bg-card border border-primary/30 text-xs font-mono text-primary tracking-wider">
                 ZK-POWERED SHADOW CLIENT
               </span>
             </motion.div>
@@ -41,12 +41,9 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-tight"
+              className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.15] tracking-[0.08em] metallic-heading"
             >
-              OPERATE IN THE{" "}
-              <span className="bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
-                SHADOW LAYER
-              </span>
+              OPERATE IN THE SHADOW LAYER
             </motion.h1>
 
             <motion.p
@@ -69,7 +66,7 @@ const Hero = () => {
               <Button
                 size="lg"
                 onClick={() => scrollToSection("cta")}
-                className="bg-primary hover:bg-primary/80 text-primary-foreground font-display tracking-wide border-glow-ember transition-all duration-300"
+                className="font-display tracking-wide"
               >
                 REQUEST EARLY ACCESS
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -78,7 +75,7 @@ const Hero = () => {
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection("how-it-works")}
-                className="border-foreground/20 hover:border-accent/50 hover:bg-accent/5 font-display tracking-wide transition-all duration-300"
+                className="font-display tracking-wide"
               >
                 VIEW HOW IT WORKS
               </Button>
@@ -93,79 +90,82 @@ const Hero = () => {
             className="relative"
           >
             <div className="relative aspect-square max-w-lg mx-auto">
-              {/* Central Gate - Minimal Radar Style */}
-              <div className="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border-2 border-accent/20 flex items-center justify-center animate-pulse-glow">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/10 to-transparent" />
-                <Shield className="w-16 h-16 text-foreground z-10" strokeWidth={1.5} />
-                <span className="absolute -bottom-10 font-display text-xs text-primary tracking-widest">THE GATE</span>
+              {/* Central Gate - Minimal HUD Style */}
+              <div className="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full border border-gunmetal flex items-center justify-center">
+                <div className="absolute inset-0 rounded-full bg-accent/5 animate-pulse-glow" />
+                <div className="absolute inset-2 rounded-full border border-primary/20" />
+                <Shield className="w-16 h-16 text-foreground z-10" strokeWidth={1} />
+                <span className="absolute -bottom-10 font-mono text-xs text-soft-steel tracking-widest">THE GATE</span>
               </div>
 
               {/* User Node - Top */}
               <motion.div
-                animate={{ y: [0, -4, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full metal-card flex items-center justify-center"
+                animate={{ y: [0, -3, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full border border-gunmetal bg-card flex items-center justify-center"
               >
-                <span className="font-mono text-xs text-foreground tracking-wider">YOU</span>
+                <div className="absolute inset-0 rounded-full border border-soft-steel/10" />
+                <span className="font-mono text-xs text-soft-steel tracking-wider">YOU</span>
               </motion.div>
 
               {/* Mask Node - Left */}
               <motion.div
-                animate={{ x: [0, -4, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-20 h-20 rounded-full metal-card border border-primary/30 flex items-center justify-center"
+                animate={{ x: [0, -3, 0] }}
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-20 h-20 rounded-full border border-primary/40 bg-card flex items-center justify-center"
               >
-                <div className="absolute inset-0 rounded-full bg-primary/5" />
+                <div className="absolute inset-1 rounded-full border border-primary/20" />
                 <span className="font-mono text-xs text-primary tracking-wider z-10">MASK</span>
               </motion.div>
 
               {/* dApp Nodes - Right */}
               <motion.div
-                animate={{ x: [0, 4, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                className="absolute right-4 top-1/3 w-14 h-14 rounded-full metal-card border border-foreground/20 flex items-center justify-center"
+                animate={{ x: [0, 3, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                className="absolute right-4 top-1/3 w-14 h-14 rounded-full border border-gunmetal bg-card flex items-center justify-center"
               >
                 <span className="font-mono text-xs text-muted-foreground tracking-wider">dApp</span>
               </motion.div>
 
               <motion.div
-                animate={{ x: [0, 4, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
-                className="absolute right-4 bottom-1/3 w-14 h-14 rounded-full metal-card border border-foreground/20 flex items-center justify-center"
+                animate={{ x: [0, 3, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
+                className="absolute right-4 bottom-1/3 w-14 h-14 rounded-full border border-gunmetal bg-card flex items-center justify-center"
               >
                 <span className="font-mono text-xs text-muted-foreground tracking-wider">dApp</span>
               </motion.div>
 
               {/* Subtle Connection Lines */}
-              <svg className="absolute inset-0 w-full h-full opacity-40" style={{ zIndex: -1 }}>
+              <svg className="absolute inset-0 w-full h-full opacity-30" style={{ zIndex: -1 }}>
                 <motion.line
                   x1="50%"
                   y1="16%"
                   x2="50%"
                   y2="42%"
-                  stroke="hsl(var(--titanium-silver))"
+                  stroke="hsl(var(--gunmetal))"
                   strokeWidth="1"
-                  strokeDasharray="4,4"
+                  strokeDasharray="3,3"
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                 />
                 <motion.line
                   x1="23%"
                   y1="50%"
                   x2="42%"
                   y2="50%"
-                  stroke="hsl(var(--electric-ember))"
+                  stroke="hsl(var(--primary))"
                   strokeWidth="1"
-                  strokeDasharray="4,4"
+                  strokeDasharray="3,3"
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
-                  transition={{ duration: 3, repeat: Infinity, delay: 1, ease: "linear" }}
+                  transition={{ duration: 4, repeat: Infinity, delay: 1.5, ease: "linear" }}
                 />
               </svg>
 
-              {/* Outer Ring */}
-              <div className="absolute inset-0 rounded-full border border-foreground/5" />
+              {/* Outer Rings */}
+              <div className="absolute inset-0 rounded-full border border-gunmetal/30" />
+              <div className="absolute inset-8 rounded-full border border-gunmetal/20" />
             </div>
           </motion.div>
         </div>
