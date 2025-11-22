@@ -9,6 +9,7 @@ interface CodeLine {
   highlight?: string;
   dotColor: string;
   isPulsing?: boolean;
+  isWarning?: boolean;
 }
 
 const Hero = () => {
@@ -19,7 +20,7 @@ const Hero = () => {
     }
   };
 
-  // All possible code operations (30+ lines)
+  // All possible code operations (30+ lines with warnings/alerts)
   const allCodeOperations: CodeLine[] = [
     { id: '1', text: 'initializing shadow_client...', dotColor: 'bg-primary/60' },
     { id: '2', text: 'detect(fingerprint) → ', highlight: 'fingerprint_shielded ✓', dotColor: 'bg-primary', isPulsing: true },
@@ -28,33 +29,38 @@ const Hero = () => {
     { id: '5', text: 'routing.mask = ', highlight: 'active', dotColor: 'bg-primary/60' },
     { id: '6', text: 'tracking_signals = ', highlight: 'nullified', dotColor: 'bg-accent/60' },
     { id: '7', text: 'risk_vector_scan → ', highlight: 'clear', dotColor: 'bg-primary', isPulsing: true },
-    { id: '8', text: 'gate.simulate(transaction) → ', highlight: 'approved', dotColor: 'bg-accent', isPulsing: true },
-    { id: '9', text: 'corridor.link_established → ', highlight: 'encrypted_tunnel ✓', dotColor: 'bg-primary' },
-    { id: '10', text: 'websocket.shield_layer → ', highlight: 'connected', dotColor: 'bg-primary/60' },
-    { id: '11', text: 'entropy.pool = ', highlight: 'refreshed', dotColor: 'bg-accent/60' },
-    { id: '12', text: 'fingerprint.rotation → ', highlight: 'cycle_23', dotColor: 'bg-primary/60' },
-    { id: '13', text: 'dns.queries = ', highlight: 'obfuscated', dotColor: 'bg-accent/60' },
-    { id: '14', text: 'browser.canvas = ', highlight: 'randomized', dotColor: 'bg-primary/60' },
-    { id: '15', text: 'webrtc.leak_protection → ', highlight: 'enabled', dotColor: 'bg-primary', isPulsing: true },
-    { id: '16', text: 'timing_attack_mitigation → ', highlight: 'active', dotColor: 'bg-accent/60' },
-    { id: '17', text: 'keyboard_signature = ', highlight: 'masked', dotColor: 'bg-primary/60' },
-    { id: '18', text: 'mouse_behavior = ', highlight: 'normalized', dotColor: 'bg-accent/60' },
-    { id: '19', text: 'screen_resolution = ', highlight: 'spoofed', dotColor: 'bg-primary/60' },
-    { id: '20', text: 'fonts.enumeration = ', highlight: 'blocked', dotColor: 'bg-accent/60' },
-    { id: '21', text: 'clipboard.isolation → ', highlight: 'enforced', dotColor: 'bg-primary', isPulsing: true },
-    { id: '22', text: 'storage.partitioning = ', highlight: 'strict', dotColor: 'bg-accent/60' },
-    { id: '23', text: 'cookie.jar = ', highlight: 'sanitized', dotColor: 'bg-primary/60' },
-    { id: '24', text: 'referrer.policy = ', highlight: 'strict-origin', dotColor: 'bg-accent/60' },
-    { id: '25', text: 'user_agent = ', highlight: 'synthetic_UA_v2.4', dotColor: 'bg-primary/60' },
-    { id: '26', text: 'tls.fingerprint = ', highlight: 'rotated', dotColor: 'bg-accent/60' },
-    { id: '27', text: 'http_headers = ', highlight: 'minimized', dotColor: 'bg-primary/60' },
-    { id: '28', text: 'certificate.validation → ', highlight: 'passed', dotColor: 'bg-primary', isPulsing: true },
-    { id: '29', text: 'network.latency = ', highlight: 'normalized', dotColor: 'bg-accent/60' },
-    { id: '30', text: 'packet.size_analysis → ', highlight: 'masked', dotColor: 'bg-primary/60' },
-    { id: '31', text: 'connection.pool = ', highlight: 'isolated', dotColor: 'bg-accent/60' },
-    { id: '32', text: 'session.cookies = ', highlight: 'partitioned', dotColor: 'bg-primary/60' },
-    { id: '33', text: 'geolocation.spoof → ', highlight: 'active', dotColor: 'bg-accent', isPulsing: true },
-    { id: '34', text: 'hardware.fingerprint = ', highlight: 'obfuscated', dotColor: 'bg-primary/60' },
+    { id: '8', text: '⚠ WARNING: ', highlight: 'tracking attempt detected and blocked', dotColor: 'bg-yellow-500', isPulsing: true, isWarning: true },
+    { id: '9', text: 'gate.simulate(transaction) → ', highlight: 'approved', dotColor: 'bg-accent', isPulsing: true },
+    { id: '10', text: 'corridor.link_established → ', highlight: 'encrypted_tunnel ✓', dotColor: 'bg-primary' },
+    { id: '11', text: 'websocket.shield_layer → ', highlight: 'connected', dotColor: 'bg-primary/60' },
+    { id: '12', text: 'entropy.pool = ', highlight: 'refreshed', dotColor: 'bg-accent/60' },
+    { id: '13', text: 'fingerprint.rotation → ', highlight: 'cycle_23', dotColor: 'bg-primary/60' },
+    { id: '14', text: 'dns.queries = ', highlight: 'obfuscated', dotColor: 'bg-accent/60' },
+    { id: '15', text: 'browser.canvas = ', highlight: 'randomized', dotColor: 'bg-primary/60' },
+    { id: '16', text: '🛡 ALERT: ', highlight: 'malicious contract signature neutralized', dotColor: 'bg-yellow-500', isPulsing: true, isWarning: true },
+    { id: '17', text: 'webrtc.leak_protection → ', highlight: 'enabled', dotColor: 'bg-primary', isPulsing: true },
+    { id: '18', text: 'timing_attack_mitigation → ', highlight: 'active', dotColor: 'bg-accent/60' },
+    { id: '19', text: 'keyboard_signature = ', highlight: 'masked', dotColor: 'bg-primary/60' },
+    { id: '20', text: 'mouse_behavior = ', highlight: 'normalized', dotColor: 'bg-accent/60' },
+    { id: '21', text: 'screen_resolution = ', highlight: 'spoofed', dotColor: 'bg-primary/60' },
+    { id: '22', text: 'fonts.enumeration = ', highlight: 'blocked', dotColor: 'bg-accent/60' },
+    { id: '23', text: 'clipboard.isolation → ', highlight: 'enforced', dotColor: 'bg-primary', isPulsing: true },
+    { id: '24', text: '⚠ WARNING: ', highlight: 'fingerprinting script detected on page', dotColor: 'bg-yellow-500', isPulsing: true, isWarning: true },
+    { id: '25', text: 'storage.partitioning = ', highlight: 'strict', dotColor: 'bg-accent/60' },
+    { id: '26', text: 'cookie.jar = ', highlight: 'sanitized', dotColor: 'bg-primary/60' },
+    { id: '27', text: 'referrer.policy = ', highlight: 'strict-origin', dotColor: 'bg-accent/60' },
+    { id: '28', text: 'user_agent = ', highlight: 'synthetic_UA_v2.4', dotColor: 'bg-primary/60' },
+    { id: '29', text: 'tls.fingerprint = ', highlight: 'rotated', dotColor: 'bg-accent/60' },
+    { id: '30', text: 'http_headers = ', highlight: 'minimized', dotColor: 'bg-primary/60' },
+    { id: '31', text: 'certificate.validation → ', highlight: 'passed', dotColor: 'bg-primary', isPulsing: true },
+    { id: '32', text: '🛡 ALERT: ', highlight: 'cross-site request forgery blocked', dotColor: 'bg-yellow-500', isPulsing: true, isWarning: true },
+    { id: '33', text: 'network.latency = ', highlight: 'normalized', dotColor: 'bg-accent/60' },
+    { id: '34', text: 'packet.size_analysis → ', highlight: 'masked', dotColor: 'bg-primary/60' },
+    { id: '35', text: 'connection.pool = ', highlight: 'isolated', dotColor: 'bg-accent/60' },
+    { id: '36', text: 'session.cookies = ', highlight: 'partitioned', dotColor: 'bg-primary/60' },
+    { id: '37', text: 'geolocation.spoof → ', highlight: 'active', dotColor: 'bg-accent', isPulsing: true },
+    { id: '38', text: 'hardware.fingerprint = ', highlight: 'obfuscated', dotColor: 'bg-primary/60' },
+    { id: '39', text: '⚠ WARNING: ', highlight: 'third-party tracker intercepted', dotColor: 'bg-yellow-500', isPulsing: true, isWarning: true },
   ];
 
   // State for visible lines in the terminal
@@ -270,10 +276,16 @@ const Hero = () => {
                           ) : (
                             <div className={`w-1 h-1 rounded-full ${line.dotColor}`} />
                           )}
-                          <span className={line.highlight ? "text-[#A5AFC3]" : "text-[#A5AFC3]/60"}>
+                          <span className={line.isWarning ? "text-yellow-500/90" : line.highlight ? "text-[#A5AFC3]" : "text-[#A5AFC3]/60"}>
                             {line.text}
                             {line.highlight && (
-                              <span className={line.dotColor.includes('primary') ? 'text-primary' : 'text-accent'}>
+                              <span className={
+                                line.isWarning 
+                                  ? 'text-yellow-400 font-semibold' 
+                                  : line.dotColor.includes('primary') 
+                                    ? 'text-primary' 
+                                    : 'text-accent'
+                              }>
                                 {line.highlight}
                               </span>
                             )}
