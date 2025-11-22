@@ -36,23 +36,23 @@ const CTA = () => {
 
   return (
     <section id="cta" ref={ref} className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/10 to-background" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/8 rounded-full blur-3xl" />
       
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-6">
-            Operate in the{" "}
-            <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-              Shadow Layer
+          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-6 tracking-wide">
+            OPERATE IN THE{" "}
+            <span className="bg-gradient-to-r from-primary via-accent to-foreground bg-clip-text text-transparent">
+              SHADOW LAYER
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
             Zxora is in private build. If you're a serious operator, builder, or fund and want 
             a safer way to touch the chain, get on the list.
           </p>
@@ -61,13 +61,13 @@ const CTA = () => {
         <motion.form
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           onSubmit={handleSubmit}
-          className="space-y-6 p-8 rounded-lg bg-card border border-border"
+          className="space-y-6 p-8 rounded-2xl metal-card"
         >
           <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-2">
-              Email Address *
+            <label htmlFor="email" className="block text-sm font-medium mb-2 font-display tracking-wider">
+              EMAIL ADDRESS *
             </label>
             <Input
               id="email"
@@ -75,21 +75,21 @@ const CTA = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
-              className="bg-background border-border focus:border-primary"
+              className="bg-input border-border focus:border-primary/50 font-body transition-all duration-300"
               required
             />
           </div>
 
           <div>
-            <label htmlFor="contact" className="block text-sm font-medium mb-2">
-              Telegram/X Handle (optional)
+            <label htmlFor="contact" className="block text-sm font-medium mb-2 font-display tracking-wider">
+              TELEGRAM/X HANDLE (OPTIONAL)
             </label>
             <Textarea
               id="contact"
               value={contact}
               onChange={(e) => setContact(e.target.value)}
               placeholder="@yourhandle or t.me/yourhandle"
-              className="bg-background border-border focus:border-primary resize-none"
+              className="bg-input border-border focus:border-primary/50 resize-none font-body transition-all duration-300"
               rows={3}
             />
           </div>
@@ -97,9 +97,9 @@ const CTA = () => {
           <Button
             type="submit"
             size="lg"
-            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-display"
+            className="w-full bg-primary hover:bg-primary/80 text-primary-foreground font-display tracking-widest border-glow-ember transition-all duration-300"
           >
-            Request Early Access
+            REQUEST EARLY ACCESS
           </Button>
 
           <p className="text-xs text-muted-foreground text-center">

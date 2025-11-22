@@ -54,8 +54,8 @@ const Roadmap = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">
-            <span className="text-primary">Roadmap</span>
+          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 tracking-wide">
+            <span className="text-primary">ROADMAP</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Building in the shadows, shipping in phases

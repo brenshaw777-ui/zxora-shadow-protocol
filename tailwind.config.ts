@@ -49,8 +49,8 @@ export default {
         },
       },
       fontFamily: {
-        'display': ['Orbitron', 'Audiowide', 'system-ui', 'sans-serif'],
-        'body': ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+        'display': ['Space Grotesk', 'Michroma', 'system-ui', 'sans-serif'],
+        'body': ['Inter', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
         'mono': ['JetBrains Mono', 'IBM Plex Mono', 'monospace'],
       },
       borderRadius: {
@@ -73,7 +73,16 @@ export default {
         },
         "pulse-glow": {
           "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.5" },
+          "50%": { opacity: "0.6" },
+        },
+        "subtle-float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
+        "pan-gradient": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
         },
         "slide-up": {
           from: { opacity: "0", transform: "translateY(20px)" },
@@ -88,9 +97,11 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "float": "float 6s ease-in-out infinite",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
-        "slide-up": "slide-up 0.5s ease-out",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "subtle-float": "subtle-float 8s ease-in-out infinite",
+        "slide-up": "slide-up 0.4s ease-out",
         "draw-line": "draw-line 2s ease-in-out forwards",
+        "pan-gradient": "pan-gradient 60s ease infinite",
       },
     },
   },

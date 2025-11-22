@@ -36,9 +36,9 @@ const Story = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">
-            Why Zxora{" "}
-            <span className="text-primary">Exists</span>
+          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 tracking-wide">
+            WHY ZXORA{" "}
+            <span className="text-primary">EXISTS</span>
           </h2>
         </motion.div>
 
@@ -95,7 +95,7 @@ const Story = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                className="p-6 rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 group"
+                className="p-6 rounded-2xl metal-card hover:border-primary/30 transition-all duration-300 group"
               >
                 <div className="flex items-start space-x-4">
                   <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">

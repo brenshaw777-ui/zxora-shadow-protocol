@@ -19,20 +19,20 @@ const AnimationsShowcase = () => {
 
   return (
     <section id="animations" ref={ref} className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/5 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/3 to-background" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">
-            See Zxora{" "}
-            <span className="text-secondary">in Motion</span>
+          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 tracking-wide">
+            SEE ZXORA{" "}
+            <span className="text-primary">IN MOTION</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-body">
             Visual demonstrations of core functionality
           </p>
         </motion.div>
@@ -42,61 +42,61 @@ const AnimationsShowcase = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="p-8 rounded-lg bg-card border border-border"
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="p-8 rounded-2xl metal-card"
           >
-            <h3 className="font-display font-semibold text-2xl mb-6 text-center">
-              Identity Masking
+            <h3 className="font-display font-semibold text-xl mb-6 text-center tracking-wide">
+              IDENTITY MASKING
             </h3>
             
             <div className="flex items-center justify-between py-8">
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto rounded-full bg-muted flex items-center justify-center mb-3">
-                  <span className="font-mono text-sm">YOU</span>
+                <div className="w-16 h-16 mx-auto rounded-full border border-foreground/20 bg-graphite flex items-center justify-center mb-3">
+                  <span className="font-mono text-xs text-foreground tracking-wider">YOU</span>
                 </div>
-                <p className="text-xs text-muted-foreground">Static</p>
+                <p className="text-xs text-muted-foreground font-body">Static</p>
               </div>
 
               <div className="flex-1 px-4">
                 <motion.div
-                  animate={{ scaleX: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="h-0.5 bg-gradient-to-r from-primary to-secondary"
+                  animate={{ opacity: [0.3, 1, 0.3] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="h-px bg-gradient-to-r from-transparent via-foreground/40 to-transparent"
                 />
               </div>
 
               <div className="text-center">
                 <motion.div
                   animate={{ 
-                    rotate: [0, 120, 240, 360],
-                    backgroundColor: ["hsl(var(--primary))", "hsl(var(--secondary))", "hsl(var(--accent))", "hsl(var(--primary))"]
+                    x: [-2, 2, -2],
+                    opacity: [0.8, 1, 0.8]
                   }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-3"
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-16 h-16 mx-auto rounded-full border border-primary/40 bg-primary/10 flex items-center justify-center mb-3"
                 >
-                  <span className="font-mono text-sm text-white">MASK</span>
+                  <span className="font-mono text-xs text-primary tracking-wider">MASK</span>
                 </motion.div>
-                <p className="text-xs text-muted-foreground">Rotating</p>
+                <p className="text-xs text-muted-foreground font-body">Shifting</p>
               </div>
 
               <div className="flex-1 px-4">
                 <motion.div
-                  animate={{ scaleX: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                  className="h-0.5 bg-gradient-to-r from-secondary to-accent"
+                  animate={{ opacity: [0.3, 1, 0.3] }}
+                  transition={{ duration: 3, repeat: Infinity, delay: 1.5, ease: "easeInOut" }}
+                  className="h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent"
                 />
               </div>
 
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto rounded-full bg-secondary/20 border border-secondary flex items-center justify-center mb-3">
-                  <span className="font-mono text-sm text-secondary">dApp</span>
+                <div className="w-16 h-16 mx-auto rounded-full border border-foreground/20 bg-graphite flex items-center justify-center mb-3">
+                  <span className="font-mono text-xs text-muted-foreground tracking-wider">dApp</span>
                 </div>
-                <p className="text-xs text-muted-foreground">Sees Mask</p>
+                <p className="text-xs text-muted-foreground font-body">Sees Mask</p>
               </div>
             </div>
 
-            <p className="text-sm text-muted-foreground text-center">
-              Your identity stays static while the mask rotates through variations
+            <p className="text-sm text-muted-foreground text-center font-body">
+              Your identity stays static while the mask shifts between variations
             </p>
           </motion.div>
 
@@ -104,63 +104,84 @@ const AnimationsShowcase = () => {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="p-8 rounded-lg bg-card border border-border"
+            transition={{ duration: 0.4, delay: 0.4 }}
+            className="p-8 rounded-2xl metal-card"
           >
-            <h3 className="font-display font-semibold text-2xl mb-6 text-center">
-              The Gate Simulation
+            <h3 className="font-display font-semibold text-xl mb-6 text-center tracking-wide">
+              THE GATE SIMULATION
             </h3>
             
             <div className="space-y-6">
-              <div className="p-6 rounded-lg bg-muted/50 border border-border">
+              <div className="p-6 rounded-xl bg-background/50 border border-foreground/10">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-sm">Transaction Status</span>
-                  {gateStatus === "safe" && <CheckCircle className="w-6 h-6 text-green-500" />}
-                  {gateStatus === "caution" && <AlertTriangle className="w-6 h-6 text-yellow-500 animate-pulse" />}
-                  {gateStatus === "blocked" && <XCircle className="w-6 h-6 text-red-500" />}
+                  <span className="font-mono text-xs text-foreground tracking-wider">TRANSACTION STATUS</span>
+                  {gateStatus === "safe" && <CheckCircle className="w-5 h-5 text-green-400" strokeWidth={1.5} />}
+                  {gateStatus === "caution" && <AlertTriangle className="w-5 h-5 text-primary animate-pulse" strokeWidth={1.5} />}
+                  {gateStatus === "blocked" && <XCircle className="w-5 h-5 text-red-400" strokeWidth={1.5} />}
                 </div>
 
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Contract Verification</span>
-                    <motion.div
-                      animate={{ width: gateStatus === "caution" ? "60%" : "100%" }}
-                      className={`h-2 rounded-full ${
-                        gateStatus === "safe" ? "bg-green-500" :
-                        gateStatus === "caution" ? "bg-yellow-500" :
-                        "bg-red-500"
-                      }`}
-                      style={{ width: "100%" }}
-                    />
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs text-muted-foreground font-mono tracking-wide">Contract Verification</span>
+                      <span className="text-xs text-foreground font-mono">
+                        {gateStatus === "caution" ? "60%" : "100%"}
+                      </span>
+                    </div>
+                    <div className="h-1 bg-secondary/20 rounded-full overflow-hidden">
+                      <motion.div
+                        animate={{ width: gateStatus === "caution" ? "60%" : "100%" }}
+                        transition={{ duration: 0.3 }}
+                        className={`h-full rounded-full ${
+                          gateStatus === "safe" ? "bg-green-400" :
+                          gateStatus === "caution" ? "bg-primary" :
+                          "bg-red-400"
+                        }`}
+                      />
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Risk Assessment</span>
-                    <motion.div
-                      animate={{ width: gateStatus === "caution" ? "40%" : "100%" }}
-                      className={`h-2 rounded-full ${
-                        gateStatus === "safe" ? "bg-green-500" :
-                        gateStatus === "caution" ? "bg-yellow-500" :
-                        "bg-red-500"
-                      }`}
-                      style={{ width: "100%" }}
-                    />
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs text-muted-foreground font-mono tracking-wide">Risk Assessment</span>
+                      <span className="text-xs text-foreground font-mono">
+                        {gateStatus === "caution" ? "40%" : "100%"}
+                      </span>
+                    </div>
+                    <div className="h-1 bg-secondary/20 rounded-full overflow-hidden">
+                      <motion.div
+                        animate={{ width: gateStatus === "caution" ? "40%" : "100%" }}
+                        transition={{ duration: 0.3 }}
+                        className={`h-full rounded-full ${
+                          gateStatus === "safe" ? "bg-green-400" :
+                          gateStatus === "caution" ? "bg-primary" :
+                          "bg-red-400"
+                        }`}
+                      />
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Approval Check</span>
-                    <motion.div
-                      animate={{ width: gateStatus === "caution" ? "80%" : "100%" }}
-                      className={`h-2 rounded-full ${
-                        gateStatus === "safe" ? "bg-green-500" :
-                        gateStatus === "caution" ? "bg-yellow-500" :
-                        "bg-red-500"
-                      }`}
-                      style={{ width: "100%" }}
-                    />
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs text-muted-foreground font-mono tracking-wide">Approval Check</span>
+                      <span className="text-xs text-foreground font-mono">
+                        {gateStatus === "caution" ? "80%" : "100%"}
+                      </span>
+                    </div>
+                    <div className="h-1 bg-secondary/20 rounded-full overflow-hidden">
+                      <motion.div
+                        animate={{ width: gateStatus === "caution" ? "80%" : "100%" }}
+                        transition={{ duration: 0.3 }}
+                        className={`h-full rounded-full ${
+                          gateStatus === "safe" ? "bg-green-400" :
+                          gateStatus === "caution" ? "bg-primary" :
+                          "bg-red-400"
+                        }`}
+                      />
+                    </div>
                   </div>
                 </div>
 
-                <div className="mt-6 p-4 rounded bg-background/50">
-                  <p className="text-sm font-mono">
+                <div className="mt-6 p-4 rounded-lg bg-charcoal-panel/50 border border-foreground/5">
+                  <p className="text-xs font-mono tracking-wide">
                     {gateStatus === "safe" && "✓ Transaction approved - Safe to proceed"}
                     {gateStatus === "caution" && "⚠ Analyzing transaction..."}
                     {gateStatus === "blocked" && "✗ Transaction blocked - High risk detected"}
@@ -170,14 +191,14 @@ const AnimationsShowcase = () => {
 
               <Button
                 onClick={simulateGate}
-                className="w-full bg-primary hover:bg-primary/90 font-display"
+                className="w-full bg-primary hover:bg-primary/80 font-display tracking-widest text-xs transition-all duration-300"
                 disabled={gateStatus === "caution"}
               >
-                Simulate Transaction
+                SIMULATE TRANSACTION
               </Button>
             </div>
 
-            <p className="text-sm text-muted-foreground text-center mt-4">
+            <p className="text-sm text-muted-foreground text-center mt-4 font-body">
               The Gate inspects and simulates before allowing through
             </p>
           </motion.div>

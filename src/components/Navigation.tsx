@@ -22,18 +22,18 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-foreground/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
-            className="flex items-center space-x-2 group"
+            className="flex items-center space-x-3 group"
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-sm flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-md flex items-center justify-center border border-primary/30">
               <span className="text-white font-display font-bold text-sm">Z</span>
             </div>
-            <span className="font-display text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="font-display text-xl font-bold tracking-widest bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
               ZXORA
             </span>
           </button>
@@ -44,17 +44,18 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300 relative group tracking-wide"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300" />
               </button>
             ))}
             <Button
               onClick={() => scrollToSection("cta")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-display"
+              className="bg-primary hover:bg-primary/80 text-primary-foreground font-display tracking-wider text-xs transition-all duration-300"
+              size="sm"
             >
-              Join Early Access
+              JOIN EARLY ACCESS
             </Button>
           </div>
 
@@ -74,7 +75,7 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-colors"
+                className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-muted/30 rounded-lg transition-all duration-300 tracking-wide"
               >
                 {item.label}
               </button>
@@ -82,9 +83,9 @@ const Navigation = () => {
             <div className="px-4">
               <Button
                 onClick={() => scrollToSection("cta")}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-display"
+                className="w-full bg-primary hover:bg-primary/80 text-primary-foreground font-display tracking-wider text-xs"
               >
-                Join Early Access
+                JOIN EARLY ACCESS
               </Button>
             </div>
           </div>
