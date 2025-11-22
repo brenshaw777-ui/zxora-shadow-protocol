@@ -120,11 +120,11 @@ const Hero = () => {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="relative"
               >
-                {/* Multi-layer metallic reflection animation */}
+                {/* Enhanced Multi-layer metallic reflection animation */}
                 <div className="absolute inset-0 -z-10 overflow-hidden">
                   {/* Primary diagonal sweep - main shimmer */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.08] to-transparent"
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.12] to-transparent"
                     style={{ transform: 'rotate(-35deg) scale(1.5)' }}
                     animate={{ x: ['-150%', '150%'] }}
                     transition={{ duration: 6, repeat: Infinity, repeatDelay: 2, ease: "linear" }}
@@ -132,7 +132,7 @@ const Hero = () => {
                   
                   {/* Secondary shimmer - faster, chromatic magenta */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/[0.04] to-transparent"
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/[0.08] to-transparent"
                     style={{ transform: 'rotate(-35deg) scale(1.5)' }}
                     animate={{ x: ['-180%', '180%'] }}
                     transition={{ duration: 4, repeat: Infinity, repeatDelay: 1, ease: "easeInOut" }}
@@ -140,20 +140,46 @@ const Hero = () => {
                   
                   {/* Tertiary glow - subtle accent yellow */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/[0.03] to-transparent"
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/[0.06] to-transparent"
                     style={{ transform: 'rotate(-35deg) scale(1.5)' }}
                     animate={{ x: ['150%', '-150%'] }}
                     transition={{ duration: 8, repeat: Infinity, repeatDelay: 3, ease: "linear" }}
                   />
                 </div>
                 
-                {/* Headline with subtle pulse synchronized with sweep */}
+                {/* Headline with enhanced metallic gradient and pulse */}
                 <motion.h1
                   animate={{ scale: [1, 1.005, 1] }}
                   transition={{ duration: 6, repeat: Infinity, repeatDelay: 2 }}
-                  className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.08] tracking-[0.04em] uppercase bg-gradient-to-br from-[#E3E8F4] via-[#C7CCD8] to-[#E3E8F4] bg-clip-text text-transparent"
+                  className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.08] tracking-[0.04em] uppercase relative"
+                  style={{
+                    background: 'linear-gradient(135deg, hsl(230, 12%, 48%), hsl(230, 10%, 58%), hsl(235, 15%, 42%), hsl(230, 8%, 55%))',
+                    backgroundSize: '200% 200%',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    filter: 'drop-shadow(0 0 20px rgba(199,204,216,0.15))'
+                  }}
                 >
-                  OPERATE IN THE SHADOW LAYER
+                  <motion.span
+                    animate={{
+                      backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+                    }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    style={{
+                      background: 'linear-gradient(135deg, hsl(230, 12%, 48%), hsl(230, 10%, 58%), hsl(235, 15%, 42%), hsl(230, 8%, 55%))',
+                      backgroundSize: '200% 200%',
+                      backgroundClip: 'text',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                    }}
+                  >
+                    OPERATE IN THE SHADOW LAYER
+                  </motion.span>
                 </motion.h1>
               </motion.div>
 
