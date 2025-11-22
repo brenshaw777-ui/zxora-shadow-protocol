@@ -48,18 +48,18 @@ const Features = () => {
 
   return (
     <section id="features" ref={ref} className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-accent/3 to-background" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">
-            Built for Operators{" "}
-            <span className="text-primary">Who Can't Afford Mistakes</span>
+          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 tracking-wide">
+            BUILT FOR OPERATORS{" "}
+            <span className="text-primary">WHO CAN'T AFFORD MISTAKES</span>
           </h2>
         </motion.div>
 
@@ -69,30 +69,26 @@ const Features = () => {
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="p-8 rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 h-full">
+              <div className="p-8 rounded-2xl metal-card hover:border-primary/30 transition-all duration-300 h-full">
                 <div className="mb-6">
-                  <div className={`
-                    w-16 h-16 rounded-lg flex items-center justify-center
-                    bg-${feature.color}/10 group-hover:bg-${feature.color}/20
-                    transition-all duration-300
-                  `}>
-                    <feature.icon className={`w-8 h-8 text-${feature.color}`} />
+                  <div className="w-14 h-14 rounded-lg flex items-center justify-center bg-primary/5 border border-primary/20 group-hover:bg-primary/10 group-hover:border-primary/40 transition-all duration-300">
+                    <feature.icon className="w-7 h-7 text-foreground" strokeWidth={1.5} />
                   </div>
                 </div>
                 
-                <h3 className="font-display font-semibold text-xl mb-4 group-hover:text-primary transition-colors">
+                <h3 className="font-display font-semibold text-lg mb-3 group-hover:text-primary transition-colors duration-300 tracking-wide">
                   {feature.title}
                 </h3>
                 
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-sm font-body">
                   {feature.description}
                 </p>
 
-                {/* Hover glow effect */}
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-primary/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                {/* Subtle hover effect */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </div>
             </motion.div>
           ))}

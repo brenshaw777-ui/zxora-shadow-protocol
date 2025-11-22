@@ -8,50 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Zxora Dark Theme - Sci-Fi/Alien Tech */
-    --jet-black: 240 14% 3%;
-    --carbon-metal: 240 11% 7%;
-    --deep-space: 240 15% 2%;
+    /* Zxora Premium Metallic Theme - iPhone 16 Pro / Lamborghini Interior */
     
-    --plasma-magenta: 331 100% 56%;
-    --irradiated-yellow: 45 100% 62%;
-    --deep-violet: 274 78% 34%;
-    --soft-chrome: 240 7% 79%;
+    /* Base / Background */
+    --obsidian: 220 25% 2%;
+    --graphite: 220 22% 4%;
+    --charcoal-panel: 220 20% 8%;
     
-    --background: var(--jet-black);
-    --foreground: var(--soft-chrome);
+    /* Metallic Accents */
+    --titanium-silver: 220 15% 82%;
+    --gunmetal-edge: 220 12% 27%;
     
-    --card: var(--carbon-metal);
-    --card-foreground: var(--soft-chrome);
+    /* Highlight Accents */
+    --electric-ember: 18 100% 61%;
+    --deep-iris: 252 100% 65%;
     
-    --popover: var(--carbon-metal);
-    --popover-foreground: var(--soft-chrome);
+    /* Semantic Tokens */
+    --background: var(--obsidian);
+    --foreground: var(--titanium-silver);
     
-    --primary: var(--plasma-magenta);
+    --card: var(--charcoal-panel);
+    --card-foreground: var(--titanium-silver);
+    
+    --popover: var(--charcoal-panel);
+    --popover-foreground: var(--titanium-silver);
+    
+    --primary: var(--electric-ember);
     --primary-foreground: 0 0% 100%;
     
-    --secondary: var(--irradiated-yellow);
-    --secondary-foreground: var(--jet-black);
+    --secondary: var(--gunmetal-edge);
+    --secondary-foreground: var(--titanium-silver);
     
-    --muted: var(--carbon-metal);
-    --muted-foreground: 240 5% 55%;
+    --muted: var(--graphite);
+    --muted-foreground: 220 10% 50%;
     
-    --accent: var(--deep-violet);
+    --accent: var(--deep-iris);
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 240 10% 15%;
-    --input: var(--carbon-metal);
-    --ring: var(--plasma-magenta);
+    --border: 0 0% 100% / 0.06;
+    --input: var(--charcoal-panel);
+    --ring: var(--electric-ember);
     
-    --radius: 0.75rem;
+    --radius: 1rem;
     
-    /* Custom Zxora tokens */
-    --glow-magenta: 331 100% 56% / 0.3;
-    --glow-yellow: 45 100% 62% / 0.25;
-    --grid-line: 240 7% 79% / 0.05;
+    /* Custom Zxora Premium Tokens */
+    --glow-ember: 18 100% 61% / 0.15;
+    --glow-iris: 252 100% 65% / 0.12;
+    --grid-line: 220 15% 82% / 0.03;
+    --metal-gradient: linear-gradient(180deg, hsl(var(--graphite)), hsl(var(--obsidian)));
   }
 }
 
@@ -62,14 +69,16 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+    background: linear-gradient(180deg, hsl(var(--obsidian)) 0%, hsl(var(--graphite)) 50%, hsl(var(--obsidian)) 100%);
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Orbitron', 'Audiowide', system-ui, sans-serif;
+    font-family: 'Space Grotesk', 'Michroma', system-ui, sans-serif;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     line-height: 1.15;
+    font-weight: 700;
   }
   
   code, pre, .mono {
@@ -78,26 +87,37 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .text-glow-magenta {
-    text-shadow: 0 0 20px hsl(var(--glow-magenta));
+  .text-glow-ember {
+    text-shadow: 0 0 30px hsl(var(--glow-ember));
   }
   
-  .text-glow-yellow {
-    text-shadow: 0 0 20px hsl(var(--glow-yellow));
+  .text-glow-iris {
+    text-shadow: 0 0 30px hsl(var(--glow-iris));
   }
   
-  .border-glow-magenta {
-    box-shadow: 0 0 20px hsl(var(--glow-magenta));
+  .border-glow-ember {
+    box-shadow: 0 0 24px hsl(var(--glow-ember));
   }
   
-  .border-glow-yellow {
-    box-shadow: 0 0 20px hsl(var(--glow-yellow));
+  .border-glow-iris {
+    box-shadow: 0 0 20px hsl(var(--glow-iris));
   }
   
   .bg-grid {
     background-image: 
       linear-gradient(hsl(var(--grid-line)) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--grid-line)) 1px, transparent 1px);
-    background-size: 50px 50px;
+    background-size: 60px 60px;
+  }
+  
+  .metal-card {
+    background: linear-gradient(135deg, hsl(var(--charcoal-panel)), hsl(var(--graphite)));
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(12px);
+    background: hsl(var(--charcoal-panel) / 0.6);
   }
 }
