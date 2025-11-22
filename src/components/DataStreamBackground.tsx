@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 
 const DataStreamBackground = () => {
-  // Generate 16 columns of data across the viewport
-  const columns = Array.from({ length: 16 }, (_, i) => ({
+  // Generate 18 columns of data across the viewport
+  const columns = Array.from({ length: 18 }, (_, i) => ({
     id: i,
-    left: `${(i + 1) * 6}%`,
-    duration: 25 + Math.random() * 20, // 25-45 seconds
+    left: `${(i + 1) * 5.5}%`,
+    duration: 28 + Math.random() * 22, // 28-50 seconds
     delay: Math.random() * 10,
-    isAccent: Math.random() > 0.85, // 15% chance of accent color
+    isAccent: Math.random() > 0.88, // 12% chance of accent color
   }));
 
   return (
@@ -15,15 +15,15 @@ const DataStreamBackground = () => {
       {columns.map((col) => (
         <motion.div
           key={col.id}
-          className="absolute top-0 font-mono text-[10px] leading-5"
+          className="absolute font-mono text-[9px] leading-5"
           style={{ 
             left: col.left,
             color: col.isAccent 
-              ? `hsla(${Math.random() > 0.5 ? 'var(--cool-ember)' : 'var(--iris-steel)'}, 0.15)`
-              : 'rgba(255,255,255,0.06)'
+              ? `hsla(${Math.random() > 0.5 ? '14, 100%, 61%' : '230, 100%, 72%'}, 0.12)`
+              : 'rgba(255,255,255,0.04)'
           }}
-          initial={{ y: '-100%' }}
-          animate={{ y: '150vh' }}
+          initial={{ y: '-120%' }}
+          animate={{ y: '120%' }}
           transition={{
             duration: col.duration,
             repeat: Infinity,
@@ -31,7 +31,7 @@ const DataStreamBackground = () => {
             ease: "linear",
           }}
         >
-          {Array.from({ length: 80 }, (_, idx) => (
+          {Array.from({ length: 100 }, (_, idx) => (
             <div key={idx}>
               {Math.random() > 0.5 ? '1' : '0'}
             </div>
