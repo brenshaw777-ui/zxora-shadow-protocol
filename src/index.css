@@ -8,57 +8,59 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Zxora Premium Metallic Theme - iPhone 16 Pro / Lamborghini Interior */
+    /* Zxora Stealth Metallic System - iPhone 16 Pro / Lamborghini Interior */
     
-    /* Base / Background */
-    --obsidian: 220 25% 2%;
-    --graphite: 220 22% 4%;
-    --charcoal-panel: 220 20% 8%;
+    /* Base / Background - Deep Almost-Black */
+    --deep-black: 220 30% 1%;
+    --section-panel: 220 25% 3%;
+    --card-background: 220 22% 5%;
     
-    /* Metallic Accents */
-    --titanium-silver: 220 15% 82%;
-    --gunmetal-edge: 220 12% 27%;
+    /* Metallic Neutrals */
+    --soft-steel: 220 15% 78%;
+    --gunmetal: 220 12% 24%;
+    --graphite-line: 220 15% 16%;
     
-    /* Highlight Accents */
-    --electric-ember: 18 100% 61%;
-    --deep-iris: 252 100% 65%;
+    /* Highlight Accents (Controlled - Edges Only) */
+    --cool-ember: 14 100% 61%;
+    --iris-steel: 230 100% 72%;
     
     /* Semantic Tokens */
-    --background: var(--obsidian);
-    --foreground: var(--titanium-silver);
+    --background: var(--deep-black);
+    --foreground: var(--soft-steel);
     
-    --card: var(--charcoal-panel);
-    --card-foreground: var(--titanium-silver);
+    --card: var(--card-background);
+    --card-foreground: var(--soft-steel);
     
-    --popover: var(--charcoal-panel);
-    --popover-foreground: var(--titanium-silver);
+    --popover: var(--card-background);
+    --popover-foreground: var(--soft-steel);
     
-    --primary: var(--electric-ember);
-    --primary-foreground: 0 0% 100%;
+    --primary: var(--cool-ember);
+    --primary-foreground: 220 15% 92%;
     
-    --secondary: var(--gunmetal-edge);
-    --secondary-foreground: var(--titanium-silver);
+    --secondary: var(--gunmetal);
+    --secondary-foreground: var(--soft-steel);
     
-    --muted: var(--graphite);
-    --muted-foreground: 220 10% 50%;
+    --muted: var(--section-panel);
+    --muted-foreground: 220 10% 58%;
     
-    --accent: var(--deep-iris);
-    --accent-foreground: 0 0% 100%;
+    --accent: var(--iris-steel);
+    --accent-foreground: 220 15% 92%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 0 0% 100% / 0.06;
-    --input: var(--charcoal-panel);
-    --ring: var(--electric-ember);
+    --border: 220 15% 20% / 0.4;
+    --input: var(--card-background);
+    --ring: var(--cool-ember);
     
     --radius: 1rem;
     
-    /* Custom Zxora Premium Tokens */
-    --glow-ember: 18 100% 61% / 0.15;
-    --glow-iris: 252 100% 65% / 0.12;
-    --grid-line: 220 15% 82% / 0.03;
-    --metal-gradient: linear-gradient(180deg, hsl(var(--graphite)), hsl(var(--obsidian)));
+    /* Custom Zxora Stealth Tokens */
+    --glow-ember: 14 100% 61% / 0.08;
+    --glow-iris: 230 100% 72% / 0.06;
+    --grid-line: 220 15% 78% / 0.02;
+    --metallic-gradient: linear-gradient(180deg, hsl(var(--section-panel)), hsl(var(--deep-black)));
+    --heading-metallic: linear-gradient(180deg, hsl(220 15% 88%), hsl(220 10% 96%));
   }
 }
 
@@ -70,7 +72,8 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
-    background: linear-gradient(180deg, hsl(var(--obsidian)) 0%, hsl(var(--graphite)) 50%, hsl(var(--obsidian)) 100%);
+    background: radial-gradient(circle at top, rgba(255,255,255,0.04), transparent 60%), 
+                linear-gradient(180deg, hsl(var(--deep-black)) 0%, hsl(var(--section-panel)) 50%, hsl(var(--deep-black)) 100%);
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -88,19 +91,26 @@ All colors MUST be HSL.
 
 @layer utilities {
   .text-glow-ember {
-    text-shadow: 0 0 30px hsl(var(--glow-ember));
+    text-shadow: 0 0 20px hsl(var(--glow-ember));
   }
   
   .text-glow-iris {
-    text-shadow: 0 0 30px hsl(var(--glow-iris));
+    text-shadow: 0 0 16px hsl(var(--glow-iris));
   }
   
   .border-glow-ember {
-    box-shadow: 0 0 24px hsl(var(--glow-ember));
+    box-shadow: 0 0 16px hsl(var(--glow-ember)), 0 0 4px hsl(var(--glow-iris));
   }
   
   .border-glow-iris {
-    box-shadow: 0 0 20px hsl(var(--glow-iris));
+    box-shadow: 0 0 12px hsl(var(--glow-iris));
+  }
+  
+  .metallic-heading {
+    background: var(--heading-metallic);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   .bg-grid {
@@ -111,13 +121,38 @@ All colors MUST be HSL.
   }
   
   .metal-card {
-    background: linear-gradient(135deg, hsl(var(--charcoal-panel)), hsl(var(--graphite)));
+    background: linear-gradient(180deg, hsl(var(--card-background)), hsl(var(--section-panel)));
     border: 1px solid hsl(var(--border));
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.03);
   }
   
   .glass-effect {
-    backdrop-filter: blur(12px);
-    background: hsl(var(--charcoal-panel) / 0.6);
+    backdrop-filter: blur(16px);
+    background: hsl(var(--card-background) / 0.4);
+  }
+  
+  .metallic-sweep {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .metallic-sweep::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.05) 50%, transparent 60%);
+    animation: sweep 15s linear infinite;
+  }
+  
+  @keyframes sweep {
+    0% {
+      transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
   }
 }

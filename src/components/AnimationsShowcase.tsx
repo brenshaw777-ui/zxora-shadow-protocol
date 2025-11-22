@@ -28,9 +28,8 @@ const AnimationsShowcase = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 tracking-wide">
-            SEE ZXORA{" "}
-            <span className="text-primary">IN MOTION</span>
+          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 tracking-[0.08em] leading-[1.15] metallic-heading">
+            SEE ZXORA IN MOTION
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-body">
             Visual demonstrations of core functionality
@@ -51,45 +50,44 @@ const AnimationsShowcase = () => {
             
             <div className="flex items-center justify-between py-8">
               <div className="text-center">
-                <div className="w-16 h-16 mx-auto rounded-full border border-foreground/20 bg-graphite flex items-center justify-center mb-3">
-                  <span className="font-mono text-xs text-foreground tracking-wider">YOU</span>
+                <div className="w-12 h-12 mx-auto rounded-full border border-gunmetal bg-card flex items-center justify-center mb-3">
+                  <span className="font-mono text-xs text-soft-steel tracking-wider">Y</span>
                 </div>
                 <p className="text-xs text-muted-foreground font-body">Static</p>
               </div>
 
-              <div className="flex-1 px-4">
-                <motion.div
-                  animate={{ opacity: [0.3, 1, 0.3] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="h-px bg-gradient-to-r from-transparent via-foreground/40 to-transparent"
-                />
+              <div className="flex-1 px-4 relative">
+                <div className="h-px bg-gunmetal" />
               </div>
 
-              <div className="text-center">
+              <div className="text-center relative">
                 <motion.div
                   animate={{ 
-                    x: [-2, 2, -2],
-                    opacity: [0.8, 1, 0.8]
+                    x: [-3, 3, -3],
+                    opacity: [0.7, 1, 0.7]
                   }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="w-16 h-16 mx-auto rounded-full border border-primary/40 bg-primary/10 flex items-center justify-center mb-3"
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-10 h-10 mx-auto rounded-full border-2 border-primary bg-card flex items-center justify-center mb-3 relative"
                 >
-                  <span className="font-mono text-xs text-primary tracking-wider">MASK</span>
+                  <div className="absolute inset-0 rounded-full bg-primary/5" />
+                  <span className="font-mono text-xs text-primary tracking-wider z-10">M</span>
                 </motion.div>
                 <p className="text-xs text-muted-foreground font-body">Shifting</p>
               </div>
 
-              <div className="flex-1 px-4">
+              <div className="flex-1 px-4 relative">
+                <div className="h-px bg-gunmetal" />
                 <motion.div
-                  animate={{ opacity: [0.3, 1, 0.3] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: 1.5, ease: "easeInOut" }}
-                  className="h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent"
+                  animate={{ width: ["0%", "100%", "0%"] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                  className="absolute top-0 left-0 h-px bg-primary/40"
+                  style={{ originX: 0 }}
                 />
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 mx-auto rounded-full border border-foreground/20 bg-graphite flex items-center justify-center mb-3">
-                  <span className="font-mono text-xs text-muted-foreground tracking-wider">dApp</span>
+                <div className="w-12 h-12 mx-auto rounded-full border border-gunmetal bg-card flex items-center justify-center mb-3">
+                  <span className="font-mono text-xs text-muted-foreground tracking-wider">D</span>
                 </div>
                 <p className="text-xs text-muted-foreground font-body">Sees Mask</p>
               </div>
@@ -128,13 +126,13 @@ const AnimationsShowcase = () => {
                         {gateStatus === "caution" ? "60%" : "100%"}
                       </span>
                     </div>
-                    <div className="h-1 bg-secondary/20 rounded-full overflow-hidden">
+                    <div className="h-1 bg-gunmetal rounded-full overflow-hidden">
                       <motion.div
                         animate={{ width: gateStatus === "caution" ? "60%" : "100%" }}
-                        transition={{ duration: 0.3 }}
+                        transition={{ duration: 1.2, ease: "easeOut" }}
                         className={`h-full rounded-full ${
-                          gateStatus === "safe" ? "bg-green-400" :
-                          gateStatus === "caution" ? "bg-primary" :
+                          gateStatus === "safe" ? "bg-[#4CD964]" :
+                          gateStatus === "caution" ? "bg-gradient-to-r from-primary/60 to-accent/60" :
                           "bg-red-400"
                         }`}
                       />
@@ -147,13 +145,13 @@ const AnimationsShowcase = () => {
                         {gateStatus === "caution" ? "40%" : "100%"}
                       </span>
                     </div>
-                    <div className="h-1 bg-secondary/20 rounded-full overflow-hidden">
+                    <div className="h-1 bg-gunmetal rounded-full overflow-hidden">
                       <motion.div
                         animate={{ width: gateStatus === "caution" ? "40%" : "100%" }}
-                        transition={{ duration: 0.3 }}
+                        transition={{ duration: 1.2, ease: "easeOut" }}
                         className={`h-full rounded-full ${
-                          gateStatus === "safe" ? "bg-green-400" :
-                          gateStatus === "caution" ? "bg-primary" :
+                          gateStatus === "safe" ? "bg-[#4CD964]" :
+                          gateStatus === "caution" ? "bg-gradient-to-r from-primary/60 to-accent/60" :
                           "bg-red-400"
                         }`}
                       />
@@ -166,13 +164,13 @@ const AnimationsShowcase = () => {
                         {gateStatus === "caution" ? "80%" : "100%"}
                       </span>
                     </div>
-                    <div className="h-1 bg-secondary/20 rounded-full overflow-hidden">
+                    <div className="h-1 bg-gunmetal rounded-full overflow-hidden">
                       <motion.div
                         animate={{ width: gateStatus === "caution" ? "80%" : "100%" }}
-                        transition={{ duration: 0.3 }}
+                        transition={{ duration: 1.2, ease: "easeOut" }}
                         className={`h-full rounded-full ${
-                          gateStatus === "safe" ? "bg-green-400" :
-                          gateStatus === "caution" ? "bg-primary" :
+                          gateStatus === "safe" ? "bg-[#4CD964]" :
+                          gateStatus === "caution" ? "bg-gradient-to-r from-primary/60 to-accent/60" :
                           "bg-red-400"
                         }`}
                       />
@@ -180,8 +178,8 @@ const AnimationsShowcase = () => {
                   </div>
                 </div>
 
-                <div className="mt-6 p-4 rounded-lg bg-charcoal-panel/50 border border-foreground/5">
-                  <p className="text-xs font-mono tracking-wide">
+                <div className="mt-6 p-4 rounded-lg bg-card border border-border">
+                  <p className="text-xs font-mono tracking-wide text-soft-steel">
                     {gateStatus === "safe" && "✓ Transaction approved - Safe to proceed"}
                     {gateStatus === "caution" && "⚠ Analyzing transaction..."}
                     {gateStatus === "blocked" && "✗ Transaction blocked - High risk detected"}
@@ -191,7 +189,7 @@ const AnimationsShowcase = () => {
 
               <Button
                 onClick={simulateGate}
-                className="w-full bg-primary hover:bg-primary/80 font-display tracking-widest text-xs transition-all duration-300"
+                className="w-full font-display tracking-widest text-xs"
                 disabled={gateStatus === "caution"}
               >
                 SIMULATE TRANSACTION

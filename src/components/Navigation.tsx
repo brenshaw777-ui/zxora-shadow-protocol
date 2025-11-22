@@ -52,7 +52,7 @@ const Navigation = () => {
             ))}
             <Button
               onClick={() => scrollToSection("cta")}
-              className="bg-primary hover:bg-primary/80 text-primary-foreground font-display tracking-wider text-xs transition-all duration-300"
+              className="font-display tracking-wider text-xs"
               size="sm"
             >
               JOIN EARLY ACCESS
@@ -83,7 +83,7 @@ const Navigation = () => {
             <div className="px-4">
               <Button
                 onClick={() => scrollToSection("cta")}
-                className="w-full bg-primary hover:bg-primary/80 text-primary-foreground font-display tracking-wider text-xs"
+                className="w-full font-display tracking-wider text-xs"
               >
                 JOIN EARLY ACCESS
               </Button>

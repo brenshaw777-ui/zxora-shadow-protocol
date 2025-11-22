@@ -46,11 +46,10 @@ const HowItWorks = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4">
-            How Zxora Sits Between{" "}
-            <span className="text-secondary">You and the Chain</span>
+          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 text-center tracking-[0.08em] leading-[1.15] metallic-heading">
+            HOW ZXORA SITS BETWEEN YOU AND THE CHAIN
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-center">
             A visual explanation of the shadow layer architecture
           </p>
         </motion.div>
@@ -68,17 +67,20 @@ const HowItWorks = () => {
               >
                 <div className="flex flex-col items-center space-y-4 group cursor-pointer">
                   <div className={`
-                    w-24 h-24 rounded-full flex items-center justify-center
+                    w-20 h-20 rounded-full border flex items-center justify-center relative
                     transition-all duration-300
                     ${index === 2 
-                      ? "bg-gradient-to-br from-primary to-accent border-glow-magenta" 
-                      : "bg-card border border-border group-hover:border-primary/50"
+                      ? "border-primary/40 bg-card" 
+                      : "border-gunmetal bg-card group-hover:border-primary/30"
                     }
                   `}>
-                    <step.icon className={`w-12 h-12 ${index === 2 ? "text-white" : "text-primary"}`} />
+                    <div className="absolute inset-2 rounded-full border border-primary/10" />
+                    {index === 2 && <div className="absolute inset-0 rounded-full bg-accent/5" />}
+                    <step.icon className="w-10 h-10 text-soft-steel z-10" strokeWidth={1} />
+                    <div className={`absolute w-2 h-2 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 ${index === 2 ? "bg-primary" : "bg-gunmetal"}`} />
                   </div>
-                  <h3 className="font-display font-semibold text-xl">{step.label}</h3>
-                  <p className="text-sm text-muted-foreground text-center max-w-[200px]">
+                  <h3 className="font-display font-semibold text-lg text-foreground tracking-wide">{step.label}</h3>
+                  <p className="text-sm text-muted-foreground text-center max-w-[200px] font-body">
                     {step.description}
                   </p>
                 </div>
@@ -88,10 +90,16 @@ const HowItWorks = () => {
                   <motion.div
                     initial={{ scaleX: 0 }}
                     animate={isInView ? { scaleX: 1 } : {}}
-                    transition={{ duration: 0.8, delay: 0.5 + index * 0.15 }}
-                    className="absolute top-12 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-primary to-secondary origin-left"
+                    transition={{ duration: 1, delay: 0.5 + index * 0.15, ease: "easeOut" }}
+                    className="absolute top-10 left-[60%] w-[80%] h-px origin-left"
                   >
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-0 h-0 border-l-8 border-l-secondary border-t-4 border-t-transparent border-b-4 border-b-transparent" />
+                    <div className="h-full bg-gunmetal" />
+                    <motion.div
+                      initial={{ scaleX: 0 }}
+                      animate={isInView ? { scaleX: 1 } : {}}
+                      transition={{ duration: 1.2, delay: 0.7 + index * 0.15, ease: "easeOut" }}
+                      className="absolute top-0 left-0 h-full w-full bg-primary/30 origin-left"
+                    />
                   </motion.div>
                 )}
               </motion.div>
@@ -110,21 +118,24 @@ const HowItWorks = () => {
               className="flex items-start space-x-4 relative"
             >
               <div className={`
-                w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0
+                w-16 h-16 rounded-full border flex items-center justify-center flex-shrink-0 relative
                 ${index === 2 
-                  ? "bg-gradient-to-br from-primary to-accent border-glow-magenta" 
-                  : "bg-card border border-border"
+                  ? "border-primary/40 bg-card" 
+                  : "border-gunmetal bg-card"
                 }
               `}>
-                <step.icon className={`w-8 h-8 ${index === 2 ? "text-white" : "text-primary"}`} />
+                <div className="absolute inset-2 rounded-full border border-primary/10" />
+                {index === 2 && <div className="absolute inset-0 rounded-full bg-accent/5" />}
+                <step.icon className="w-8 h-8 text-soft-steel z-10" strokeWidth={1} />
+                <div className={`absolute w-1.5 h-1.5 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 ${index === 2 ? "bg-primary" : "bg-gunmetal"}`} />
               </div>
               <div className="flex-1 pt-2">
-                <h3 className="font-display font-semibold text-lg mb-2">{step.label}</h3>
-                <p className="text-sm text-muted-foreground">{step.description}</p>
+                <h3 className="font-display font-semibold text-lg mb-2 text-foreground tracking-wide">{step.label}</h3>
+                <p className="text-sm text-muted-foreground font-body">{step.description}</p>
               </div>
 
               {index < steps.length - 1 && (
-                <div className="absolute left-8 top-16 w-0.5 h-8 bg-gradient-to-b from-primary to-secondary" />
+                <div className="absolute left-8 top-16 w-px h-8 bg-gunmetal" />
               )}
             </motion.div>
           ))}

@@ -46,11 +46,8 @@ const CTA = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-6 tracking-wide">
-            OPERATE IN THE{" "}
-            <span className="bg-gradient-to-r from-primary via-accent to-foreground bg-clip-text text-transparent">
-              SHADOW LAYER
-            </span>
+          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-6 tracking-[0.08em] leading-[1.15] metallic-heading">
+            OPERATE IN THE SHADOW LAYER
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
             Zxora is in private build. If you're a serious operator, builder, or fund and want 
@@ -97,7 +94,7 @@ const CTA = () => {
           <Button
             type="submit"
             size="lg"
-            className="w-full bg-primary hover:bg-primary/80 text-primary-foreground font-display tracking-widest border-glow-ember transition-all duration-300"
+            className="w-full font-display tracking-widest"
           >
             REQUEST EARLY ACCESS
           </Button>
