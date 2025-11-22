@@ -49,9 +49,9 @@ export default {
         },
       },
       fontFamily: {
-        'display': ['Space Grotesk', 'Michroma', 'system-ui', 'sans-serif'],
-        'body': ['Inter', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-        'mono': ['JetBrains Mono', 'IBM Plex Mono', 'monospace'],
+        'display': ['Rajdhani', 'Saira', 'system-ui', 'sans-serif'],
+        'body': ['Exo 2', 'system-ui', 'sans-serif'],
+        'mono': ['Share Tech Mono', 'monospace'],
       },
       borderRadius: {
         lg: "var(--radius)",
