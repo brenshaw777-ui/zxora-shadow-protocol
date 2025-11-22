@@ -17,6 +17,60 @@ const Hero = () => {
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl animate-subtle-float" />
       <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-primary/8 rounded-full blur-3xl animate-subtle-float" style={{ animationDelay: "4s" }} />
       
+      {/* Binary Data Streams */}
+      {[...Array(12)].map((_, i) => (
+        <motion.div
+          key={`stream-${i}`}
+          className="absolute top-0 font-mono text-xs text-soft-steel/20 pointer-events-none"
+          style={{ left: `${(i + 1) * 8}%` }}
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ 
+            y: "100vh", 
+            opacity: [0, 0.3, 0.3, 0] 
+          }}
+          transition={{
+            duration: 8 + Math.random() * 4,
+            repeat: Infinity,
+            delay: Math.random() * 5,
+            ease: "linear"
+          }}
+        >
+          {Array.from({ length: 20 }, () => Math.random() > 0.5 ? '1' : '0').join('\n').split('\n').map((char, idx) => (
+            <div key={idx} className="leading-6">{char}</div>
+          ))}
+        </motion.div>
+      ))}
+
+      {/* Floating Data Fragments */}
+      {[
+        { text: '0x4f2a...c8e1', delay: 0 },
+        { text: 'tx:a9d3...7b2f', delay: 2 },
+        { text: '0xbc7e...4a91', delay: 4 },
+        { text: 'hash:2e8f...d4c3', delay: 1.5 },
+        { text: '0x1a4b...9e2c', delay: 3.5 },
+      ].map((fragment, i) => (
+        <motion.div
+          key={`fragment-${i}`}
+          className="absolute font-mono text-xs text-soft-steel/10 pointer-events-none"
+          style={{ 
+            top: `${20 + (i * 15)}%`,
+            left: i % 2 === 0 ? '-10%' : '110%'
+          }}
+          animate={{ 
+            x: i % 2 === 0 ? ['0%', '120vw'] : ['0%', '-120vw'],
+            opacity: [0, 0.3, 0.3, 0]
+          }}
+          transition={{
+            duration: 20 + Math.random() * 10,
+            repeat: Infinity,
+            delay: fragment.delay,
+            ease: "linear"
+          }}
+        >
+          {fragment.text}
+        </motion.div>
+      ))}
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text Content */}
