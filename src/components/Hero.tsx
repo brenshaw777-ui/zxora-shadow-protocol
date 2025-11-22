@@ -1,6 +1,15 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield } from "lucide-react";
+import { useState, useEffect } from "react";
+
+interface CodeLine {
+  id: string;
+  text: string;
+  highlight?: string;
+  dotColor: string;
+  isPulsing?: boolean;
+}
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -9,6 +18,64 @@ const Hero = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // All possible code operations (30+ lines)
+  const allCodeOperations: CodeLine[] = [
+    { id: '1', text: 'initializing shadow_client...', dotColor: 'bg-primary/60' },
+    { id: '2', text: 'detect(fingerprint) → ', highlight: 'fingerprint_shielded ✓', dotColor: 'bg-primary', isPulsing: true },
+    { id: '3', text: 'zk_proof(wallet_ownership) → ', highlight: 'verified ✓', dotColor: 'bg-accent', isPulsing: true },
+    { id: '4', text: 'session_identity = ', highlight: 'rotating_ID_74829', dotColor: 'bg-[#A5AFC3]/40' },
+    { id: '5', text: 'routing.mask = ', highlight: 'active', dotColor: 'bg-primary/60' },
+    { id: '6', text: 'tracking_signals = ', highlight: 'nullified', dotColor: 'bg-accent/60' },
+    { id: '7', text: 'risk_vector_scan → ', highlight: 'clear', dotColor: 'bg-primary', isPulsing: true },
+    { id: '8', text: 'gate.simulate(transaction) → ', highlight: 'approved', dotColor: 'bg-accent', isPulsing: true },
+    { id: '9', text: 'corridor.link_established → ', highlight: 'encrypted_tunnel ✓', dotColor: 'bg-primary' },
+    { id: '10', text: 'websocket.shield_layer → ', highlight: 'connected', dotColor: 'bg-primary/60' },
+    { id: '11', text: 'entropy.pool = ', highlight: 'refreshed', dotColor: 'bg-accent/60' },
+    { id: '12', text: 'fingerprint.rotation → ', highlight: 'cycle_23', dotColor: 'bg-primary/60' },
+    { id: '13', text: 'dns.queries = ', highlight: 'obfuscated', dotColor: 'bg-accent/60' },
+    { id: '14', text: 'browser.canvas = ', highlight: 'randomized', dotColor: 'bg-primary/60' },
+    { id: '15', text: 'webrtc.leak_protection → ', highlight: 'enabled', dotColor: 'bg-primary', isPulsing: true },
+    { id: '16', text: 'timing_attack_mitigation → ', highlight: 'active', dotColor: 'bg-accent/60' },
+    { id: '17', text: 'keyboard_signature = ', highlight: 'masked', dotColor: 'bg-primary/60' },
+    { id: '18', text: 'mouse_behavior = ', highlight: 'normalized', dotColor: 'bg-accent/60' },
+    { id: '19', text: 'screen_resolution = ', highlight: 'spoofed', dotColor: 'bg-primary/60' },
+    { id: '20', text: 'fonts.enumeration = ', highlight: 'blocked', dotColor: 'bg-accent/60' },
+    { id: '21', text: 'clipboard.isolation → ', highlight: 'enforced', dotColor: 'bg-primary', isPulsing: true },
+    { id: '22', text: 'storage.partitioning = ', highlight: 'strict', dotColor: 'bg-accent/60' },
+    { id: '23', text: 'cookie.jar = ', highlight: 'sanitized', dotColor: 'bg-primary/60' },
+    { id: '24', text: 'referrer.policy = ', highlight: 'strict-origin', dotColor: 'bg-accent/60' },
+    { id: '25', text: 'user_agent = ', highlight: 'synthetic_UA_v2.4', dotColor: 'bg-primary/60' },
+    { id: '26', text: 'tls.fingerprint = ', highlight: 'rotated', dotColor: 'bg-accent/60' },
+    { id: '27', text: 'http_headers = ', highlight: 'minimized', dotColor: 'bg-primary/60' },
+    { id: '28', text: 'certificate.validation → ', highlight: 'passed', dotColor: 'bg-primary', isPulsing: true },
+    { id: '29', text: 'network.latency = ', highlight: 'normalized', dotColor: 'bg-accent/60' },
+    { id: '30', text: 'packet.size_analysis → ', highlight: 'masked', dotColor: 'bg-primary/60' },
+    { id: '31', text: 'connection.pool = ', highlight: 'isolated', dotColor: 'bg-accent/60' },
+    { id: '32', text: 'session.cookies = ', highlight: 'partitioned', dotColor: 'bg-primary/60' },
+    { id: '33', text: 'geolocation.spoof → ', highlight: 'active', dotColor: 'bg-accent', isPulsing: true },
+    { id: '34', text: 'hardware.fingerprint = ', highlight: 'obfuscated', dotColor: 'bg-primary/60' },
+  ];
+
+  // State for visible lines in the terminal
+  const [visibleLines, setVisibleLines] = useState<CodeLine[]>(
+    allCodeOperations.slice(0, 10)
+  );
+  const [lineIndex, setLineIndex] = useState(10);
+
+  // Continuously cycle through code operations
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisibleLines((prev) => {
+        const newLines = prev.slice(1); // Remove first line
+        const nextLine = allCodeOperations[lineIndex % allCodeOperations.length];
+        setLineIndex((i) => i + 1);
+        return [...newLines, { ...nextLine, id: `${nextLine.id}-${Date.now()}` }]; // Add new line at bottom
+      });
+    }, 2500); // Every 2.5 seconds
+
+    return () => clearInterval(interval);
+  }, [lineIndex]);
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 pb-24">
@@ -47,16 +114,41 @@ const Hero = () => {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="relative"
               >
-                {/* Metallic reflection sweep */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.06] to-transparent -z-10"
-                  animate={{ x: ['-200%', '200%'] }}
-                  transition={{ duration: 8, repeat: Infinity, repeatDelay: 4, ease: "linear" }}
-                />
+                {/* Multi-layer metallic reflection animation */}
+                <div className="absolute inset-0 -z-10 overflow-hidden">
+                  {/* Primary diagonal sweep - main shimmer */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.08] to-transparent"
+                    style={{ transform: 'rotate(-35deg) scale(1.5)' }}
+                    animate={{ x: ['-150%', '150%'] }}
+                    transition={{ duration: 6, repeat: Infinity, repeatDelay: 2, ease: "linear" }}
+                  />
+                  
+                  {/* Secondary shimmer - faster, chromatic magenta */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/[0.04] to-transparent"
+                    style={{ transform: 'rotate(-35deg) scale(1.5)' }}
+                    animate={{ x: ['-180%', '180%'] }}
+                    transition={{ duration: 4, repeat: Infinity, repeatDelay: 1, ease: "easeInOut" }}
+                  />
+                  
+                  {/* Tertiary glow - subtle accent yellow */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/[0.03] to-transparent"
+                    style={{ transform: 'rotate(-35deg) scale(1.5)' }}
+                    animate={{ x: ['150%', '-150%'] }}
+                    transition={{ duration: 8, repeat: Infinity, repeatDelay: 3, ease: "linear" }}
+                  />
+                </div>
                 
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.08] tracking-[0.04em] uppercase bg-gradient-to-br from-[#E3E8F4] via-[#C7CCD8] to-[#E3E8F4] bg-clip-text text-transparent">
+                {/* Headline with subtle pulse synchronized with sweep */}
+                <motion.h1
+                  animate={{ scale: [1, 1.005, 1] }}
+                  transition={{ duration: 6, repeat: Infinity, repeatDelay: 2 }}
+                  className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.08] tracking-[0.04em] uppercase bg-gradient-to-br from-[#E3E8F4] via-[#C7CCD8] to-[#E3E8F4] bg-clip-text text-transparent"
+                >
                   OPERATE IN THE SHADOW LAYER
-                </h1>
+                </motion.h1>
               </motion.div>
 
               <motion.p
@@ -157,123 +249,44 @@ const Hero = () => {
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(199,204,216,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(199,204,216,0.03)_1px,transparent_1px)] bg-[size:32px_32px]" />
                   </div>
 
-                  {/* Animated Security Code Lines */}
+                  {/* Continuously Scrolling Security Code Lines */}
                   <div className="relative space-y-3 font-mono text-sm">
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.8, duration: 0.4 }}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="w-1 h-1 rounded-full bg-primary/60" />
-                      <span className="text-[#A5AFC3]/60">initializing shadow_client...</span>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 1.2, duration: 0.4 }}
-                      className="flex items-center gap-3"
-                    >
-                      <motion.div 
-                        className="w-1 h-1 rounded-full bg-primary"
-                        animate={{ opacity: [0.4, 1, 0.4] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      />
-                      <span className="text-[#A5AFC3]">detect(fingerprint) → <span className="text-primary">fingerprint_shielded ✓</span></span>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 1.5, duration: 0.4 }}
-                      className="flex items-center gap-3"
-                    >
-                      <motion.div 
-                        className="w-1 h-1 rounded-full bg-accent"
-                        animate={{ opacity: [0.4, 1, 0.4] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
-                      />
-                      <span className="text-[#A5AFC3]">zk_proof(wallet_ownership) → <span className="text-accent">verified ✓</span></span>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 1.8, duration: 0.4 }}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="w-1 h-1 rounded-full bg-[#A5AFC3]/40" />
-                      <span className="text-[#A5AFC3]/80">session_identity = <span className="text-primary/80">rotating_ID_48392</span></span>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 2.1, duration: 0.4 }}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="w-1 h-1 rounded-full bg-primary/60" />
-                      <span className="text-[#A5AFC3]">routing.mask = <span className="text-primary">active</span></span>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 2.4, duration: 0.4 }}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="w-1 h-1 rounded-full bg-accent/60" />
-                      <span className="text-[#A5AFC3]">tracking_signals = <span className="text-accent">nullified</span></span>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 2.7, duration: 0.4 }}
-                      className="flex items-center gap-3"
-                    >
-                      <motion.div 
-                        className="w-1 h-1 rounded-full bg-primary"
-                        animate={{ opacity: [0.4, 1, 0.4] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
-                      />
-                      <span className="text-[#A5AFC3]">risk_vector_scan → <span className="text-primary">clear</span></span>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 3, duration: 0.4 }}
-                      className="flex items-center gap-3"
-                    >
-                      <motion.div 
-                        className="w-1 h-1 rounded-full bg-accent"
-                        animate={{ opacity: [0.4, 1, 0.4] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: 0.9 }}
-                      />
-                      <span className="text-[#A5AFC3]">gate.simulate(transaction) → <span className="text-accent">approved</span></span>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 3.3, duration: 0.4 }}
-                      className="flex items-center gap-3"
-                    >
-                      <motion.div 
-                        className="w-1 h-1 rounded-full bg-primary"
-                        animate={{ opacity: [0.4, 1, 0.4] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: 1.2 }}
-                      />
-                      <span className="text-[#A5AFC3]">corridor.link_established → <span className="text-primary">encrypted_tunnel ✓</span></span>
-                    </motion.div>
+                    <AnimatePresence mode="popLayout">
+                      {visibleLines.map((line, index) => (
+                        <motion.div
+                          key={line.id}
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          transition={{ duration: 0.3 }}
+                          className="flex items-center gap-3"
+                        >
+                          {line.isPulsing ? (
+                            <motion.div 
+                              className={`w-1 h-1 rounded-full ${line.dotColor}`}
+                              animate={{ opacity: [0.4, 1, 0.4] }}
+                              transition={{ duration: 2, repeat: Infinity, delay: Math.random() * 2 }}
+                            />
+                          ) : (
+                            <div className={`w-1 h-1 rounded-full ${line.dotColor}`} />
+                          )}
+                          <span className={line.highlight ? "text-[#A5AFC3]" : "text-[#A5AFC3]/60"}>
+                            {line.text}
+                            {line.highlight && (
+                              <span className={line.dotColor.includes('primary') ? 'text-primary' : 'text-accent'}>
+                                {line.highlight}
+                              </span>
+                            )}
+                          </span>
+                        </motion.div>
+                      ))}
+                    </AnimatePresence>
 
                     {/* Minimal outline icons */}
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 0.3 }}
-                      transition={{ delay: 3.6, duration: 0.6 }}
+                      transition={{ delay: 1.5, duration: 0.6 }}
                       className="absolute bottom-6 right-6 flex gap-4"
                     >
                       <Shield className="w-8 h-8 text-primary/30" strokeWidth={1} />
