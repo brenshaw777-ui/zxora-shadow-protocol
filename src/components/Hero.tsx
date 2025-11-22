@@ -120,33 +120,6 @@ const Hero = () => {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="relative"
               >
-                {/* Enhanced Multi-layer metallic reflection animation */}
-                <div className="absolute inset-0 -z-10 overflow-hidden">
-                  {/* Primary diagonal sweep - main shimmer */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.12] to-transparent"
-                    style={{ transform: 'rotate(-35deg) scale(1.5)' }}
-                    animate={{ x: ['-150%', '150%'] }}
-                    transition={{ duration: 6, repeat: Infinity, repeatDelay: 2, ease: "linear" }}
-                  />
-                  
-                  {/* Secondary shimmer - faster, chromatic magenta */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/[0.08] to-transparent"
-                    style={{ transform: 'rotate(-35deg) scale(1.5)' }}
-                    animate={{ x: ['-180%', '180%'] }}
-                    transition={{ duration: 4, repeat: Infinity, repeatDelay: 1, ease: "easeInOut" }}
-                  />
-                  
-                  {/* Tertiary glow - subtle accent yellow */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/[0.06] to-transparent"
-                    style={{ transform: 'rotate(-35deg) scale(1.5)' }}
-                    animate={{ x: ['150%', '-150%'] }}
-                    transition={{ duration: 8, repeat: Infinity, repeatDelay: 3, ease: "linear" }}
-                  />
-                </div>
-                
                 {/* Headline with enhanced metallic gradient and pulse */}
                 <motion.h1
                   animate={{ scale: [1, 1.005, 1] }}
