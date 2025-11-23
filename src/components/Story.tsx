@@ -75,7 +75,7 @@ const Story = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-monument font-bold mb-4 text-center tracking-[0.03em] leading-[1.15] metallic-heading">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-monument font-bold mb-4 text-center tracking-[0.02em] sm:tracking-[0.03em] leading-[1.15] metallic-heading max-w-full">
             {displayText}
           </h2>
           <p className="text-steel text-base sm:text-lg font-body font-normal">
@@ -88,15 +88,15 @@ const Story = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center mb-8 sm:mb-10 lg:mb-12 overflow-x-auto"
+          className="flex justify-center mb-8 sm:mb-10 lg:mb-12 overflow-x-auto pb-2 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-emerald/20"
         >
-          <div className="inline-flex gap-2 p-2 rounded-2xl bg-slate/50 border border-emerald/10 min-w-min">
+          <div className="inline-flex gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-slate/50 border border-emerald/10 min-w-min">
             {steps.map((step, index) => (
               <button
                 key={step.id}
                 onClick={() => setActiveStep(index)}
                 className={`
-                  px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-machina font-medium text-xs sm:text-sm md:text-base tracking-[0.05em] uppercase transition-all duration-300 whitespace-nowrap
+                  px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-xl font-machina font-medium text-[10px] sm:text-xs md:text-sm tracking-[0.04em] sm:tracking-[0.05em] uppercase transition-all duration-300 whitespace-nowrap
                   ${activeStep === index 
                     ? 'bg-graphite text-emerald border border-emerald/30 shadow-[0_0_12px_rgba(0,227,140,0.25)]' 
                     : 'text-dim-steel hover:text-steel hover:border-b hover:border-dim-steel/30'
@@ -132,7 +132,7 @@ const Story = () => {
                     Step {activeStep + 1}
                   </span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-machina font-semibold text-titanium tracking-[0.02em]">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-machina font-semibold text-titanium tracking-[0.02em] max-w-full">
                   {steps[activeStep].title}
                 </h3>
                 {steps[activeStep].content}
@@ -146,7 +146,7 @@ const Story = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="rounded-2xl bg-graphite border border-emerald/15 p-6 shadow-[0_0_24px_rgba(0,227,140,0.1)]">
+            <div className="rounded-2xl bg-graphite border border-emerald/15 p-4 sm:p-5 md:p-6 shadow-[0_0_24px_rgba(0,227,140,0.1)] max-w-full overflow-hidden">
               {/* Console Header */}
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-emerald/10">
                 <span className="text-dim-steel text-xs font-mono font-normal tracking-wider uppercase">

@@ -14,12 +14,12 @@ import DataStreamBackground from "@/components/DataStreamBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#020307] via-[#050811] to-[#020307] text-foreground relative">
+    <div className="min-h-screen bg-gradient-to-b from-[#020307] via-[#050811] to-[#020307] text-foreground relative overflow-x-hidden">
       {/* Global Data Stream Background */}
       <DataStreamBackground />
       
       {/* Main Content - Sits Above Data Stream */}
-      <div className="relative z-10">
+      <div className="relative z-10 max-w-full overflow-x-hidden">
         <Navigation />
         <main>
           <Hero />
