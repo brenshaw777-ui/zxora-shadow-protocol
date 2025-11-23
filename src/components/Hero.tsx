@@ -132,7 +132,7 @@ const Hero = () => {
   }, [lineIndex]);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 pb-24">
+    <section id="hero" className="relative pt-24 pb-20 sm:pt-28 sm:pb-24 lg:min-h-screen lg:flex lg:items-center lg:justify-center overflow-x-hidden">
       {/* Subtle metallic vignettes */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/8 via-transparent to-transparent rounded-full blur-3xl" />
       <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-gradient-radial from-accent/6 via-transparent to-transparent rounded-full blur-3xl" />
