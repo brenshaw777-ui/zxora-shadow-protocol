@@ -47,6 +47,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        emerald: {
+          DEFAULT: "hsl(var(--zx-emerald))",
+          deep: "hsl(var(--zx-emerald-deep))",
+          soft: "hsl(var(--zx-mint-soft))",
+        },
+        titanium: "hsl(var(--zx-titanium))",
+        steel: "hsl(var(--zx-steel))",
+        'dim-steel': "hsl(var(--zx-dim-steel))",
+        graphite: "hsl(var(--zx-graphite-code))",
+        slate: "hsl(var(--zx-slate))",
+        safe: "hsl(var(--zx-safe))",
+        alert: "hsl(var(--zx-alert))",
       },
       fontFamily: {
         'monument': ['Rajdhani', 'Bank Gothic', 'Eurostile Extended', 'system-ui', 'sans-serif'],

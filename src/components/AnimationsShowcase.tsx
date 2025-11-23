@@ -41,7 +41,7 @@ const AnimationsShowcase = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-[#A5AFC3] text-base sm:text-lg max-w-2xl mx-auto font-body"
+            className="text-steel text-base sm:text-lg max-w-2xl mx-auto font-body"
           >
             Visual simulations of the shadow client at work
           </motion.p>
@@ -70,8 +70,8 @@ const AnimationsShowcase = () => {
                 className={`
                   relative px-6 py-3 rounded-full font-display text-sm tracking-wide transition-all duration-300
                   ${activeMode === mode.id 
-                    ? "text-[#E3E8F4]" 
-                    : "text-[#A5AFC3] hover:text-[#C7CCD8]"
+                    ? "text-titanium" 
+                    : "text-steel hover:text-titanium"
                   }
                 `}
               >
@@ -150,18 +150,18 @@ const MaskShiftSimulation = () => {
         {/* YOU Node */}
         <div className="flex flex-col items-center gap-3">
           <div className="relative w-16 h-16 rounded-full border border-[rgba(199,204,216,0.3)] bg-[rgba(5,8,17,0.6)] flex items-center justify-center">
-            <div className="w-2 h-2 rounded-full bg-accent/80" />
+            <div className="w-2 h-2 rounded-full bg-safe/80" />
           </div>
-          <span className="font-mono text-xs text-[#A5AFC3] tracking-widest">YOU</span>
+          <span className="font-mono text-xs text-steel tracking-widest">YOU</span>
         </div>
 
         {/* Connection Rail 1 */}
         <div className="relative flex-1 max-w-[120px]">
-          <div className="h-px bg-[rgba(199,204,216,0.2)]" />
+          <div className="h-px bg-steel/20" />
           <motion.div
             animate={{ x: ['-100%', '100%'] }}
             transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            className="absolute top-0 left-0 w-8 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent"
+            className="absolute top-0 left-0 w-8 h-px bg-gradient-to-r from-transparent via-emerald/60 to-transparent"
           />
         </div>
 
@@ -174,9 +174,9 @@ const MaskShiftSimulation = () => {
             }}
           >
             <motion.div
-              animate={{ rotate: 360 }}
+            animate={{ rotate: 360 }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-2 rounded-full border border-dashed border-primary/30"
+              className="absolute inset-2 rounded-full border border-dashed border-emerald/30"
             />
             <motion.div
               animate={{ 
@@ -184,42 +184,42 @@ const MaskShiftSimulation = () => {
                 opacity: [0.6, 1, 0.6]
               }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-3 h-3 rounded-full bg-primary"
+              className="w-3 h-3 rounded-full bg-emerald"
             />
           </motion.div>
-          <span className="font-mono text-xs text-primary tracking-widest">MASK</span>
+          <span className="font-mono text-xs text-emerald tracking-widest">MASK</span>
         </div>
 
         {/* Connection Rail 2 */}
         <div className="relative flex-1 max-w-[120px]">
-          <div className="h-px bg-[rgba(199,204,216,0.2)]" />
+          <div className="h-px bg-steel/20" />
           <motion.div
             animate={{ x: ['-100%', '100%'] }}
             transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1.5 }}
-            className="absolute top-0 left-0 w-8 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent"
+            className="absolute top-0 left-0 w-8 h-px bg-gradient-to-r from-transparent via-safe/60 to-transparent"
           />
         </div>
 
         {/* dApp Node */}
         <div className="flex flex-col items-center gap-3">
           <div className="relative w-16 h-16 rounded-full border border-[rgba(199,204,216,0.3)] bg-[rgba(5,8,17,0.6)] flex items-center justify-center">
-            <div className="w-2 h-2 rounded-full bg-[#A5AFC3]/60" />
+            <div className="w-2 h-2 rounded-full bg-steel/60" />
           </div>
-          <span className="font-mono text-xs text-[#A5AFC3] tracking-widest">dApp</span>
+          <span className="font-mono text-xs text-steel tracking-widest">dApp</span>
         </div>
       </div>
 
       {/* Status Console */}
-      <div className="w-full max-w-2xl p-6 rounded-xl bg-[rgba(5,8,17,0.6)] border border-[rgba(60,66,83,0.25)]">
-        <div className="font-mono text-xs space-y-2 text-[#A5AFC3]/80">
+      <div className="w-full max-w-2xl p-6 rounded-xl bg-graphite/60 border border-slate/25">
+        <div className="font-mono text-xs space-y-2 text-steel/80">
           <div className="flex justify-between">
             <span>fingerprint_base:</span>
-            <span className="text-[#C7CCD8]">stable</span>
+            <span className="text-titanium">stable</span>
           </div>
           <div className="flex justify-between">
             <span>mask_profile:</span>
             <motion.span 
-              className="text-primary"
+              className="text-emerald"
               animate={{ opacity: [0.7, 1, 0.7] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
@@ -228,11 +228,11 @@ const MaskShiftSimulation = () => {
           </div>
           <div className="flex justify-between">
             <span>dapp_view:</span>
-            <span className="text-[#C7CCD8]">mask_only</span>
+            <span className="text-titanium">mask_only</span>
           </div>
           <div className="flex justify-between">
             <span>trace_link:</span>
-            <span className="text-accent">broken</span>
+            <span className="text-safe">broken</span>
           </div>
         </div>
       </div>
@@ -258,30 +258,30 @@ const GateInspectSimulation = ({
     >
       {/* Left: Request Summary */}
       <div className="flex-1">
-        <div className="p-6 rounded-xl bg-[rgba(5,8,17,0.7)] border border-[rgba(60,66,83,0.25)] h-full">
+        <div className="p-6 rounded-xl bg-graphite/70 border border-slate/25 h-full">
           <div className="flex items-center justify-between mb-6">
-            <span className="font-mono text-xs text-[#C7CCD8] tracking-widest uppercase">Incoming Transaction</span>
-            <Shield className="w-4 h-4 text-primary/60" strokeWidth={1.5} />
+            <span className="font-mono text-xs text-titanium tracking-widest uppercase">Incoming Transaction</span>
+            <Shield className="w-4 h-4 text-emerald/60" strokeWidth={1.5} />
           </div>
-          <div className="font-mono text-sm space-y-3 text-[#A5AFC3]">
+          <div className="font-mono text-sm space-y-3 text-steel">
             <div className="flex justify-between">
-              <span className="text-[#A5AFC3]/60">protocol:</span>
+              <span className="text-steel/60">protocol:</span>
               <span>dex.example</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-[#A5AFC3]/60">action:</span>
+              <span className="text-steel/60">action:</span>
               <span>swap</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-[#A5AFC3]/60">amount:</span>
-              <span className="text-accent">1.23 ETH</span>
+              <span className="text-steel/60">amount:</span>
+              <span className="text-safe">1.23 ETH</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-[#A5AFC3]/60">asset:</span>
+              <span className="text-steel/60">asset:</span>
               <span>TOKEN_X</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-[#A5AFC3]/60">chain:</span>
+              <span className="text-steel/60">chain:</span>
               <span>mainnet</span>
             </div>
           </div>
@@ -290,8 +290,8 @@ const GateInspectSimulation = ({
 
       {/* Right: Gate Console */}
       <div className="flex-1">
-        <div className="p-6 rounded-xl bg-[rgba(5,8,17,0.7)] border border-[rgba(60,66,83,0.25)] h-full flex flex-col">
-          <span className="font-mono text-xs text-[#C7CCD8] tracking-widest uppercase mb-6">Gate Console</span>
+        <div className="p-6 rounded-xl bg-graphite/70 border border-slate/25 h-full flex flex-col">
+          <span className="font-mono text-xs text-titanium tracking-widest uppercase mb-6">Gate Console</span>
           
           {/* Check Rows */}
           <div className="space-y-4 flex-1">
@@ -303,20 +303,20 @@ const GateInspectSimulation = ({
             ].map((check) => (
               <div key={check.label} className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs text-[#A5AFC3]/80">{check.label}</span>
+                  <span className="font-mono text-xs text-steel/80">{check.label}</span>
                   {isInspecting ? (
                     <motion.div
                       initial={{ scale: 0 }}
                       animate={{ scale: 1, rotate: 360 }}
                       transition={{ delay: check.delay + 1.6, duration: 0.3 }}
                     >
-                      <CheckCircle className="w-4 h-4 text-primary" strokeWidth={1.5} />
+                      <CheckCircle className="w-4 h-4 text-emerald" strokeWidth={1.5} />
                     </motion.div>
                   ) : (
-                    <CheckCircle className="w-4 h-4 text-primary/30" strokeWidth={1.5} />
+                    <CheckCircle className="w-4 h-4 text-emerald/30" strokeWidth={1.5} />
                   )}
                 </div>
-                <div className="h-1 bg-[rgba(60,66,83,0.3)] rounded-full overflow-hidden">
+                <div className="h-1 bg-slate/30 rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: "0%" }}
                     animate={{ width: isInspecting ? "100%" : "0%" }}
@@ -325,7 +325,7 @@ const GateInspectSimulation = ({
                       delay: check.delay,
                       ease: "easeOut" 
                     }}
-                    className="h-full rounded-full bg-gradient-to-r from-primary/60 to-accent/60"
+                    className="h-full rounded-full bg-gradient-to-r from-emerald/60 to-safe/60"
                   />
                 </div>
               </div>
@@ -333,8 +333,8 @@ const GateInspectSimulation = ({
           </div>
 
           {/* Status Log */}
-          <div className="mt-6 p-4 rounded-lg bg-[rgba(5,8,17,0.8)] border border-[rgba(60,66,83,0.2)]">
-            <div className="font-mono text-xs space-y-1 text-[#A5AFC3]/70">
+          <div className="mt-6 p-4 rounded-lg bg-graphite/80 border border-slate/20">
+            <div className="font-mono text-xs space-y-1 text-steel/70">
               <AnimatePresence mode="wait">
                 {!isInspecting ? (
                   <motion.div
@@ -343,7 +343,7 @@ const GateInspectSimulation = ({
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                   >
-                    <div>gate.status = <span className="text-[#C7CCD8]">ready</span></div>
+                    <div>gate.status = <span className="text-titanium">ready</span></div>
                   </motion.div>
                 ) : (
                   <motion.div
@@ -358,27 +358,27 @@ const GateInspectSimulation = ({
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.2 }}
                     >
-                      gate.load_abi() → <span className="text-primary">ok</span>
+                      gate.load_abi() → <span className="text-emerald">ok</span>
                     </motion.div>
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.8 }}
                     >
-                      gate.simulate(tx) → <span className="text-primary">pass</span>
+                      gate.simulate(tx) → <span className="text-emerald">pass</span>
                     </motion.div>
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 1.4 }}
                     >
-                      risk.score = <span className="text-accent">0.12 (low)</span>
+                      risk.score = <span className="text-safe">0.12 (low)</span>
                     </motion.div>
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 2.0 }}
-                      className="text-primary font-semibold"
+                      className="text-emerald font-semibold"
                     >
                       status: SAFE TO PROCEED
                     </motion.div>
@@ -392,9 +392,9 @@ const GateInspectSimulation = ({
           <button
             onClick={onInspect}
             disabled={isInspecting}
-            className="mt-6 w-full py-3 rounded-lg border border-primary/40 bg-[rgba(108,77,255,0.05)] 
-                     hover:bg-[rgba(108,77,255,0.1)] hover:border-primary/60 transition-all duration-300
-                     disabled:opacity-50 disabled:cursor-not-allowed font-display text-sm tracking-widest text-primary"
+            className="mt-6 w-full py-3 rounded-lg border border-emerald/40 bg-emerald/5 
+                     hover:bg-emerald/10 hover:border-emerald/60 transition-all duration-300
+                     disabled:opacity-50 disabled:cursor-not-allowed font-display text-sm tracking-widest text-emerald"
           >
             {isInspecting ? "INSPECTING..." : "RUN GATE INSPECT"}
           </button>
@@ -442,7 +442,7 @@ const CorridorBurnSimulation = ({
               <motion.div
                 animate={{ y: ['0%', '100%'] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                className="font-mono text-[8px] leading-4 text-primary/40"
+                className="font-mono text-[8px] leading-4 text-emerald/40"
               >
                 {Array.from({ length: 30 }, (_, i) => (
                   <div key={i}>{Math.random() > 0.5 ? '1' : '0'}</div>
@@ -460,8 +460,8 @@ const CorridorBurnSimulation = ({
               <motion.span 
                 className={`font-mono text-xs px-3 py-1 rounded-full border ${
                   isBurned 
-                    ? 'border-[rgba(60,66,83,0.2)] text-[#A5AFC3]/40 bg-[rgba(5,8,17,0.3)]'
-                    : 'border-primary/40 text-primary bg-[rgba(108,77,255,0.1)]'
+                    ? 'border-slate/20 text-steel/40 bg-graphite/30'
+                    : 'border-emerald/40 text-emerald bg-emerald/10'
                 }`}
                 animate={{
                   opacity: isBurned ? 0.5 : 1
@@ -510,17 +510,17 @@ const CorridorBurnSimulation = ({
             </div>
 
             {/* Status Log */}
-            <div className="mb-6 p-4 rounded-lg bg-[rgba(5,8,17,0.6)] border border-[rgba(60,66,83,0.2)]">
-              <div className="font-mono text-xs space-y-1 text-[#A5AFC3]/70">
+            <div className="mb-6 p-4 rounded-lg bg-graphite/60 border border-slate/20">
+              <div className="font-mono text-xs space-y-1 text-steel/70">
                 <AnimatePresence mode="wait">
                   {!isBurned ? (
                     <motion.div
-                      key="live"
+                      key="ready"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                     >
-                      <div>status: <span className="text-primary">live</span></div>
+                      corridor_status: <span className="text-titanium">active</span>
                     </motion.div>
                   ) : (
                     <motion.div
@@ -533,29 +533,22 @@ const CorridorBurnSimulation = ({
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
+                        transition={{ delay: 0.7 }}
                       >
-                        writing_to_chain: <span className="text-accent">minimal</span>
-                      </motion.div>
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.8 }}
-                      >
-                        session_logs: <span className="text-[#C7CCD8]">wiped</span>
+                        session_logs: <span className="text-titanium">wiped</span>
                       </motion.div>
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1.3 }}
                       >
-                        corridor_state: <span className="text-accent">burned</span>
+                        corridor_state: <span className="text-safe">burned</span>
                       </motion.div>
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1.8 }}
-                        className="text-accent font-semibold"
+                        className="text-safe font-semibold"
                       >
                         status: CLEAN EXIT
                       </motion.div>
@@ -571,13 +564,13 @@ const CorridorBurnSimulation = ({
               disabled={isBurned}
               className="w-full py-4 rounded-lg border font-display text-sm tracking-widest transition-all duration-300 relative overflow-hidden"
               style={{
-                borderColor: isBurned ? 'rgba(60,66,83,0.2)' : 'rgba(255,107,60,0.4)',
-                backgroundColor: isBurned ? 'rgba(5,8,17,0.3)' : 'rgba(255,107,60,0.05)',
-                color: isBurned ? 'rgba(165,175,195,0.4)' : '#FF6B3C'
+                borderColor: isBurned ? 'rgba(21,26,32,0.2)' : 'rgba(0,227,140,0.4)',
+                backgroundColor: isBurned ? 'rgba(5,8,17,0.3)' : 'rgba(0,227,140,0.05)',
+                color: isBurned ? 'rgba(167,176,195,0.4)' : 'hsl(var(--zx-emerald))'
               }}
               whileHover={!isBurned ? { 
-                borderColor: 'rgba(255,107,60,0.6)',
-                boxShadow: '0 0 20px rgba(255,107,60,0.2)'
+                borderColor: 'rgba(0,227,140,0.6)',
+                boxShadow: '0 0 20px rgba(0,227,140,0.2)'
               } : {}}
             >
               {isBurned ? "BURNED" : "BURN CORRIDOR"}

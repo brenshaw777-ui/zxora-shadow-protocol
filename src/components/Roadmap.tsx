@@ -108,26 +108,26 @@ const Roadmap = () => {
                       transition={{ duration: 0.3 }}
                       className={`relative w-16 h-16 rounded-full border-2 transition-all duration-300 cursor-pointer group ${
                         isActive 
-                          ? "border-primary/60 bg-gradient-to-br from-card to-primary/10 shadow-[0_0_30px_rgba(255,122,60,0.25)]" 
-                          : "border-gunmetal bg-card hover:border-primary/30 hover:shadow-[0_0_20px_rgba(255,122,60,0.1)]"
+                          ? "border-emerald/60 bg-gradient-to-br from-card to-emerald/10 border-glow-emerald-soft" 
+                          : "border-slate bg-card hover:border-emerald/30 hover:shadow-[0_0_20px_rgba(0,227,140,0.1)]"
                       } flex items-center justify-center overflow-hidden`}
                     >
                       {/* Inner ring */}
                       <div className={`absolute inset-2 rounded-full border transition-colors duration-300 ${
-                        isActive ? "border-primary/30" : "border-gunmetal/40"
+                        isActive ? "border-emerald/30" : "border-slate/40"
                       }`} />
                       
                       {/* Icon */}
                       <Icon className={`w-7 h-7 relative z-10 transition-all duration-300 ${
                         isActive 
-                          ? "text-primary scale-110" 
-                          : "text-soft-steel/70 group-hover:text-soft-steel"
+                          ? "text-emerald scale-110" 
+                          : "text-steel/70 group-hover:text-steel"
                       }`} strokeWidth={1.5} />
                       
                       {/* Active pulse */}
                       {isActive && (
                         <motion.div
-                          className="absolute inset-0 rounded-full border-2 border-primary/60"
+                          className="absolute inset-0 rounded-full border-2 border-emerald/60"
                           animate={{ scale: [1, 1.3], opacity: [0.6, 0] }}
                           transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
                         />
@@ -145,7 +145,7 @@ const Roadmap = () => {
                           transition={{ duration: 0.3, ease: "easeOut" }}
                           className="w-full mt-6 overflow-hidden"
                         >
-                          <div className="relative rounded-2xl bg-gradient-to-br from-[#0C0F18] to-[#05070D] border border-gunmetal/60 shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.03)] p-6 overflow-hidden max-w-2xl mx-auto">
+                          <div className="relative rounded-2xl bg-gradient-to-br from-graphite to-card border border-border shadow-[0_8px_32px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(0,227,140,0.03)] p-6 overflow-hidden max-w-2xl mx-auto">
                             
                             {/* Subtle noise texture */}
                             <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')]" />
@@ -164,8 +164,8 @@ const Roadmap = () => {
                               {/* Status Pill */}
                               <div className={`px-3 py-1 rounded-full border text-xs font-mono tracking-wider flex-shrink-0 ml-4 ${
                                 phase.status === "In Build"
-                                  ? "border-accent/40 bg-accent/10 text-accent"
-                                  : "border-gunmetal/60 bg-gunmetal/20 text-soft-steel/70"
+                                  ? "border-emerald/40 bg-emerald/10 text-emerald"
+                                  : "border-slate/60 bg-slate/20 text-steel/70"
                               }`}>
                                 {phase.status}
                               </div>
@@ -181,7 +181,7 @@ const Roadmap = () => {
                                   transition={{ duration: 0.25, delay: i * 0.05 }}
                                   className="text-sm text-muted-foreground flex items-start font-body"
                                 >
-                                  <span className="text-primary mr-3 mt-0.5 text-base">•</span>
+                                  <span className="text-emerald mr-3 mt-0.5 text-base">•</span>
                                   <span className="flex-1">{item}</span>
                                 </motion.li>
                               ))}

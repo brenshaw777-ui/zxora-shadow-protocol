@@ -69,7 +69,7 @@ const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border border-border rounded-2xl px-6 metal-card hover:border-primary/40 hover:shadow-[0_0_12px_rgba(255,107,60,0.06)] transition-all duration-300 data-[state=open]:border-l-2 data-[state=open]:border-l-primary"
+                className="border border-border rounded-2xl px-6 metal-card hover:border-primary/40 hover:border-glow-emerald-soft transition-all duration-300 data-[state=open]:border-l-2 data-[state=open]:border-l-primary"
               >
                 <AccordionTrigger className="font-machina text-base sm:text-lg text-foreground hover:no-underline tracking-[0.02em] font-medium">
                   {faq.question}

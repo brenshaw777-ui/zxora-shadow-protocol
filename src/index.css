@@ -9,59 +9,64 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Zxora Stealth Metallic System - iPhone 16 Pro / Lamborghini Interior */
+    /* Encrypted Emerald Core Palette */
     
-    /* Base / Background - Deep Almost-Black */
-    --deep-black: 220 30% 1%;
-    --section-panel: 220 25% 3%;
-    --card-background: 220 22% 5%;
+    /* Core Greens */
+    --zx-emerald: 159 100% 45%;           /* #00E38C - Primary accent */
+    --zx-emerald-deep: 159 100% 33%;      /* #00A66C - Darker accent */
+    --zx-mint-soft: 154 100% 89%;         /* #C8FFE2 - Soft highlights */
+    --zx-safe: 146 100% 67%;              /* #5BFF9D - Safe status */
     
-    /* Metallic Neutrals */
-    --soft-steel: 220 15% 78%;
-    --gunmetal: 220 12% 24%;
-    --graphite-line: 220 15% 16%;
+    /* Neutrals / Backgrounds */
+    --zx-shadow-black: 200 11% 3%;        /* #050607 - Page background */
+    --zx-graphite-code: 210 15% 6%;       /* #0C1116 - Panels */
+    --zx-slate: 210 14% 11%;              /* #151A20 - Secondary panels */
+    --zx-titanium: 220 30% 93%;           /* #E3E8F4 - Light text */
+    --zx-steel: 218 19% 70%;              /* #A7B0C3 - Body text */
+    --zx-dim-steel: 215 13% 54%;          /* #7A8495 - Muted text */
     
-    /* Highlight Accents (Controlled - Edges Only) */
-    --cool-ember: 14 100% 61%;
-    --iris-steel: 230 100% 72%;
+    /* Status & Support */
+    --zx-alert: 38 100% 64%;              /* #FFB547 - Warnings */
+    --zx-error: 0 100% 65%;               /* #FF4D4D - Errors */
     
     /* Semantic Tokens */
-    --background: var(--deep-black);
-    --foreground: var(--soft-steel);
+    --background: var(--zx-shadow-black);
+    --foreground: var(--zx-steel);
     
-    --card: var(--card-background);
-    --card-foreground: var(--soft-steel);
+    --card: var(--zx-graphite-code);
+    --card-foreground: var(--zx-steel);
     
-    --popover: var(--card-background);
-    --popover-foreground: var(--soft-steel);
+    --popover: var(--zx-graphite-code);
+    --popover-foreground: var(--zx-steel);
     
-    --primary: var(--cool-ember);
-    --primary-foreground: 220 15% 92%;
+    --primary: var(--zx-emerald);
+    --primary-foreground: var(--zx-titanium);
     
-    --secondary: var(--gunmetal);
-    --secondary-foreground: var(--soft-steel);
+    --secondary: var(--zx-slate);
+    --secondary-foreground: var(--zx-steel);
     
-    --muted: var(--section-panel);
-    --muted-foreground: 220 10% 58%;
+    --muted: var(--zx-graphite-code);
+    --muted-foreground: var(--zx-dim-steel);
     
-    --accent: var(--iris-steel);
-    --accent-foreground: 220 15% 92%;
+    --accent: var(--zx-emerald);
+    --accent-foreground: var(--zx-titanium);
     
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: var(--zx-error);
+    --destructive-foreground: var(--zx-titanium);
     
-    --border: 220 15% 20% / 0.4;
-    --input: var(--card-background);
-    --ring: var(--cool-ember);
+    --border: 159 100% 45% / 0.14;
+    --input: var(--zx-graphite-code);
+    --ring: var(--zx-emerald);
     
     --radius: 1rem;
     
-    /* Custom Zxora Stealth Tokens */
-    --glow-ember: 14 100% 61% / 0.08;
-    --glow-iris: 230 100% 72% / 0.06;
-    --grid-line: 220 15% 78% / 0.02;
-    --metallic-gradient: linear-gradient(180deg, hsl(var(--section-panel)), hsl(var(--deep-black)));
-    --heading-metallic: linear-gradient(135deg, hsl(230 12% 48%), hsl(230 10% 58%), hsl(235 15% 42%), hsl(230 8% 55%));
+    /* Custom Zxora Encrypted Emerald Tokens */
+    --glow-emerald: 159 100% 45% / 0.25;
+    --glow-emerald-soft: 159 100% 45% / 0.12;
+    --grid-line: 159 100% 45% / 0.02;
+    --metallic-gradient: linear-gradient(180deg, hsl(var(--zx-graphite-code)), hsl(var(--zx-shadow-black)));
+    --heading-metallic: linear-gradient(135deg, hsl(210 15% 48%), hsl(159 30% 55%), hsl(210 12% 42%), hsl(159 20% 50%));
+    --bg-gradient: linear-gradient(180deg, hsl(var(--zx-shadow-black)), hsl(159 30% 3%), hsl(var(--zx-shadow-black)));
   }
 }
 
@@ -113,20 +118,20 @@ h3, h4, h5, h6 {
     font-family: 'Abnes', 'Rajdhani', 'Saira', system-ui, sans-serif;
   }
 
-  .text-glow-ember {
-    text-shadow: 0 0 20px hsl(var(--glow-ember));
+  .text-glow-emerald {
+    text-shadow: 0 0 20px hsl(var(--glow-emerald));
   }
   
-  .text-glow-iris {
-    text-shadow: 0 0 16px hsl(var(--glow-iris));
+  .text-glow-emerald-soft {
+    text-shadow: 0 0 16px hsl(var(--glow-emerald-soft));
   }
   
-  .border-glow-ember {
-    box-shadow: 0 0 16px hsl(var(--glow-ember)), 0 0 4px hsl(var(--glow-iris));
+  .border-glow-emerald {
+    box-shadow: 0 0 16px hsl(var(--glow-emerald));
   }
   
-  .border-glow-iris {
-    box-shadow: 0 0 12px hsl(var(--glow-iris));
+  .border-glow-emerald-soft {
+    box-shadow: 0 0 12px hsl(var(--glow-emerald-soft));
   }
   
   .metallic-heading {
@@ -146,14 +151,14 @@ h3, h4, h5, h6 {
   }
   
   .metal-card {
-    background: linear-gradient(180deg, hsl(var(--card-background)), hsl(var(--section-panel)));
+    background: linear-gradient(180deg, hsl(var(--zx-graphite-code)), hsl(var(--zx-slate)));
     border: 1px solid hsl(var(--border));
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 hsl(var(--zx-emerald) / 0.03);
   }
   
   .glass-effect {
     backdrop-filter: blur(16px);
-    background: hsl(var(--card-background) / 0.4);
+    background: hsl(var(--zx-graphite-code) / 0.4);
   }
   
   .metallic-sweep {

@@ -19,8 +19,8 @@ const DataStreamBackground = () => {
           style={{ 
             left: col.left,
             color: col.isAccent 
-              ? `hsla(${Math.random() > 0.5 ? '14, 100%, 61%' : '230, 100%, 72%'}, 0.12)`
-              : 'rgba(255,255,255,0.04)'
+              ? 'hsla(159, 100%, 45%, 0.35)'
+              : 'rgba(255,255,255,0.08)'
           }}
           initial={{ y: '-120%' }}
           animate={{ y: '120%' }}
