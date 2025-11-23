@@ -71,7 +71,7 @@ const Features = () => {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="p-8 rounded-2xl metal-card hover:border-primary/40 hover:shadow-[0_0_12px_rgba(255,107,60,0.06)] transition-all duration-300 h-full">
+              <div className="p-8 rounded-2xl metal-card hover:border-primary/40 hover:border-glow-emerald-soft transition-all duration-300 h-full">
                 <div className="mb-6">
                   <div className="w-14 h-14 rounded-lg flex items-center justify-center border border-gunmetal group-hover:border-primary/30 transition-all duration-300">
                     <feature.icon className="w-7 h-7 text-soft-steel" strokeWidth={1} />

@@ -94,10 +94,10 @@ const Story = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                className="p-6 rounded-2xl metal-card hover:border-primary/40 hover:shadow-[0_0_12px_rgba(255,107,60,0.06)] transition-all duration-300 group"
+                className="p-6 rounded-2xl metal-card hover:border-primary/40 hover:border-glow-emerald-soft transition-all duration-300 group"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="p-3 rounded-lg border border-gunmetal group-hover:border-primary/30 transition-colors">
+                  <div className="p-3 rounded-lg border border-slate group-hover:border-primary/30 transition-colors">
                     <card.icon className="w-6 h-6 text-soft-steel" strokeWidth={1} />
                   </div>
                   <div className="flex-1">
