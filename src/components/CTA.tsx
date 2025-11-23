@@ -37,7 +37,7 @@ const CTA = () => {
   };
 
   return (
-    <section id="cta" ref={ref} className="py-24 relative overflow-hidden">
+    <section id="cta" ref={ref} className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/8 rounded-full blur-3xl" />
       
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -45,7 +45,7 @@ const CTA = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-10 sm:mb-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-6 tracking-[0.10em] leading-[1.15] metallic-heading">
             {displayText}

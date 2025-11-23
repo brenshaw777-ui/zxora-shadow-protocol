@@ -33,16 +33,16 @@ const Tokenomics = () => {
   };
 
   return (
-    <section id="tokenomics" ref={ref} className="py-24 relative overflow-hidden">
+    <section id="tokenomics" ref={ref} className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-14 lg:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-monument font-bold mb-4 text-center tracking-[0.03em] leading-[1.15] metallic-heading">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-monument font-bold mb-4 text-center tracking-[0.03em] leading-[1.15] metallic-heading">
             {displayText}
           </h2>
           <p className="text-steel text-base sm:text-lg font-body font-normal">
@@ -51,7 +51,7 @@ const Tokenomics = () => {
         </motion.div>
 
         {/* Two Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-start">
           {/* Left: Token Stats Grid */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
