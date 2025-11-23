@@ -159,7 +159,7 @@ const Hero = () => {
                 className="relative mb-8"
               >
                 <h1
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-azonix leading-[1.05] tracking-[0.08em] sm:tracking-[0.12em] uppercase relative"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-azonix leading-[1.05] tracking-[0.03em] sm:tracking-[0.08em] md:tracking-[0.12em] uppercase relative max-w-full"
                   style={{
                     background: 'linear-gradient(135deg, hsl(230, 12%, 48%), hsl(230, 10%, 58%), hsl(235, 15%, 42%), hsl(230, 8%, 55%))',
                     backgroundSize: '200% 200%',
@@ -195,7 +195,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-xl font-body text-steel"
+                className="text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed max-w-full sm:max-w-xl font-body text-steel"
               >
                 Zxora shields your identity, device fingerprint, routing patterns, approvals, and wallet behavior—every action passes through an autonomous ZK-powered defense layer.
               </motion.p>
@@ -232,12 +232,12 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative"
+            className="relative max-w-full"
           >
             <motion.div
               animate={{ y: [0, -2, 0] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="relative max-w-2xl mx-auto"
+              className="relative max-w-full sm:max-w-2xl mx-auto"
             >
               {/* Shadow Browser Window Frame */}
               <div className="rounded-2xl overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.7),0_0_1px_rgba(199,204,216,0.3)] relative"
@@ -259,30 +259,30 @@ const Hero = () => {
                 <div className="absolute bottom-0 right-0 w-24 h-24 bg-emerald/8 rounded-br-2xl blur-2xl" />
 
                 {/* Top Bar - Browser Chrome */}
-                <div className="relative px-6 py-4 border-b border-[rgba(60,66,83,0.3)] bg-gradient-to-b from-[rgba(8,10,16,0.95)] to-[rgba(5,7,12,0.9)] backdrop-blur-sm">
+                <div className="relative px-3 sm:px-6 py-3 sm:py-4 border-b border-[rgba(60,66,83,0.3)] bg-gradient-to-b from-[rgba(8,10,16,0.95)] to-[rgba(5,7,12,0.9)] backdrop-blur-sm">
                   <div className="flex items-center justify-between relative z-10">
                     {/* Window Control Dots */}
-                    <div className="flex gap-2">
-                      <div className="w-3 h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
-                      <div className="w-3 h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
-                      <div className="w-3 h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
+                    <div className="flex gap-1.5 sm:gap-2">
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
                     </div>
                     
                     {/* URL Bar */}
-                    <div className="flex-1 mx-6 px-5 py-2 rounded-lg bg-[rgba(5,7,13,0.7)] border border-emerald/20 backdrop-blur-sm shadow-[0_0_15px_rgba(0,227,140,0.12)]">
-                      <div className="flex items-center gap-3">
-                        <Shield className="w-3.5 h-3.5 text-emerald" strokeWidth={2} />
-                        <span className="font-mono text-xs text-titanium tracking-wide">zxora://shield.session</span>
+                    <div className="flex-1 mx-2 sm:mx-4 md:mx-6 px-2 sm:px-3 md:px-5 py-1.5 sm:py-2 rounded-lg bg-[rgba(5,7,13,0.7)] border border-emerald/20 backdrop-blur-sm shadow-[0_0_15px_rgba(0,227,140,0.12)]">
+                      <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
+                        <Shield className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald flex-shrink-0" strokeWidth={2} />
+                        <span className="font-mono text-[10px] sm:text-xs text-titanium tracking-wide truncate">zxora://shield.session</span>
                       </div>
                     </div>
                     
                     {/* Shield Icon Indicator */}
-                    <Shield className="w-4 h-4 text-emerald/60" strokeWidth={1.5} />
+                    <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-emerald/60 flex-shrink-0" strokeWidth={1.5} />
                   </div>
                 </div>
 
                 {/* Inner Window Content Area - Security Code Simulation */}
-                <div className="relative h-96 overflow-hidden bg-[#050811] p-6">
+                <div className="relative h-72 sm:h-96 overflow-hidden bg-[#050811] p-3 sm:p-4 md:p-6">
                   
                   {/* Background texture */}
                   <div className="absolute inset-0 opacity-30">
@@ -290,7 +290,7 @@ const Hero = () => {
                   </div>
 
                   {/* Continuously Scrolling Security Code Lines */}
-                  <div className="relative space-y-3 font-mono text-sm">
+                  <div className="relative space-y-2 sm:space-y-3 font-mono text-xs sm:text-sm">
                     <AnimatePresence mode="popLayout">
                       {visibleLines.map((line, index) => (
                         <motion.div
