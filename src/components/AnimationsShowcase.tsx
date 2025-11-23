@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Shield, CheckCircle, AlertTriangle } from "lucide-react";
+import { useScrambleText } from "@/hooks/useScrambleText";
 
 type SimulationMode = "mask" | "gate" | "corridor";
 
@@ -11,6 +12,7 @@ const AnimationsShowcase = () => {
   const [activeMode, setActiveMode] = useState<SimulationMode>("mask");
   const [corridorBurned, setCorridorBurned] = useState(false);
   const [gateInspecting, setGateInspecting] = useState(false);
+  const { displayText } = useScrambleText("SEE ZXORA IN MOTION", 1200, isInView);
 
   const handleGateInspect = () => {
     setGateInspecting(true);
@@ -32,12 +34,17 @@ const AnimationsShowcase = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 tracking-[0.08em] leading-[1.15] metallic-heading">
-            SEE ZXORA IN MOTION
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-4 tracking-[0.10em] leading-[1.15] metallic-heading">
+            {displayText}
           </h2>
-          <p className="text-[#A5AFC3] text-lg max-w-2xl mx-auto font-body">
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-[#A5AFC3] text-base sm:text-lg max-w-2xl mx-auto font-body"
+          >
             Visual simulations of the shadow client at work
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Mode Selector Tabs */}

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useScrambleText } from "@/hooks/useScrambleText";
 
 const CTA = () => {
   const ref = useRef(null);
@@ -12,6 +13,7 @@ const CTA = () => {
   const { toast } = useToast();
   const [email, setEmail] = useState("");
   const [contact, setContact] = useState("");
+  const { displayText } = useScrambleText("OPERATE IN THE SHADOW LAYER", 1200, isInView);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,12 +48,17 @@ const CTA = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-6 tracking-[0.10em] leading-[1.15] metallic-heading">
-            OPERATE IN THE SHADOW LAYER
+            {displayText}
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto font-body">
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto font-body font-medium"
+          >
             Zxora is in private build. If you're a serious operator, builder, or fund and want 
-            a safer way to touch the chain, get on the list.
-          </p>
+            a safer way to touch the chain, <span className="text-foreground font-semibold">get on the list</span>.
+          </motion.p>
         </motion.div>
 
         <motion.form

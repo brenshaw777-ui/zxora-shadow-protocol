@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Fingerprint, ShieldCheck, Flame, BarChart3, Eye, HardDrive } from "lucide-react";
+import { useScrambleText } from "@/hooks/useScrambleText";
 
 const Features = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const { displayText } = useScrambleText("BUILT FOR OPERATORS WHO CAN'T AFFORD MISTAKES", 1200, isInView);
 
   const features = [
     {
@@ -56,7 +58,7 @@ const Features = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-4 tracking-[0.10em] leading-[1.15] metallic-heading">
-            BUILT FOR OPERATORS WHO CAN'T AFFORD MISTAKES
+            {displayText}
           </h2>
         </motion.div>
 
@@ -76,11 +78,11 @@ const Features = () => {
                   </div>
                 </div>
                 
-                <h3 className="font-display font-semibold text-lg mb-3 tracking-wide text-foreground">
+                <h3 className="font-display font-semibold text-lg mb-3 tracking-wide text-foreground font-azonix tracking-[0.08em]">
                   {feature.title}
                 </h3>
                 
-                <p className="text-muted-foreground leading-relaxed text-sm font-body">
+                <p className="text-muted-foreground leading-relaxed text-sm font-body font-medium">
                   {feature.description}
                 </p>
               </div>

@@ -7,10 +7,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useScrambleText } from "@/hooks/useScrambleText";
 
 const FAQ = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const { displayText } = useScrambleText("QUESTIONS, ANSWERED", 1200, isInView);
 
   const faqs = [
     {
@@ -53,7 +55,7 @@ const FAQ = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-4 text-center tracking-[0.10em] leading-[1.15] metallic-heading">
-            QUESTIONS, ANSWERED
+            {displayText}
           </h2>
         </motion.div>
 
