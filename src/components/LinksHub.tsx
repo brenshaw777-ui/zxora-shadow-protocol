@@ -48,16 +48,16 @@ const LinksHub = () => {
   ];
 
   return (
-    <section id="links" ref={ref} className="py-24 relative overflow-hidden">
+    <section id="links" ref={ref} className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-14 lg:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-monument font-bold mb-4 text-center tracking-[0.03em] leading-[1.15] metallic-heading">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-monument font-bold mb-4 text-center tracking-[0.03em] leading-[1.15] metallic-heading">
             {displayText}
           </h2>
           <p className="text-steel text-base sm:text-lg font-body font-normal">
@@ -81,7 +81,7 @@ const LinksHub = () => {
         </div>
 
         {/* Links Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-6">
           {links.map((link, index) => {
             const Icon = link.icon;
             
@@ -98,7 +98,7 @@ const LinksHub = () => {
                 title={link.tooltip}
               >
                 {/* Card */}
-                <div className="relative p-8 rounded-2xl bg-gradient-to-br from-graphite to-slate border border-emerald/15 hover:border-emerald/40 transition-all duration-500 hover:shadow-[0_0_32px_rgba(0,227,140,0.25)] hover:-translate-y-2 active:translate-y-0">
+                <div className="relative p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-graphite to-slate border border-emerald/15 hover:border-emerald/40 transition-all duration-500 hover:shadow-[0_0_32px_rgba(0,227,140,0.25)] hover:-translate-y-2 active:translate-y-0">
                   {/* Inner Glow */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -158,7 +158,7 @@ const LinksHub = () => {
                     </motion.div>
 
                     {/* Label */}
-                    <h3 className="text-lg sm:text-xl font-monument font-bold text-titanium tracking-[0.03em] uppercase group-hover:text-emerald transition-colors duration-300">
+                    <h3 className="text-base sm:text-lg lg:text-xl font-monument font-bold text-titanium tracking-[0.03em] uppercase group-hover:text-emerald transition-colors duration-300">
                       {link.title}
                     </h3>
 

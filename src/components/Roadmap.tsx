@@ -51,15 +51,15 @@ const Roadmap = () => {
   };
 
   return (
-    <section id="roadmap" ref={ref} className="py-24 relative overflow-hidden">
+    <section id="roadmap" ref={ref} className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-14 lg:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-4 text-center tracking-[0.10em] leading-[1.15] metallic-heading">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-monument font-bold mb-4 text-center tracking-[0.03em] leading-[1.15] metallic-heading">
             {displayText}
           </h2>
           <motion.p 

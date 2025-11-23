@@ -78,6 +78,32 @@ All colors MUST be HSL.
 body {
   @apply bg-background text-foreground antialiased;
   font-family: 'Space Grotesk', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--zx-shadow-black));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--zx-emerald) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--zx-emerald) / 0.5);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--zx-emerald) / 0.3) hsl(var(--zx-shadow-black));
 }
   
 h1 {

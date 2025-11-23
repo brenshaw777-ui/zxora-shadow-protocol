@@ -66,16 +66,16 @@ const Story = () => {
   ];
 
   return (
-    <section id="story" ref={ref} className="py-24 relative overflow-hidden">
+    <section id="story" ref={ref} className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Title + Subtitle */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-monument font-bold mb-4 text-center tracking-[0.03em] leading-[1.15] metallic-heading">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-monument font-bold mb-4 text-center tracking-[0.03em] leading-[1.15] metallic-heading">
             {displayText}
           </h2>
           <p className="text-steel text-base sm:text-lg font-body font-normal">
@@ -88,15 +88,15 @@ const Story = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-8 sm:mb-10 lg:mb-12 overflow-x-auto"
         >
-          <div className="inline-flex gap-2 p-2 rounded-2xl bg-slate/50 border border-emerald/10">
+          <div className="inline-flex gap-2 p-2 rounded-2xl bg-slate/50 border border-emerald/10 min-w-min">
             {steps.map((step, index) => (
               <button
                 key={step.id}
                 onClick={() => setActiveStep(index)}
                 className={`
-                  px-6 py-3 rounded-xl font-machina font-medium text-sm sm:text-base tracking-[0.05em] uppercase transition-all duration-300
+                  px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-machina font-medium text-xs sm:text-sm md:text-base tracking-[0.05em] uppercase transition-all duration-300 whitespace-nowrap
                   ${activeStep === index 
                     ? 'bg-graphite text-emerald border border-emerald/30 shadow-[0_0_12px_rgba(0,227,140,0.25)]' 
                     : 'text-dim-steel hover:text-steel hover:border-b hover:border-dim-steel/30'
