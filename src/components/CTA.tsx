@@ -45,10 +45,10 @@ const CTA = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-6 tracking-[0.08em] leading-[1.15] metallic-heading">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-6 tracking-[0.10em] leading-[1.15] metallic-heading">
             OPERATE IN THE SHADOW LAYER
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto font-body">
             Zxora is in private build. If you're a serious operator, builder, or fund and want 
             a safer way to touch the chain, get on the list.
           </p>

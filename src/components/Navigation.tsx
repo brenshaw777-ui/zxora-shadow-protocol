@@ -52,7 +52,7 @@ const Navigation = () => {
             ))}
             <Button
               onClick={() => scrollToSection("cta")}
-              className="font-display tracking-wider text-xs"
+              className="font-display font-azonix tracking-[0.08em] text-xs uppercase"
               size="sm"
             >
               JOIN EARLY ACCESS
@@ -83,7 +83,7 @@ const Navigation = () => {
             <div className="px-4">
               <Button
                 onClick={() => scrollToSection("cta")}
-                className="w-full font-display tracking-wider text-xs"
+                className="w-full font-display font-azonix tracking-[0.08em] text-xs uppercase"
               >
                 JOIN EARLY ACCESS
               </Button>

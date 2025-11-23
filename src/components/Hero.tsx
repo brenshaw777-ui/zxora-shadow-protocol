@@ -159,7 +159,7 @@ const Hero = () => {
                 className="relative mb-8"
               >
                 <h1
-                  className="text-5xl sm:text-6xl lg:text-7xl font-display font-azonix font-bold leading-[1.05] tracking-[0.04em] uppercase relative"
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-azonix leading-[1.05] tracking-[0.08em] sm:tracking-[0.12em] uppercase relative"
                   style={{
                     background: 'linear-gradient(135deg, hsl(230, 12%, 48%), hsl(230, 10%, 58%), hsl(235, 15%, 42%), hsl(230, 8%, 55%))',
                     backgroundSize: '200% 200%',
@@ -195,7 +195,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="text-lg leading-relaxed max-w-xl font-body text-[#A5AFC3]"
+                className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-xl font-body text-[#A5AFC3]"
               >
                 Zxora shields your identity, device fingerprint, routing patterns, approvals, and wallet behavior—every action passes through an autonomous ZK-powered defense layer.
               </motion.p>

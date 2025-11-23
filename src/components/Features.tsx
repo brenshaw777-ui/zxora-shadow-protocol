@@ -55,7 +55,7 @@ const Features = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-azonix font-bold mb-4 tracking-[0.08em] leading-[1.15] metallic-heading">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-4 tracking-[0.10em] leading-[1.15] metallic-heading">
             BUILT FOR OPERATORS WHO CAN'T AFFORD MISTAKES
           </h2>
         </motion.div>
