@@ -2,11 +2,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Rocket, Zap, Network } from "lucide-react";
+import { useScrambleText } from "@/hooks/useScrambleText";
 
 const Roadmap = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [activePhase, setActivePhase] = useState(0);
+  const { displayText } = useScrambleText("ROADMAP", 1200, isInView);
 
   const phases = [
     {
@@ -58,11 +60,16 @@ const Roadmap = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-4 text-center tracking-[0.10em] leading-[1.15] metallic-heading">
-            ROADMAP
+            {displayText}
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto font-body">
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto font-body"
+          >
             Building in the shadows, shipping in phases
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Centered Vertical Timeline */}

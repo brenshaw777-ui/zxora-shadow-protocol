@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { User, UserCircle, Shield, Zap, Globe } from "lucide-react";
+import { useScrambleText } from "@/hooks/useScrambleText";
 
 const HowItWorks = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const { displayText } = useScrambleText("HOW ZXORA SITS BETWEEN YOU AND THE CHAIN", 1200, isInView);
 
   const steps = [
     {
@@ -44,12 +46,17 @@ const HowItWorks = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-azonix font-bold mb-4 text-center tracking-[0.08em] leading-[1.15] metallic-heading">
-            HOW ZXORA SITS BETWEEN YOU AND THE CHAIN
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-4 text-center tracking-[0.10em] leading-[1.15] metallic-heading">
+            {displayText}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-center">
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto text-center font-body"
+          >
             A visual explanation of the shadow layer architecture
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Desktop: Horizontal Flow */}

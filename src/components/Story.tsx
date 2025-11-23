@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { AlertCircle, Eye, Shield } from "lucide-react";
+import { useScrambleText } from "@/hooks/useScrambleText";
 
 const Story = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const { displayText } = useScrambleText("WHY ZXORA EXISTS", 1200, isInView);
 
   const narrativeCards = [
     {
@@ -35,7 +37,7 @@ const Story = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-12 text-center tracking-[0.10em] leading-[1.15] metallic-heading">
-            WHY ZXORA EXISTS
+            {displayText}
           </h2>
         </motion.div>
 
@@ -51,8 +53,8 @@ const Story = () => {
               <h3 className="text-2xl font-display font-semibold mb-4 text-primary">
                 The Problem
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Every time you connect a wallet, visit a dApp, or sign a transaction, you're leaking identity markers. 
+              <p className="text-muted-foreground leading-relaxed font-body font-medium">
+                Every time you connect a wallet, visit a dApp, or sign a transaction, you're <span className="text-foreground font-semibold">leaking identity markers</span>. 
                 Your IP, device fingerprint, wallet history, and interaction patterns create a permanent trail.
               </p>
             </div>
@@ -61,9 +63,9 @@ const Story = () => {
               <h3 className="text-2xl font-display font-semibold mb-4 text-primary">
                 The Old Way
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed font-body font-medium">
                 Fragmented tools. VPNs that don't understand crypto. Wallets that expose everything. 
-                No unified layer to control your exposure or manage approvals across chains.
+                <span className="text-foreground font-semibold"> No unified layer</span> to control your exposure or manage approvals across chains.
               </p>
             </div>
 
@@ -71,10 +73,10 @@ const Story = () => {
               <h3 className="text-2xl font-display font-semibold mb-4 text-primary">
                 Our Approach
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed font-body font-medium">
                 We don't believe users should have to expose themselves just to interact with DeFi, NFTs, or dApps. 
                 Zxora creates a <span className="text-secondary font-semibold">shadow layer</span> that sits between 
-                you and the chain, giving you control, privacy, and safety.
+                you and the chain, giving you <span className="text-foreground font-semibold">control, privacy, and safety</span>.
               </p>
             </div>
           </motion.div>
@@ -102,7 +104,7 @@ const Story = () => {
                     <h4 className="text-xl font-display font-semibold mb-2 text-foreground">
                       {card.title}
                     </h4>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed font-body font-medium">
                       {card.description}
                     </p>
                   </div>
