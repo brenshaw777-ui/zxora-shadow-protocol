@@ -34,7 +34,7 @@ const Story = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-azonix font-bold mb-12 text-center tracking-[0.08em] leading-[1.15] metallic-heading">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-12 text-center tracking-[0.10em] leading-[1.15] metallic-heading">
             WHY ZXORA EXISTS
           </h2>
         </motion.div>

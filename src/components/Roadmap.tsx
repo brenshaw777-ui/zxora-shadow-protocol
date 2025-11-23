@@ -57,10 +57,10 @@ const Roadmap = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 text-center tracking-[0.08em] leading-[1.15] metallic-heading">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-4 text-center tracking-[0.10em] leading-[1.15] metallic-heading">
             ROADMAP
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto font-body">
             Building in the shadows, shipping in phases
           </p>
         </motion.div>
@@ -149,7 +149,7 @@ const Roadmap = () => {
                                 <div className="text-xs font-mono text-muted-foreground mb-2">
                                   {phase.phase}
                                 </div>
-                                <h3 className="font-display font-bold text-xl sm:text-2xl text-foreground tracking-wide metallic-heading">
+                                <h3 className="font-display font-azonix text-lg sm:text-xl lg:text-2xl text-foreground tracking-[0.08em] metallic-heading">
                                   {phase.title}
                                 </h3>
                               </div>
