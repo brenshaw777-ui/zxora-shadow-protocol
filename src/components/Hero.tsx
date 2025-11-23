@@ -159,7 +159,7 @@ const Hero = () => {
                 className="relative mb-8"
               >
                 <h1
-                  className="text-5xl sm:text-6xl lg:text-7xl font-display font-abnes font-bold leading-[1.05] tracking-[0.04em] uppercase relative"
+                  className="text-5xl sm:text-6xl lg:text-7xl font-display font-azonix font-bold leading-[1.05] tracking-[0.04em] uppercase relative"
                   style={{
                     background: 'linear-gradient(135deg, hsl(230, 12%, 48%), hsl(230, 10%, 58%), hsl(235, 15%, 42%), hsl(230, 8%, 55%))',
                     backgroundSize: '200% 200%',

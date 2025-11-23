@@ -83,7 +83,7 @@ All colors MUST be HSL.
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Abnes', 'Rajdhani', 'Saira', system-ui, sans-serif;
+    font-family: 'Azonix', 'Abnes', 'Rajdhani', 'Saira', system-ui, sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     line-height: 1.15;
@@ -96,6 +96,10 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  .font-azonix {
+    font-family: 'Azonix', 'Abnes', 'Rajdhani', 'Saira', system-ui, sans-serif;
+  }
+
   .font-abnes {
     font-family: 'Abnes', 'Rajdhani', 'Saira', system-ui, sans-serif;
   }
