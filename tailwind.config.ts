@@ -49,9 +49,11 @@ export default {
         },
       },
       fontFamily: {
-        'display': ['Abnes', 'Rajdhani', 'Saira', 'system-ui', 'sans-serif'],
+        'display': ['Azonix', 'Abnes', 'Rajdhani', 'Saira', 'system-ui', 'sans-serif'],
         'body': ['Exo 2', 'system-ui', 'sans-serif'],
         'mono': ['Share Tech Mono', 'monospace'],
+        'azonix': ['Azonix', 'sans-serif'],
+        'abnes': ['Abnes', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

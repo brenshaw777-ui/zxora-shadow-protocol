@@ -44,7 +44,7 @@ const HowItWorks = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-abnes font-bold mb-4 text-center tracking-[0.08em] leading-[1.15] metallic-heading">
+          <h2 className="text-4xl sm:text-5xl font-display font-azonix font-bold mb-4 text-center tracking-[0.08em] leading-[1.15] metallic-heading">
             HOW ZXORA SITS BETWEEN YOU AND THE CHAIN
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-center">
