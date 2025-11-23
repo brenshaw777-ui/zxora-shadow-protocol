@@ -96,6 +96,10 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  .font-abnes {
+    font-family: 'Abnes', 'Rajdhani', 'Saira', system-ui, sans-serif;
+  }
+
   .text-glow-ember {
     text-shadow: 0 0 20px hsl(var(--glow-ember));
   }
