@@ -36,7 +36,7 @@ const Story = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-12 text-center tracking-[0.10em] leading-[1.15] metallic-heading">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-monument font-bold mb-12 text-center tracking-[0.03em] leading-[1.15] metallic-heading">
             {displayText}
           </h2>
         </motion.div>
@@ -50,33 +50,33 @@ const Story = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-display font-semibold mb-4 text-primary">
+              <h3 className="text-xl sm:text-2xl font-machina font-semibold mb-4 text-primary tracking-[0.02em] uppercase">
                 The Problem
               </h3>
-              <p className="text-muted-foreground leading-relaxed font-body font-medium">
-                Every time you connect a wallet, visit a dApp, or sign a transaction, you're <span className="text-foreground font-semibold">leaking identity markers</span>. 
+              <p className="text-muted-foreground leading-relaxed font-body font-normal">
+                Every time you connect a wallet, visit a dApp, or sign a transaction, you're <span className="text-foreground font-medium">leaking identity markers</span>. 
                 Your IP, device fingerprint, wallet history, and interaction patterns create a permanent trail.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-display font-semibold mb-4 text-primary">
+              <h3 className="text-xl sm:text-2xl font-machina font-semibold mb-4 text-primary tracking-[0.02em] uppercase">
                 The Old Way
               </h3>
-              <p className="text-muted-foreground leading-relaxed font-body font-medium">
+              <p className="text-muted-foreground leading-relaxed font-body font-normal">
                 Fragmented tools. VPNs that don't understand crypto. Wallets that expose everything. 
-                <span className="text-foreground font-semibold"> No unified layer</span> to control your exposure or manage approvals across chains.
+                <span className="text-foreground font-medium"> No unified layer</span> to control your exposure or manage approvals across chains.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-display font-semibold mb-4 text-primary">
+              <h3 className="text-xl sm:text-2xl font-machina font-semibold mb-4 text-primary tracking-[0.02em] uppercase">
                 Our Approach
               </h3>
-              <p className="text-muted-foreground leading-relaxed font-body font-medium">
+              <p className="text-muted-foreground leading-relaxed font-body font-normal">
                 We don't believe users should have to expose themselves just to interact with DeFi, NFTs, or dApps. 
-                Zxora creates a <span className="text-secondary font-semibold">shadow layer</span> that sits between 
-                you and the chain, giving you <span className="text-foreground font-semibold">control, privacy, and safety</span>.
+                Zxora creates a <span className="text-secondary font-medium">shadow layer</span> that sits between 
+                you and the chain, giving you <span className="text-foreground font-medium">control, privacy, and safety</span>.
               </p>
             </div>
           </motion.div>
@@ -101,10 +101,10 @@ const Story = () => {
                     <card.icon className="w-6 h-6 text-soft-steel" strokeWidth={1} />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-xl font-display font-semibold mb-2 text-foreground">
+                    <h4 className="text-lg sm:text-xl font-machina font-semibold mb-2 text-foreground tracking-[0.02em]">
                       {card.title}
                     </h4>
-                    <p className="text-muted-foreground leading-relaxed font-body font-medium">
+                    <p className="text-muted-foreground leading-relaxed font-body font-normal">
                       {card.description}
                     </p>
                   </div>

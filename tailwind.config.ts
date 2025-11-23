@@ -49,11 +49,10 @@ export default {
         },
       },
       fontFamily: {
-        'display': ['Azonix', 'Abnes', 'Rajdhani', 'Saira', 'system-ui', 'sans-serif'],
-        'body': ['Inter', 'system-ui', 'sans-serif'],
-        'mono': ['Share Tech Mono', 'monospace'],
-        'azonix': ['Azonix', 'sans-serif'],
-        'abnes': ['Abnes', 'sans-serif'],
+        'monument': ['Rajdhani', 'Bank Gothic', 'Eurostile Extended', 'system-ui', 'sans-serif'],
+        'machina': ['Space Grotesk', 'system-ui', 'sans-serif'],
+        'body': ['Space Grotesk', 'system-ui', 'sans-serif'],
+        'mono': ['JetBrains Mono', 'IBM Plex Mono', 'SF Mono', 'monospace'],
       },
       borderRadius: {
         lg: "var(--radius)",

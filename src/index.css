@@ -6,13 +6,6 @@
 All colors MUST be HSL.
 */
 
-@font-face {
-  font-family: 'Abnes';
-  src: url('/fonts/abnes.otf?v=1') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 
 @layer base {
   :root {
@@ -77,18 +70,34 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
-  }
+body {
+  @apply bg-background text-foreground antialiased;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
   
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Azonix', 'Abnes', 'Rajdhani', 'Saira', system-ui, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.10em;
-    line-height: 1.15;
-    font-weight: 400;
-  }
+h1 {
+  font-family: 'Rajdhani', 'Bank Gothic', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: 'Rajdhani', 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
   
   code, pre, .mono {
     font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;

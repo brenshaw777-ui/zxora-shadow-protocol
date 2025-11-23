@@ -46,7 +46,7 @@ const HowItWorks = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-azonix mb-4 text-center tracking-[0.10em] leading-[1.15] metallic-heading">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-monument font-bold mb-4 text-center tracking-[0.03em] leading-[1.15] metallic-heading">
             {displayText}
           </h2>
           <motion.p 
@@ -84,8 +84,8 @@ const HowItWorks = () => {
                     <step.icon className="w-10 h-10 text-soft-steel z-10" strokeWidth={1} />
                     <div className={`absolute w-2 h-2 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 ${index === 2 ? "bg-primary" : "bg-gunmetal"}`} />
                   </div>
-                  <h3 className="font-display font-semibold text-lg text-foreground tracking-wide">{step.label}</h3>
-                  <p className="text-sm text-muted-foreground text-center max-w-[200px] font-body">
+                  <h3 className="font-machina font-semibold text-base sm:text-lg text-foreground tracking-[0.02em] uppercase">{step.label}</h3>
+                  <p className="text-sm text-muted-foreground text-center max-w-[200px] font-body font-normal">
                     {step.description}
                   </p>
                 </div>
@@ -135,8 +135,8 @@ const HowItWorks = () => {
                 <div className={`absolute w-1.5 h-1.5 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 ${index === 2 ? "bg-primary" : "bg-gunmetal"}`} />
               </div>
               <div className="flex-1 pt-2">
-                <h3 className="font-display font-semibold text-lg mb-2 text-foreground tracking-wide">{step.label}</h3>
-                <p className="text-sm text-muted-foreground font-body">{step.description}</p>
+                <h3 className="font-machina font-semibold text-base sm:text-lg mb-2 text-foreground tracking-[0.02em] uppercase">{step.label}</h3>
+                <p className="text-sm text-muted-foreground font-body font-normal">{step.description}</p>
               </div>
 
               {index < steps.length - 1 && (
