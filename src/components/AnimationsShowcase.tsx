@@ -274,7 +274,7 @@ const GateInspectSimulation = ({
             </div>
             <div className="flex justify-between">
               <span className="text-steel/60">amount:</span>
-              <span className="text-safe">1867 SOL   </span>
+              <span className="text-safe">1867 SOL      </span>
             </div>
             <div className="flex justify-between">
               <span className="text-steel/60">asset:</span>
