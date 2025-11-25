@@ -1,7 +1,8 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import { useState, useRef } from "react";
 import { Brain, Radar, Shield, Link2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrambleText } from "@/hooks/useScrambleText";
 
 interface PageChip {
   id: string;
@@ -172,6 +173,14 @@ const AgentDemoPanel = () => {
 };
 
 const ZxoraShadowAgent = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.3
+  });
+
+  const { displayText } = useScrambleText("ZXORA SHADOW AGENT", 1200, isInView);
+
   const features = [
     {
       icon: Radar,
@@ -191,8 +200,28 @@ const ZxoraShadowAgent = () => {
   ];
 
   return (
-    <section id="agent" className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+    <section id="agent" ref={ref} className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
+        {/* Centered Title & Subtitle */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-10 sm:mb-12"
+        >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-monument font-bold mb-4 tracking-[0.03em] leading-[1.15] metallic-heading">
+            {displayText}
+          </h2>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-steel text-base sm:text-lg max-w-2xl mx-auto font-body"
+          >
+            An AI operator wired into your browser, decoding every dApp in real time.
+          </motion.p>
+        </motion.div>
+
         {/* Hero Row - Two Column Layout */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16 lg:mb-20">
           {/* Left Column - Copy */}
@@ -203,15 +232,6 @@ const ZxoraShadowAgent = () => {
             transition={{ duration: 0.5 }}
             className="flex flex-col justify-center space-y-6"
           >
-            {/* Title */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-monument font-bold tracking-[0.03em] leading-[1.15] metallic-heading uppercase">
-              Zxora Shadow Agent
-            </h2>
-
-            {/* Subtitle */}
-            <p className="text-steel text-base sm:text-lg max-w-xl font-body leading-relaxed">
-              An AI operator wired into your browser, decoding every dApp in real time.
-            </p>
 
             {/* Bullet Points */}
             <div className="space-y-4 pt-2">
