@@ -186,7 +186,14 @@ const Hero = () => {
                       WebkitTextFillColor: 'transparent',
                     }}
                   >
-                    {displayText}
+                    {displayText.split(' ').map((word, index) => (
+                      <span key={index}>
+                        {word}
+                        {index === 0 && <br className="sm:hidden" />}
+                        {index === 2 && <br className="sm:hidden" />}
+                        {index < displayText.split(' ').length - 1 && ' '}
+                      </span>
+                    ))}
                   </motion.span>
                 </h1>
               </motion.div>
