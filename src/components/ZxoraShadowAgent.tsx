@@ -233,48 +233,51 @@ const ZxoraShadowAgent = () => {
             className="flex flex-col justify-center space-y-6"
           >
 
-            {/* Bullet Points */}
-            <div className="space-y-4 pt-2">
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mt-0.5">
-                  <Brain className="w-5 h-5 text-primary" />
+            {/* Card Container */}
+            <div className="p-6 sm:p-8 rounded-2xl bg-graphite border border-primary/15 shadow-[0_0_24px_rgba(0,227,140,0.08)]">
+              {/* Bullet Points */}
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mt-0.5">
+                    <Brain className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold text-titanium mb-1 uppercase tracking-wider">Protocol Intel</h4>
+                    <p className="text-sm text-steel leading-relaxed">Summarises pages, pools, and contracts in plain language.</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-titanium mb-1 uppercase tracking-wider">Protocol Intel</h4>
-                  <p className="text-sm text-steel leading-relaxed">Summarises pages, pools, and contracts in plain language.</p>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mt-0.5">
+                    <Radar className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold text-titanium mb-1 uppercase tracking-wider">Risk Lens</h4>
+                    <p className="text-sm text-steel leading-relaxed">Flags suspicious patterns, approvals, and rug signals.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mt-0.5">
+                    <Sparkles className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold text-titanium mb-1 uppercase tracking-wider">Action-Aware</h4>
+                    <p className="text-sm text-steel leading-relaxed">Answers questions based on the exact screen you're on.</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mt-0.5">
-                  <Radar className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-titanium mb-1 uppercase tracking-wider">Risk Lens</h4>
-                  <p className="text-sm text-steel leading-relaxed">Flags suspicious patterns, approvals, and rug signals.</p>
-                </div>
+              {/* CTA */}
+              <div className="pt-6">
+                <Button
+                  variant="outline"
+                  className="border-primary/40 text-primary hover:bg-primary/10 hover:border-primary font-display tracking-widest"
+                  asChild
+                >
+                  <a href="#">VIEW AGENT DOCS</a>
+                </Button>
               </div>
-
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mt-0.5">
-                  <Sparkles className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-titanium mb-1 uppercase tracking-wider">Action-Aware</h4>
-                  <p className="text-sm text-steel leading-relaxed">Answers questions based on the exact screen you're on.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="pt-4">
-              <Button
-                variant="outline"
-                className="border-primary/40 text-primary hover:bg-primary/10 hover:border-primary font-display tracking-widest"
-                asChild
-              >
-                <a href="#">VIEW AGENT DOCS</a>
-              </Button>
             </div>
           </motion.div>
 
