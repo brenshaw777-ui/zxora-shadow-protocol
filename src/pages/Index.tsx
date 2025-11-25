@@ -28,9 +28,9 @@ const Index = () => {
           <Features />
           <AnimationsShowcase />
           <Roadmap />
-          <FAQ />
           <Tokenomics />
           <LinksHub />
+          <FAQ />
           <CTA />
         </main>
         <Footer />
