@@ -7,6 +7,7 @@ import AnimationsShowcase from "@/components/AnimationsShowcase";
 import Roadmap from "@/components/Roadmap";
 import FAQ from "@/components/FAQ";
 import Tokenomics from "@/components/Tokenomics";
+import ZxoraShadowAgent from "@/components/ZxoraShadowAgent";
 import LinksHub from "@/components/LinksHub";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -28,6 +29,7 @@ const Index = () => {
           <Features />
           <AnimationsShowcase />
           <Roadmap />
+          <ZxoraShadowAgent />
           <Tokenomics />
           <LinksHub />
           <FAQ />

@@ -18,6 +18,7 @@ const Navigation = () => {
     { label: "How It Works", id: "how-it-works" },
     { label: "Features", id: "features" },
     { label: "Roadmap", id: "roadmap" },
+    { label: "Agent", id: "agent" },
     { label: "FAQ", id: "faq" },
   ];
 
