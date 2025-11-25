@@ -159,14 +159,14 @@ const Hero = () => {
                 className="relative mb-8"
               >
                 <h1
-                  className="text-6xl sm:text-7xl md:text-8xl lg:text-7xl xl:text-8xl font-display font-azonix leading-[1.05] tracking-[0.03em] sm:tracking-[0.08em] md:tracking-[0.12em] uppercase relative max-w-full text-glow-emerald"
+                  className="text-6xl sm:text-7xl md:text-8xl lg:text-7xl xl:text-8xl font-display font-azonix leading-[1.05] tracking-[0.03em] sm:tracking-[0.08em] md:tracking-[0.12em] uppercase relative max-w-full text-glow-emerald-soft"
                   style={{
                     background: 'linear-gradient(135deg, hsl(230, 12%, 48%), hsl(230, 10%, 58%), hsl(235, 15%, 42%), hsl(230, 8%, 55%))',
                     backgroundSize: '200% 200%',
                     backgroundClip: 'text',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    filter: 'drop-shadow(0 0 20px rgba(0,227,140,0.25))'
+                    filter: 'drop-shadow(0 0 16px rgba(0,227,140,0.12))'
                   }}
                 >
                   <motion.span
