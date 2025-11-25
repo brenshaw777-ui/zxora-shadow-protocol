@@ -59,7 +59,12 @@ const AgentDemoPanel = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
-      className="relative w-full h-full bg-[hsl(var(--graphite-code))] rounded-2xl border border-primary/15 shadow-[0_0_40px_rgba(0,227,140,0.08)] overflow-hidden"
+      className="relative w-full h-full rounded-2xl overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, rgba(5,8,17,0.95), rgba(10,16,24,0.95))',
+        border: '1.5px solid rgba(60,66,83,0.3)',
+        boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.5), 0 20px 60px rgba(0,0,0,0.4)'
+      }}
     >
       {/* Scan Animation Overlay */}
       <AnimatePresence>
@@ -167,13 +172,6 @@ const AgentDemoPanel = () => {
 };
 
 const ZxoraShadowAgent = () => {
-  const scrollToDemo = () => {
-    const element = document.getElementById("agent-demo");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  };
-
   const features = [
     {
       icon: Radar,
@@ -193,7 +191,7 @@ const ZxoraShadowAgent = () => {
   ];
 
   return (
-    <section id="agent" className="relative py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
+    <section id="agent" className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Hero Row - Two Column Layout */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16 lg:mb-20">
@@ -205,77 +203,63 @@ const ZxoraShadowAgent = () => {
             transition={{ duration: 0.5 }}
             className="flex flex-col justify-center space-y-6"
           >
-            {/* Pill Label */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 border border-primary/30 rounded-full w-fit">
-              <Brain className="w-3 h-3 text-primary" />
-              <span className="text-xs font-mono text-primary uppercase tracking-wider">
-                AI Context Assistant • Live Page Awareness
-              </span>
-            </div>
-
             {/* Title */}
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-titanium leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-monument font-bold tracking-[0.03em] leading-[1.15] metallic-heading uppercase">
               Zxora Shadow Agent
             </h2>
 
             {/* Subtitle */}
-            <p className="text-lg sm:text-xl text-steel leading-relaxed">
+            <p className="text-steel text-base sm:text-lg max-w-xl font-body leading-relaxed">
               An AI operator wired into your browser, decoding every dApp in real time.
             </p>
 
             {/* Bullet Points */}
-            <div className="space-y-4">
+            <div className="space-y-4 pt-2">
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mt-0.5">
-                  <Brain className="w-4 h-4 text-primary" />
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mt-0.5">
+                  <Brain className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-titanium mb-1">Protocol Intel</h4>
-                  <p className="text-sm text-steel">Summarises pages, pools, and contracts in plain language.</p>
+                  <h4 className="text-sm font-semibold text-titanium mb-1 uppercase tracking-wider">Protocol Intel</h4>
+                  <p className="text-sm text-steel leading-relaxed">Summarises pages, pools, and contracts in plain language.</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mt-0.5">
-                  <Radar className="w-4 h-4 text-primary" />
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mt-0.5">
+                  <Radar className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-titanium mb-1">Risk Lens</h4>
-                  <p className="text-sm text-steel">Flags suspicious patterns, approvals, and rug signals.</p>
+                  <h4 className="text-sm font-semibold text-titanium mb-1 uppercase tracking-wider">Risk Lens</h4>
+                  <p className="text-sm text-steel leading-relaxed">Flags suspicious patterns, approvals, and rug signals.</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mt-0.5">
-                  <Sparkles className="w-4 h-4 text-primary" />
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center mt-0.5">
+                  <Sparkles className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-titanium mb-1">Action-Aware</h4>
-                  <p className="text-sm text-steel">Answers questions based on the exact screen you're on.</p>
+                  <h4 className="text-sm font-semibold text-titanium mb-1 uppercase tracking-wider">Action-Aware</h4>
+                  <p className="text-sm text-steel leading-relaxed">Answers questions based on the exact screen you're on.</p>
                 </div>
               </div>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Button
-                onClick={scrollToDemo}
-                className="bg-primary hover:bg-primary/90 text-shadow-black font-semibold shadow-[0_0_20px_rgba(0,227,140,0.3)] hover:shadow-[0_0_30px_rgba(0,227,140,0.5)] transition-all duration-300"
-              >
-                See Agent in Action
-              </Button>
+            {/* CTA */}
+            <div className="pt-4">
               <Button
                 variant="outline"
-                className="border-primary/40 text-primary hover:bg-primary/10 hover:border-primary"
+                className="border-primary/40 text-primary hover:bg-primary/10 hover:border-primary font-display tracking-widest"
                 asChild
               >
-                <a href="#">View Agent Docs</a>
+                <a href="#">VIEW AGENT DOCS</a>
               </Button>
             </div>
           </motion.div>
 
           {/* Right Column - Interactive Console */}
-          <div id="agent-demo" className="flex items-center">
+          <div className="flex items-center">
             <AgentDemoPanel />
           </div>
         </div>
