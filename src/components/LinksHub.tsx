@@ -1,8 +1,23 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { BarChart3, Send, Twitter, BookOpen, Youtube } from "lucide-react";
+import { BarChart3, Send, BookOpen, Youtube } from "lucide-react";
 import { useScrambleText } from "@/hooks/useScrambleText";
+
+// Custom X Logo Component
+const XLogo = ({ className, strokeWidth }: { className?: string; strokeWidth?: number }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={strokeWidth || 1.5}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M4 4l16 16M20 4l-16 16" />
+  </svg>
+);
 
 const LinksHub = () => {
   const ref = useRef(null);
@@ -25,17 +40,17 @@ const LinksHub = () => {
       animation: "rotate",
     },
     {
-      title: "X / Twitter",
-      icon: Twitter,
+      title: "X",
+      icon: XLogo,
       url: "#",
       tooltip: "Follow on X",
       animation: "scale",
     },
     {
-      title: "Gitbook",
+      title: "Docs",
       icon: BookOpen,
       url: "#",
-      tooltip: "Visit Gitbook",
+      tooltip: "Read Documentation",
       animation: "pulse",
     },
     {
