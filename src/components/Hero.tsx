@@ -217,7 +217,7 @@ const Hero = () => {
             </Button>
           </motion.div>
 
-          {/* dApp Video/Screenshot Frame */}
+          {/* dApp Video Frame - Minimal Borderless */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -225,65 +225,28 @@ const Hero = () => {
             className="relative w-full max-w-6xl group"
           >
             <motion.div
-              whileHover={{ scale: 1.01 }}
+              whileHover={{ scale: 1.005 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="relative"
             >
-              {/* Shadow Browser Window Frame */}
+              {/* Minimal High-Tech Frame */}
               <div 
-                className="rounded-3xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.8),0_0_2px_rgba(199,204,216,0.3)] relative transition-shadow duration-300 group-hover:shadow-[0_30px_100px_rgba(0,0,0,0.8),0_0_30px_rgba(0,227,140,0.2)]"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(8,10,16,0.98), rgba(5,7,12,0.99))',
-                }}
+                className="rounded-2xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.9),0_0_1px_rgba(0,227,140,0.3)] relative transition-shadow duration-300 group-hover:shadow-[0_30px_100px_rgba(0,0,0,0.9),0_0_40px_rgba(0,227,140,0.25)]"
               >
                 
-                {/* Metallic bezel */}
+                {/* Ultra-slim emerald border */}
                 <div 
-                  className="absolute inset-0 rounded-3xl pointer-events-none transition-all duration-300 group-hover:opacity-100 opacity-90"
+                  className="absolute inset-0 rounded-2xl pointer-events-none transition-all duration-300"
                   style={{
-                    border: '1.5px solid transparent',
-                    borderImage: 'linear-gradient(135deg, rgba(199,204,216,0.3), rgba(0,227,140,0.2), rgba(199,204,216,0.25)) 1'
+                    border: '1px solid rgba(0,227,140,0.25)',
+                    boxShadow: 'inset 0 0 20px rgba(0,227,140,0.05), 0 0 20px rgba(0,227,140,0.1)'
                   }}
                 />
-                
-                {/* Corner accent glows */}
-                <div className="absolute top-0 left-0 w-32 h-32 bg-emerald/8 rounded-tl-3xl blur-3xl transition-opacity duration-300 group-hover:opacity-100 opacity-70" />
-                <div className="absolute bottom-0 right-0 w-32 h-32 bg-emerald/8 rounded-br-3xl blur-3xl transition-opacity duration-300 group-hover:opacity-100 opacity-70" />
 
-                {/* Top Bar - Browser Chrome */}
-                <div className="relative px-4 sm:px-8 py-3 sm:py-4 border-b border-[rgba(60,66,83,0.3)] bg-gradient-to-b from-[rgba(8,10,16,0.95)] to-[rgba(5,7,12,0.9)] backdrop-blur-sm">
-                  <div className="flex items-center justify-between relative z-10">
-                    {/* Window Control Dots */}
-                    <div className="flex gap-2">
-                      <div className="w-3 h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
-                      <div className="w-3 h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
-                      <div className="w-3 h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
-                    </div>
-                    
-                    {/* URL Bar */}
-                    <div className="flex-1 mx-4 sm:mx-8 px-4 sm:px-6 py-2 rounded-xl bg-[rgba(5,7,13,0.7)] border border-emerald/20 backdrop-blur-sm shadow-[0_0_20px_rgba(0,227,140,0.12)]">
-                      <div className="flex items-center justify-center gap-2 sm:gap-3">
-                        <Shield className="w-4 h-4 text-emerald flex-shrink-0" strokeWidth={2} />
-                        <span className="font-mono text-xs sm:text-sm text-titanium tracking-wide">zxora://shadow.session</span>
-                      </div>
-                    </div>
-                    
-                    {/* Shield Icon Indicator */}
-                    <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-emerald/60 flex-shrink-0" strokeWidth={1.5} />
-                  </div>
-                </div>
-
-                {/* Inner Window Content Area - Video */}
-                <div className="relative bg-[#050811] overflow-hidden" style={{ aspectRatio: '16/9' }}>
-                  
-                  {/* Background texture */}
-                  <div className="absolute inset-0 opacity-20 pointer-events-none">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(199,204,216,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(199,204,216,0.03)_1px,transparent_1px)] bg-[size:32px_32px]" />
-                  </div>
-
-                  {/* Video Element */}
+                {/* Video Element - Full Fit */}
+                <div className="relative bg-black overflow-hidden" style={{ aspectRatio: '16/9' }}>
                   <video 
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="w-full h-full object-cover"
                     autoPlay 
                     muted 
                     loop
@@ -293,15 +256,15 @@ const Hero = () => {
                     Your browser does not support the video tag.
                   </video>
 
-                   {/* Optional: Subtle scan line animation */}
+                  {/* Optional: Subtle scan line animation */}
                   <motion.div
                     animate={{ y: ['0%', '100%'] }}
                     transition={{ 
-                      duration: 10, 
+                      duration: 12, 
                       repeat: Infinity,
                       ease: "linear"
                     }}
-                    className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald/20 to-transparent"
+                    className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald/15 to-transparent pointer-events-none"
                     style={{ top: 0 }}
                   />
                 </div>
