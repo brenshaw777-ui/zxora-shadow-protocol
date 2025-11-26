@@ -132,236 +132,210 @@ const Hero = () => {
   }, [lineIndex]);
 
   return (
-    <section id="hero" className="relative pt-24 pb-20 sm:pt-28 sm:pb-24 lg:min-h-screen lg:flex lg:items-center lg:justify-center overflow-x-hidden">
+    <section id="hero" className="relative pt-24 pb-20 sm:pt-32 sm:pb-32 lg:pt-40 lg:pb-32 overflow-x-hidden" style={{ minHeight: 'min(100vh, 900px)' }}>
       {/* Subtle metallic vignettes */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/8 via-transparent to-transparent rounded-full blur-3xl" />
       <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-gradient-radial from-accent/6 via-transparent to-transparent rounded-full blur-3xl" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        {/* Centered Single Column Layout */}
+        <div className="flex flex-col items-center text-center">
           
-          {/* Left Column - Hero Text (No Box) */}
+          {/* Headline with encrypted → decrypted animation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="relative mb-5 sm:mb-6 max-w-4xl"
           >
-            {/* Subtle vignette behind text */}
-            <div className="absolute inset-0 -inset-x-12 -inset-y-8 bg-gradient-radial from-[rgba(5,8,17,0.7)] via-[rgba(5,8,17,0.4)] to-transparent rounded-3xl blur-2xl -z-10" />
-            
-            <div className="space-y-8 relative">
-              {/* Headline with encrypted → decrypted animation */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="relative mb-8"
+            <h1
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-azonix leading-[1.05] tracking-[0.03em] sm:tracking-[0.08em] md:tracking-[0.12em] uppercase relative text-glow-emerald-soft"
+              style={{
+                background: 'linear-gradient(135deg, hsl(230, 12%, 48%), hsl(230, 10%, 58%), hsl(235, 15%, 42%), hsl(230, 8%, 55%))',
+                backgroundSize: '200% 200%',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                filter: 'drop-shadow(0 0 16px rgba(0,227,140,0.12))'
+              }}
+            >
+              <motion.span
+                animate={isComplete ? {
+                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+                } : {}}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+                style={{
+                  background: 'linear-gradient(135deg, hsl(230, 12%, 48%), hsl(230, 10%, 58%), hsl(235, 15%, 42%), hsl(230, 8%, 55%))',
+                  backgroundSize: '200% 200%',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
               >
-                <h1
-                  className="text-6xl sm:text-7xl md:text-8xl lg:text-7xl xl:text-8xl font-display font-azonix leading-[1.05] tracking-[0.03em] sm:tracking-[0.08em] md:tracking-[0.12em] uppercase relative max-w-full text-glow-emerald-soft"
-                  style={{
-                    background: 'linear-gradient(135deg, hsl(230, 12%, 48%), hsl(230, 10%, 58%), hsl(235, 15%, 42%), hsl(230, 8%, 55%))',
-                    backgroundSize: '200% 200%',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    filter: 'drop-shadow(0 0 16px rgba(0,227,140,0.12))'
-                  }}
-                >
-                  <motion.span
-                    animate={isComplete ? {
-                      backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
-                    } : {}}
-                    transition={{
-                      duration: 8,
-                      repeat: Infinity,
-                      ease: "linear"
-                    }}
-                    style={{
-                      background: 'linear-gradient(135deg, hsl(230, 12%, 48%), hsl(230, 10%, 58%), hsl(235, 15%, 42%), hsl(230, 8%, 55%))',
-                      backgroundSize: '200% 200%',
-                      backgroundClip: 'text',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                    }}
-                  >
-                    {displayText.split(' ').map((word, index) => (
-                      <span key={index}>
-                        {word}
-                        {index === 0 && <br className="sm:hidden" />}
-                        {index === 2 && <br className="sm:hidden" />}
-                        {index < displayText.split(' ').length - 1 && ' '}
-                      </span>
-                    ))}
-                  </motion.span>
-                </h1>
-              </motion.div>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-                className="text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed max-w-full sm:max-w-xl font-body text-steel"
-              >
-                Zxora shields your identity, device fingerprint, routing patterns, approvals, and wallet behavior—every action passes through an autonomous ZK-powered defense layer.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4"
-              >
-                <Button
-                  size="lg"
-                  onClick={() => scrollToSection("cta")}
-                  variant="outline"
-                  className="font-display tracking-wide"
-                >
-                  REQUEST EARLY ACCESS
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  onClick={() => scrollToSection("how-it-works")}
-                  className="font-display tracking-wide"
-                >
-                  VIEW HOW IT WORKS
-                </Button>
-              </motion.div>
-            </div>
+                {displayText}
+              </motion.span>
+            </h1>
           </motion.div>
 
-          {/* Right Column - Shadow Browser Simulation Window */}
+          {/* Subheading */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl font-body text-steel mb-6 sm:mb-8"
+          >
+            Zxora shields your identity, device fingerprint, routing patterns, approvals, and wallet behavior—every action passes through an autonomous ZK-powered defense layer.
+          </motion.p>
+
+          {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.4 }}
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10 sm:mb-14 lg:mb-16 w-full sm:w-auto"
+          >
+            <Button
+              size="lg"
+              onClick={() => scrollToSection("cta")}
+              variant="outline"
+              className="font-display tracking-wide w-full sm:w-auto"
+            >
+              REQUEST EARLY ACCESS
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => scrollToSection("how-it-works")}
+              className="font-display tracking-wide w-full sm:w-auto"
+            >
+              VIEW HOW IT WORKS
+            </Button>
+          </motion.div>
+
+          {/* dApp Video/Screenshot Frame */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative max-w-full"
+            transition={{ delay: 0.8, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="relative w-full max-w-6xl group"
           >
             <motion.div
-              animate={{ y: [0, -2, 0] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="relative max-w-full sm:max-w-2xl mx-auto"
+              whileHover={{ scale: 1.01 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="relative"
             >
               {/* Shadow Browser Window Frame */}
-              <div className="rounded-2xl overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.7),0_0_1px_rgba(199,204,216,0.3)] relative"
+              <div 
+                className="rounded-3xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.8),0_0_2px_rgba(199,204,216,0.3)] relative transition-shadow duration-300 group-hover:shadow-[0_30px_100px_rgba(0,0,0,0.8),0_0_30px_rgba(0,227,140,0.2)]"
                 style={{
                   background: 'linear-gradient(135deg, rgba(8,10,16,0.98), rgba(5,7,12,0.99))',
                 }}
               >
                 
                 {/* Metallic bezel */}
-                <div className="absolute inset-0 rounded-2xl pointer-events-none"
+                <div 
+                  className="absolute inset-0 rounded-3xl pointer-events-none transition-all duration-300 group-hover:opacity-100 opacity-90"
                   style={{
                     border: '1.5px solid transparent',
-                    borderImage: 'linear-gradient(135deg, rgba(199,204,216,0.3), rgba(0,227,140,0.15), rgba(199,204,216,0.25)) 1'
+                    borderImage: 'linear-gradient(135deg, rgba(199,204,216,0.3), rgba(0,227,140,0.2), rgba(199,204,216,0.25)) 1'
                   }}
                 />
                 
                 {/* Corner accent glows */}
-                <div className="absolute top-0 left-0 w-24 h-24 bg-emerald/10 rounded-tl-2xl blur-2xl" />
-                <div className="absolute bottom-0 right-0 w-24 h-24 bg-emerald/8 rounded-br-2xl blur-2xl" />
+                <div className="absolute top-0 left-0 w-32 h-32 bg-emerald/8 rounded-tl-3xl blur-3xl transition-opacity duration-300 group-hover:opacity-100 opacity-70" />
+                <div className="absolute bottom-0 right-0 w-32 h-32 bg-emerald/8 rounded-br-3xl blur-3xl transition-opacity duration-300 group-hover:opacity-100 opacity-70" />
 
                 {/* Top Bar - Browser Chrome */}
-                <div className="relative px-3 sm:px-6 py-3 sm:py-4 border-b border-[rgba(60,66,83,0.3)] bg-gradient-to-b from-[rgba(8,10,16,0.95)] to-[rgba(5,7,12,0.9)] backdrop-blur-sm">
+                <div className="relative px-4 sm:px-8 py-3 sm:py-4 border-b border-[rgba(60,66,83,0.3)] bg-gradient-to-b from-[rgba(8,10,16,0.95)] to-[rgba(5,7,12,0.9)] backdrop-blur-sm">
                   <div className="flex items-center justify-between relative z-10">
                     {/* Window Control Dots */}
-                    <div className="flex gap-1.5 sm:gap-2">
-                      <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
-                      <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
-                      <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
+                    <div className="flex gap-2">
+                      <div className="w-3 h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
+                      <div className="w-3 h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
+                      <div className="w-3 h-3 rounded-full bg-gradient-to-br from-[rgba(60,66,83,0.6)] to-[rgba(60,66,83,0.3)] border border-[rgba(60,66,83,0.4)]" />
                     </div>
                     
                     {/* URL Bar */}
-                    <div className="flex-1 mx-2 sm:mx-4 md:mx-6 px-2 sm:px-3 md:px-5 py-1.5 sm:py-2 rounded-lg bg-[rgba(5,7,13,0.7)] border border-emerald/20 backdrop-blur-sm shadow-[0_0_15px_rgba(0,227,140,0.12)]">
-                      <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
-                        <Shield className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald flex-shrink-0" strokeWidth={2} />
-                        <span className="font-mono text-[10px] sm:text-xs text-titanium tracking-wide truncate">zxora://shield.session</span>
+                    <div className="flex-1 mx-4 sm:mx-8 px-4 sm:px-6 py-2 rounded-xl bg-[rgba(5,7,13,0.7)] border border-emerald/20 backdrop-blur-sm shadow-[0_0_20px_rgba(0,227,140,0.12)]">
+                      <div className="flex items-center justify-center gap-2 sm:gap-3">
+                        <Shield className="w-4 h-4 text-emerald flex-shrink-0" strokeWidth={2} />
+                        <span className="font-mono text-xs sm:text-sm text-titanium tracking-wide">zxora://shadow.session</span>
                       </div>
                     </div>
                     
                     {/* Shield Icon Indicator */}
-                    <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-emerald/60 flex-shrink-0" strokeWidth={1.5} />
+                    <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-emerald/60 flex-shrink-0" strokeWidth={1.5} />
                   </div>
                 </div>
 
-                {/* Inner Window Content Area - Security Code Simulation */}
-                <div className="relative h-72 sm:h-96 overflow-hidden bg-[#050811] p-3 sm:p-4 md:p-6">
+                {/* Inner Window Content Area - Video/Screenshot Placeholder */}
+                <div className="relative bg-[#050811] overflow-hidden" style={{ aspectRatio: '16/9' }}>
                   
                   {/* Background texture */}
-                  <div className="absolute inset-0 opacity-30">
+                  <div className="absolute inset-0 opacity-20">
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(199,204,216,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(199,204,216,0.03)_1px,transparent_1px)] bg-[size:32px_32px]" />
                   </div>
 
-                  {/* Continuously Scrolling Security Code Lines */}
-                  <div className="relative space-y-2 sm:space-y-3 font-mono text-xs sm:text-sm">
-                    <AnimatePresence mode="popLayout">
-                      {visibleLines.map((line, index) => (
-                        <motion.div
-                          key={line.id}
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 10 }}
-                          transition={{ duration: 0.3 }}
-                          className="flex items-center gap-3"
-                        >
-                          {line.isPulsing ? (
-                            <motion.div 
-                              className={`w-1 h-1 rounded-full ${line.dotColor}`}
-                              animate={{ opacity: [0.4, 1, 0.4] }}
-                              transition={{ duration: 2, repeat: Infinity, delay: Math.random() * 2 }}
-                            />
-                          ) : (
-                            <div className={`w-1 h-1 rounded-full ${line.dotColor}`} />
-                          )}
-                          <span className={line.isWarning ? "text-alert/90" : line.highlight ? "text-steel" : "text-steel/60"}>
-                            {line.text}
-                            {line.highlight && (
-                              <span className={
-                                line.isWarning 
-                                  ? 'text-alert font-semibold' 
-                                  : line.dotColor.includes('primary') 
-                                    ? 'text-emerald' 
-                                    : 'text-safe'
-                              }>
-                                {line.highlight}
-                              </span>
-                            )}
-                          </span>
-                        </motion.div>
-                      ))}
-                    </AnimatePresence>
+                  {/* Placeholder DeFi screenshot - will be replaced with video/image */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[rgba(5,8,17,0.9)] via-[rgba(8,12,20,0.85)] to-[rgba(5,8,17,0.9)]">
+                    
+                    {/* Mock DeFi Interface Elements */}
+                    <div className="w-full h-full p-6 sm:p-10 grid grid-cols-12 gap-4 opacity-40">
+                      {/* Chart area */}
+                      <div className="col-span-8 bg-gradient-to-br from-[rgba(60,66,83,0.2)] to-[rgba(60,66,83,0.1)] rounded-xl border border-emerald/10" />
+                      
+                      {/* Side panels */}
+                      <div className="col-span-4 space-y-4">
+                        <div className="h-32 bg-gradient-to-br from-[rgba(60,66,83,0.2)] to-[rgba(60,66,83,0.1)] rounded-xl border border-emerald/10" />
+                        <div className="h-24 bg-gradient-to-br from-[rgba(60,66,83,0.2)] to-[rgba(60,66,83,0.1)] rounded-xl border border-emerald/10" />
+                        <div className="h-24 bg-gradient-to-br from-[rgba(60,66,83,0.2)] to-[rgba(60,66,83,0.1)] rounded-xl border border-emerald/10" />
+                      </div>
+                    </div>
 
-                    {/* Minimal outline icons */}
+                    {/* Play Button Overlay */}
                     <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 0.3 }}
-                      transition={{ delay: 1.5, duration: 0.6 }}
-                      className="absolute bottom-6 right-6 flex gap-4"
+                      animate={{ 
+                        scale: [1, 1.05, 1],
+                        boxShadow: [
+                          '0 0 0 0 rgba(0,227,140,0.3)',
+                          '0 0 0 20px rgba(0,227,140,0)',
+                          '0 0 0 0 rgba(0,227,140,0.3)'
+                        ]
+                      }}
+                      transition={{ 
+                        duration: 2, 
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                      className="absolute inset-0 flex items-center justify-center cursor-pointer"
                     >
-                      <Shield className="w-8 h-8 text-primary/30" strokeWidth={1} />
-                      <motion.div
-                        animate={{ scale: [1, 1.1, 1] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      >
-                        <div className="w-8 h-8 rounded-full border border-accent/30" />
-                      </motion.div>
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-emerald/20 backdrop-blur-sm border-2 border-emerald/40 flex items-center justify-center group-hover:bg-emerald/30 transition-colors duration-300">
+                        <div className="w-0 h-0 border-t-[12px] sm:border-t-[14px] border-t-transparent border-l-[20px] sm:border-l-[24px] border-l-emerald border-b-[12px] sm:border-b-[14px] border-b-transparent ml-1" />
+                      </div>
                     </motion.div>
                   </div>
-                </div>
-              </div>
 
-              {/* Caption */}
-              <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-full text-center">
-                <span className="font-mono text-[9px] text-steel/40 tracking-widest uppercase">
-                  Shadow Browser Window · Zxora Client (Conceptual)
-                </span>
+                   {/* Optional: Subtle scan line animation */}
+                  <motion.div
+                    animate={{ y: ['0%', '100%'] }}
+                    transition={{ 
+                      duration: 10, 
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald/20 to-transparent"
+                    style={{ top: 0 }}
+                  />
+                </div>
               </div>
             </motion.div>
           </motion.div>
+
         </div>
       </div>
     </section>
