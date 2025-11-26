@@ -273,52 +273,25 @@ const Hero = () => {
                   </div>
                 </div>
 
-                {/* Inner Window Content Area - Video/Screenshot Placeholder */}
+                {/* Inner Window Content Area - Video */}
                 <div className="relative bg-[#050811] overflow-hidden" style={{ aspectRatio: '16/9' }}>
                   
                   {/* Background texture */}
-                  <div className="absolute inset-0 opacity-20">
+                  <div className="absolute inset-0 opacity-20 pointer-events-none">
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(199,204,216,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(199,204,216,0.03)_1px,transparent_1px)] bg-[size:32px_32px]" />
                   </div>
 
-                  {/* Placeholder DeFi screenshot - will be replaced with video/image */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[rgba(5,8,17,0.9)] via-[rgba(8,12,20,0.85)] to-[rgba(5,8,17,0.9)]">
-                    
-                    {/* Mock DeFi Interface Elements */}
-                    <div className="w-full h-full p-6 sm:p-10 grid grid-cols-12 gap-4 opacity-40">
-                      {/* Chart area */}
-                      <div className="col-span-8 bg-gradient-to-br from-[rgba(60,66,83,0.2)] to-[rgba(60,66,83,0.1)] rounded-xl border border-emerald/10" />
-                      
-                      {/* Side panels */}
-                      <div className="col-span-4 space-y-4">
-                        <div className="h-32 bg-gradient-to-br from-[rgba(60,66,83,0.2)] to-[rgba(60,66,83,0.1)] rounded-xl border border-emerald/10" />
-                        <div className="h-24 bg-gradient-to-br from-[rgba(60,66,83,0.2)] to-[rgba(60,66,83,0.1)] rounded-xl border border-emerald/10" />
-                        <div className="h-24 bg-gradient-to-br from-[rgba(60,66,83,0.2)] to-[rgba(60,66,83,0.1)] rounded-xl border border-emerald/10" />
-                      </div>
-                    </div>
-
-                    {/* Play Button Overlay */}
-                    <motion.div
-                      animate={{ 
-                        scale: [1, 1.05, 1],
-                        boxShadow: [
-                          '0 0 0 0 rgba(0,227,140,0.3)',
-                          '0 0 0 20px rgba(0,227,140,0)',
-                          '0 0 0 0 rgba(0,227,140,0.3)'
-                        ]
-                      }}
-                      transition={{ 
-                        duration: 2, 
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                      className="absolute inset-0 flex items-center justify-center cursor-pointer"
-                    >
-                      <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-emerald/20 backdrop-blur-sm border-2 border-emerald/40 flex items-center justify-center group-hover:bg-emerald/30 transition-colors duration-300">
-                        <div className="w-0 h-0 border-t-[12px] sm:border-t-[14px] border-t-transparent border-l-[20px] sm:border-l-[24px] border-l-emerald border-b-[12px] sm:border-b-[14px] border-b-transparent ml-1" />
-                      </div>
-                    </motion.div>
-                  </div>
+                  {/* Video Element */}
+                  <video 
+                    className="absolute inset-0 w-full h-full object-cover"
+                    autoPlay 
+                    muted 
+                    loop
+                    playsInline
+                  >
+                    <source src="/videos/zxora-walkthrough.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
 
                    {/* Optional: Subtle scan line animation */}
                   <motion.div
