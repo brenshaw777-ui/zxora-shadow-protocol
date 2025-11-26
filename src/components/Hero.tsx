@@ -229,24 +229,18 @@ const Hero = () => {
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="relative"
             >
-              {/* Minimal High-Tech Frame */}
+              {/* Minimal High-Tech Frame with Slim Border & Glow */}
               <div 
-                className="rounded-2xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.9),0_0_1px_rgba(0,227,140,0.3)] relative transition-shadow duration-300 group-hover:shadow-[0_30px_100px_rgba(0,0,0,0.9),0_0_40px_rgba(0,227,140,0.25)]"
+                className="rounded-2xl overflow-hidden relative transition-all duration-300"
+                style={{
+                  border: '1px solid rgba(0,227,140,0.3)',
+                  boxShadow: '0 0 30px rgba(0,227,140,0.12), 0 30px 80px rgba(0,0,0,0.8)',
+                }}
               >
-                
-                {/* Ultra-slim emerald border */}
-                <div 
-                  className="absolute inset-0 rounded-2xl pointer-events-none transition-all duration-300"
-                  style={{
-                    border: '1px solid rgba(0,227,140,0.25)',
-                    boxShadow: 'inset 0 0 20px rgba(0,227,140,0.05), 0 0 20px rgba(0,227,140,0.1)'
-                  }}
-                />
-
-                {/* Video Element - Full Fit */}
-                <div className="relative bg-black overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                {/* Video Element - Natural Dimensions */}
+                <div className="relative">
                   <video 
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto block"
                     autoPlay 
                     muted 
                     loop
@@ -256,7 +250,7 @@ const Hero = () => {
                     Your browser does not support the video tag.
                   </video>
 
-                  {/* Optional: Subtle scan line animation */}
+                  {/* Subtle scan line animation */}
                   <motion.div
                     animate={{ y: ['0%', '100%'] }}
                     transition={{ 
