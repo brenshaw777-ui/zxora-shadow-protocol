@@ -169,6 +169,204 @@ const Tokenomics = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Token Utility Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-16 sm:mt-20 lg:mt-24"
+        >
+          {/* Token Utility Header */}
+          <div className="text-center mb-10 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-monument font-bold mb-3 text-center tracking-[0.03em] leading-[1.15] metallic-heading uppercase">
+              Token Utility
+            </h2>
+            <p className="text-steel text-sm sm:text-base font-body font-normal max-w-3xl mx-auto">
+              How the ZXO token connects to real usage inside ZXORA's Shadow Console—today and as the product evolves.
+            </p>
+          </div>
+
+          {/* Three Utility Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+            {/* Card 1 - MVP Access */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="group p-6 sm:p-8 rounded-2xl bg-graphite border border-emerald/15 hover:border-emerald/30 transition-all duration-300 hover:shadow-[0_0_24px_rgba(0,227,140,0.15)] hover:scale-[1.02] cursor-pointer"
+            >
+              <h3 className="text-lg sm:text-xl font-machina font-semibold text-titanium tracking-[0.02em] uppercase mb-4">
+                Day 1 · Access Via ZXO
+              </h3>
+              <p className="text-steel text-sm sm:text-base font-body leading-relaxed mb-6">
+                From MVP launch, holding any non-zero amount of the ZXO token gives you access to the ZXORA Shadow Console and built-in Agent. Connect your wallet, hold ZXO, and step into the analysis layer running inside your browser.
+              </p>
+              <div className="pt-4 border-t border-emerald/10">
+                <span className="text-emerald text-xs font-mono uppercase tracking-wider">
+                  ZXO = Access key for the platform
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Card 2 - Power Users */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="group p-6 sm:p-8 rounded-2xl bg-graphite border border-emerald/15 hover:border-emerald/30 transition-all duration-300 hover:shadow-[0_0_24px_rgba(0,227,140,0.15)] hover:scale-[1.02] cursor-pointer"
+            >
+              <h3 className="text-lg sm:text-xl font-machina font-semibold text-titanium tracking-[0.02em] uppercase mb-4">
+                Power Users Scale With ZXO
+              </h3>
+              <p className="text-steel text-sm sm:text-base font-body leading-relaxed mb-6">
+                As ZXORA evolves, heavier features will recognise ZXO holders and stakers. Higher Agent usage limits, advanced analysis templates, and saved workflows will progressively unlock first for accounts with meaningful ZXO exposure.
+              </p>
+              <div className="pt-4 border-t border-emerald/10">
+                <span className="text-emerald text-xs font-mono uppercase tracking-wider">
+                  More ZXO → more depth, more capacity
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Card 3 - Long-Term Utility */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.9 }}
+              className="group p-6 sm:p-8 rounded-2xl bg-graphite border border-emerald/15 hover:border-emerald/30 transition-all duration-300 hover:shadow-[0_0_24px_rgba(0,227,140,0.15)] hover:scale-[1.02] cursor-pointer md:col-span-2 lg:col-span-1"
+            >
+              <h3 className="text-lg sm:text-xl font-machina font-semibold text-titanium tracking-[0.02em] uppercase mb-4">
+                Long-Term Utility, Not Hype
+              </h3>
+              <p className="text-steel text-sm sm:text-base font-body leading-relaxed mb-6">
+                Workspaces, encrypted sync, tool integrations, and pro data sources are designed to be unlocked via ZXO token tiers—not just subscriptions. The more you rely on ZXORA for research, the more value ZXO has inside the ecosystem.
+              </p>
+              <div className="pt-4 border-t border-emerald/10">
+                <span className="text-emerald text-xs font-mono uppercase tracking-wider">
+                  ZXO powers the advanced stack
+                </span>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Token Utility Roadmap Timeline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 1.0 }}
+            className="p-8 sm:p-10 rounded-2xl bg-graphite border border-emerald/15 relative overflow-hidden"
+          >
+            {/* Background Grid */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute inset-0 bg-grid" />
+            </div>
+
+            {/* Content */}
+            <div className="relative">
+              {/* Timeline Header */}
+              <div className="mb-8">
+                <h3 className="text-lg sm:text-xl font-machina font-semibold text-titanium tracking-[0.02em] uppercase mb-2">
+                  ZXO Token Utility Roadmap
+                </h3>
+                <p className="text-dim-steel text-xs sm:text-sm font-body">
+                  How ZXO gradually powers deeper features as ZXORA expands.
+                </p>
+              </div>
+
+              {/* Timeline Phases - Horizontal on Desktop, Vertical on Mobile */}
+              <div className="space-y-6 lg:space-y-0 lg:grid lg:grid-cols-5 lg:gap-6">
+                {/* Phase 1 */}
+                <div className="group relative">
+                  <div className="flex items-start gap-3 lg:flex-col">
+                    <div className="flex-shrink-0 w-3 h-3 rounded-full bg-emerald/50 group-hover:bg-emerald group-hover:shadow-[0_0_12px_rgba(0,227,140,0.8)] transition-all duration-300 mt-1 lg:mt-0" />
+                    <div>
+                      <h4 className="text-sm sm:text-base font-machina font-medium text-titanium mb-2 group-hover:text-emerald transition-colors">
+                        Phase 1 – Token Access
+                      </h4>
+                      <p className="text-xs sm:text-sm text-steel font-body leading-relaxed">
+                        Any ZXO balance = access to the ZXORA console and Shadow Agent in the browser-hosted MVP.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Phase 2 */}
+                <div className="group relative">
+                  <div className="flex items-start gap-3 lg:flex-col">
+                    <div className="flex-shrink-0 w-3 h-3 rounded-full bg-emerald/50 group-hover:bg-emerald group-hover:shadow-[0_0_12px_rgba(0,227,140,0.8)] transition-all duration-300 mt-1 lg:mt-0" />
+                    <div>
+                      <h4 className="text-sm sm:text-base font-machina font-medium text-titanium mb-2 group-hover:text-emerald transition-colors">
+                        Phase 2 – Power Usage
+                      </h4>
+                      <p className="text-xs sm:text-sm text-steel font-body leading-relaxed">
+                        ZXO holder tiers unlock higher daily Agent limits and early access to pro analysis templates.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Phase 3 */}
+                <div className="group relative">
+                  <div className="flex items-start gap-3 lg:flex-col">
+                    <div className="flex-shrink-0 w-3 h-3 rounded-full bg-emerald/50 group-hover:bg-emerald group-hover:shadow-[0_0_12px_rgba(0,227,140,0.8)] transition-all duration-300 mt-1 lg:mt-0" />
+                    <div>
+                      <h4 className="text-sm sm:text-base font-machina font-medium text-titanium mb-2 group-hover:text-emerald transition-colors">
+                        Phase 3 – Workflows
+                      </h4>
+                      <p className="text-xs sm:text-sm text-steel font-body leading-relaxed">
+                        ZXO-gated workflows, advanced template libraries, and rich session exports for serious users.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Phase 4 */}
+                <div className="group relative">
+                  <div className="flex items-start gap-3 lg:flex-col">
+                    <div className="flex-shrink-0 w-3 h-3 rounded-full bg-emerald/50 group-hover:bg-emerald group-hover:shadow-[0_0_12px_rgba(0,227,140,0.8)] transition-all duration-300 mt-1 lg:mt-0" />
+                    <div>
+                      <h4 className="text-sm sm:text-base font-machina font-medium text-titanium mb-2 group-hover:text-emerald transition-colors">
+                        Phase 4 – Workspaces
+                      </h4>
+                      <p className="text-xs sm:text-sm text-steel font-body leading-relaxed">
+                        Extra workspaces, encrypted sync, and premium integrations powered by ZXO holding or staking.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Phase 5 */}
+                <div className="group relative">
+                  <div className="flex items-start gap-3 lg:flex-col">
+                    <div className="flex-shrink-0 w-3 h-3 rounded-full bg-emerald/50 group-hover:bg-emerald group-hover:shadow-[0_0_12px_rgba(0,227,140,0.8)] transition-all duration-300 mt-1 lg:mt-0" />
+                    <div>
+                      <h4 className="text-sm sm:text-base font-machina font-medium text-titanium mb-2 group-hover:text-emerald transition-colors">
+                        Phase 5 – Governance
+                      </h4>
+                      <p className="text-xs sm:text-sm text-steel font-body leading-relaxed">
+                        ZXO used to reward tool builders and signal which features, templates, and integrations we prioritise next.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Docs Link */}
+              <div className="mt-8 pt-6 border-t border-emerald/10 flex justify-end">
+                <a
+                  href="#"
+                  className="group inline-flex items-center gap-2 text-emerald text-xs sm:text-sm font-mono uppercase tracking-wider hover:text-emerald/80 transition-colors"
+                >
+                  View full ZXO utility in Docs
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
