@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useScrambleText } from "@/hooks/useScrambleText";
+import zxoraIcon from "@/assets/zxora-icon.png";
 
 const CTA = () => {
   const ref = useRef(null);
@@ -68,6 +69,14 @@ const CTA = () => {
           onSubmit={handleSubmit}
           className="space-y-6 p-8 rounded-2xl metal-card"
         >
+          {/* Logo Badge */}
+          <div className="flex justify-center mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald/5 border border-emerald/20">
+              <img src={zxoraIcon} alt="Zxora" className="w-5 h-5" />
+              <span className="text-emerald text-xs font-mono tracking-wider uppercase">Secure Submission</span>
+            </div>
+          </div>
+          
           <div>
             <label htmlFor="email" className="block text-sm font-medium mb-2 font-display tracking-wider">
               EMAIL ADDRESS *
