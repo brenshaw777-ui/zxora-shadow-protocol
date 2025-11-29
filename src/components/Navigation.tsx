@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import zxoraLogo from "@/assets/zxora-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,9 +32,11 @@ const Navigation = () => {
             onClick={() => scrollToSection("hero")}
             className="flex items-center space-x-3 group"
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-md flex items-center justify-center border border-primary/30">
-              <span className="text-white font-display font-bold text-sm">Z</span>
-            </div>
+            <img 
+              src={zxoraLogo} 
+              alt="Zxora Logo" 
+              className="w-8 h-8 transition-transform duration-300 group-hover:scale-110"
+            />
             <span className="font-display text-xl font-bold tracking-widest bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
               ZXORA
             </span>
