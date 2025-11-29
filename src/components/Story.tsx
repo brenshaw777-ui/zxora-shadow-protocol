@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { useScrambleText } from "@/hooks/useScrambleText";
+import zxoraIcon from "@/assets/zxora-icon.png";
 
 const Story = () => {
   const ref = useRef(null);
@@ -310,9 +311,11 @@ const ShadowLayerReveal = ({ principles }: { principles: Array<{ title: string; 
         transition={{ duration: 0.5, delay: 0.2 }}
         className="relative w-24 h-24 rounded-2xl bg-gradient-to-br from-emerald/20 to-emerald/5 border border-emerald/40 flex items-center justify-center shadow-[0_0_24px_rgba(0,227,140,0.3)]"
       >
-        <span className="text-emerald text-xs font-machina font-semibold text-center leading-tight">
-          Zxora<br />Shadow
-        </span>
+        <img 
+          src={zxoraIcon} 
+          alt="Zxora" 
+          className="w-10 h-10"
+        />
         <motion.div
           className="absolute inset-0 rounded-2xl border border-emerald/60"
           animate={{ scale: [1, 1.1, 1] }}

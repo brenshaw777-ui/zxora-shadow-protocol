@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Shield, CheckCircle, AlertTriangle } from "lucide-react";
 import { useScrambleText } from "@/hooks/useScrambleText";
+import zxoraIcon from "@/assets/zxora-icon.png";
 type SimulationMode = "mask" | "gate" | "corridor";
 const AnimationsShowcase = () => {
   const ref = useRef(null);
@@ -160,7 +161,7 @@ const MaskShiftSimulation = () => {
         }} className="absolute top-0 left-0 w-8 h-px bg-gradient-to-r from-transparent via-emerald/60 to-transparent" />
         </div>
 
-        {/* MASK Node - Rotating */}
+        {/* MASK Node - Rotating with Logo */}
         <div className="flex flex-col items-center gap-3">
           <motion.div className="relative w-20 h-20 rounded-full border-2 border-primary/40 bg-[rgba(5,8,17,0.8)] flex items-center justify-center" style={{
           boxShadow: '0 0 20px rgba(108,77,255,0.15)'
@@ -172,13 +173,19 @@ const MaskShiftSimulation = () => {
             repeat: Infinity,
             ease: "linear"
           }} className="absolute inset-2 rounded-full border border-dashed border-emerald/30" />
-            <motion.div animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.6, 1, 0.6]
-          }} transition={{
-            duration: 2,
-            repeat: Infinity
-          }} className="w-3 h-3 rounded-full bg-emerald" />
+            <motion.img
+              src={zxoraIcon}
+              alt="Zxora Mask"
+              className="w-8 h-8"
+              animate={{
+                scale: [1, 1.05, 1],
+                opacity: [0.8, 1, 0.8]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity
+              }}
+            />
           </motion.div>
           <span className="font-mono text-xs text-emerald tracking-widest">MASK</span>
         </div>

@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
+import zxoraIcon from "@/assets/zxora-icon.png";
 
 interface CodeLine {
   id: string;
@@ -136,6 +137,11 @@ const Hero = () => {
       {/* Subtle metallic vignettes */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/8 via-transparent to-transparent rounded-full blur-3xl" />
       <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-gradient-radial from-accent/6 via-transparent to-transparent rounded-full blur-3xl" />
+      
+      {/* Subtle Logo Watermark */}
+      <div className="absolute bottom-20 right-10 opacity-[0.03] pointer-events-none">
+        <img src={zxoraIcon} alt="" className="w-[500px] h-[500px]" />
+      </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Centered Single Column Layout */}
