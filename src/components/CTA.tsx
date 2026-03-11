@@ -45,7 +45,7 @@ const CTA = () => {
           <div className="flex justify-center mb-6">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald/5 border border-emerald/20">
               <img src={zxoraIcon} alt="Zxora" className="w-5 h-5" />
-              <span className="text-emerald text-xs font-mono tracking-wider uppercase">Zxora Economic Layer — Live</span>
+              <span className="text-emerald text-xs font-mono tracking-wider uppercase">Zxora Economic Layer, Live</span>
             </div>
           </div>
 

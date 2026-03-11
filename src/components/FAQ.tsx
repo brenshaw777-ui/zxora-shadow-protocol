@@ -17,7 +17,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "What is Zxora?",
-      answer: "Zxora is the economic operating system for autonomous AI agents. It adds budgets, approvals, stablecoin treasury, and verifiable receipts on top of OpenClaw — the open-source agent platform. Think of it as the CFO layer for your AI workforce.",
+      answer: "Zxora is the economic operating system for autonomous AI agents. It adds budgets, approvals, stablecoin treasury, and verifiable receipts on top of OpenClaw, the open-source agent platform. Think of it as the CFO layer for your AI workforce.",
     },
     {
       question: "Do I need OpenClaw to use Zxora?",

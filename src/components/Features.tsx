@@ -43,7 +43,7 @@ const Features = () => {
     {
       icon: Landmark,
       title: "Stablecoin Treasury",
-      description: "USDC-first treasury with multi-wallet support. Fund missions from your treasury, track spend by category, and manage agent wallet assignments. Real money, real accountability — not play tokens.",
+      description: "USDC-first treasury with multi-wallet support. Fund missions from your treasury, track spend by category, and manage agent wallet assignments. Real money, real accountability, not play tokens.",
       color: "accent",
     },
   ];
