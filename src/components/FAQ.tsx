@@ -33,7 +33,7 @@ const FAQ = () => {
     },
     {
       question: "What are verifiable receipts?",
-      answer: "Every agent action produces a receipt — a structured record of what happened, when, and how much it cost. Receipts are hash-chained (each receipt references the previous one) and batched into Merkle trees that are anchored on-chain. The result is cryptographic proof that your agent did exactly what it claims.",
+      answer: "Every agent action produces a receipt, a structured record of what happened, when, and how much it cost. Receipts are hash-chained (each receipt references the previous one) and batched into Merkle trees that are anchored on-chain. The result is cryptographic proof that your agent did exactly what it claims.",
     },
     {
       question: "What stops an agent from going rogue?",
