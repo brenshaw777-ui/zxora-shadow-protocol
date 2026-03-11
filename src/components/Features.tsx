@@ -19,7 +19,7 @@ const Features = () => {
     {
       icon: DollarSign,
       title: "Budget Vaults",
-      description: "Every mission gets a vault funded in USDC. Set hard caps per category — model inference, paid APIs, x402 payments, on-chain transfers. When spend hits the ceiling, execution pauses automatically. No surprises.",
+      description: "Every mission gets a vault funded in USDC. Set hard caps per category: model inference, paid APIs, x402 payments, on-chain transfers. When spend hits the ceiling, execution pauses automatically. No surprises.",
       color: "secondary",
     },
     {
