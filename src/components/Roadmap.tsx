@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Rocket, Zap, Network } from "lucide-react";
+import { Rocket, Zap, Network, ShieldCheck } from "lucide-react";
 import { useScrambleText } from "@/hooks/useScrambleText";
 
 const Roadmap = () => {
@@ -13,66 +13,58 @@ const Roadmap = () => {
   const phases = [
     {
       icon: Rocket,
-      phase: "Phase I",
-      title: "Core Web Console",
-      tagline: "ZXORA inside your browser – the Shadow Console goes live.",
-      status: "Live",
+      phase: "Phase 1",
+      title: "Missions & Budget Vaults",
+      tagline: "The financial foundation for autonomous agents.",
+      status: "Complete",
       items: [
-        "Browser-hosted ZXORA console running inside a single tab with its own navigation and bottom control bar.",
-        "Stealth, Trader, and Paranoid modes with Shadow Agent v1 and basic context-aware summaries.",
-        "Session-oriented privacy: Clear Session and Clear Conversation actions, minimal or disabled history by default.",
+        "Mission lifecycle (draft → active → completed)",
+        "Budget vault funding and enforcement",
+        "Per-category spend caps (model, API, x402, chain)",
+        "Reserve / commit / release accounting",
+        "Real-time spend tracking dashboard",
       ],
     },
     {
       icon: Zap,
-      phase: "Phase II",
-      title: "Research Engine",
-      tagline: "From smart reader to full research engine.",
-      status: "Next",
+      phase: "Phase 2",
+      title: "Agents & Gateway Integration",
+      tagline: "Connect your OpenClaw agents to the economic layer.",
+      status: "Complete",
       items: [
-        "Named sessions / lightweight workspaces so you can pick up deep research exactly where you left off.",
-        "Bookmarks with folders, tags, and Agent-assisted notes to capture why a page matters.",
-        "Optional, time-bounded local history (short windows only) with clear wipe controls.",
-        "Trader mode upgraded with structured analysis formats (Summary / Key Claims / Risks / Unknowns / Questions).",
+        "OpenClaw-native agent deployment",
+        "Gateway registration with health monitoring",
+        "Mission dispatch via gateway",
+        "Agent wallet binding",
+        "Multi-agent per gateway support",
+      ],
+    },
+    {
+      icon: ShieldCheck,
+      phase: "Phase 3",
+      title: "Approvals & Execution Control",
+      tagline: "Human-in-the-loop gates for high-risk actions.",
+      status: "In Progress",
+      items: [
+        "Human-in-the-loop approval gates",
+        "Spend threshold triggers",
+        "Resumable execution after approval",
+        "Approval audit history",
+        "Telegram/Discord approval notifications",
       ],
     },
     {
       icon: Network,
-      phase: "Phase III",
-      title: "Workflows & Automation",
-      tagline: "Encode your thinking into ZXORA.",
-      status: "Planned",
+      phase: "Phase 4",
+      title: "Receipts & Verification",
+      tagline: "Cryptographic proof of every agent action.",
+      status: "Upcoming",
       items: [
-        "User-defined workflows (multi-step routines) that can be run on any page in one click.",
-        "Built-in review templates and checklists for specs, proposals, and comparisons.",
-        "Session-level notes and exports, e.g. 'give me a one-page summary of this entire session'.",
-        "Power users shift from ad-hoc prompts to repeatable, high-signal routines.",
-      ],
-    },
-    {
-      icon: Rocket,
-      phase: "Phase IV",
-      title: "Clients & Integrations",
-      tagline: "PC & mobile clients + curated, privacy-first integrations.",
-      status: "Planned",
-      items: [
-        "Standalone PC application so ZXORA runs as its own program, not just in a browser tab.",
-        "Android and iOS apps bringing the Shadow Console and Agent to native mobile clients.",
-        "Controlled tool / plugin layer: read-only data sources, analysis helpers, and curated external APIs with mode-based permissions.",
-        "ZXO-aligned: advanced workspaces, encrypted sync, and pro integrations designed to unlock for committed users as the ecosystem matures.",
-      ],
-    },
-    {
-      icon: Zap,
-      phase: "Phase V",
-      title: "Teams & Policy",
-      tagline: "Shared environments, policy control, and governance signal.",
-      status: "Planned",
-      items: [
-        "Team / org workspaces with shared bookmark collections, shared workflows, and documented session policies.",
-        "Admin-level controls over history windows, logging, and allowed tools, without breaking the privacy narrative.",
-        "Narrowly scoped governance hooks where ZXO holders and teams can signal feature priorities and integration wishlists (safety and privacy rules remain non-negotiable).",
-        "Position ZXORA as the standard analysis terminal for teams, DAOs, and operators who care about structured, privacy-conscious research.",
+        "Hash-chained receipt generation",
+        "Merkle tree batching",
+        "On-chain anchor service (Base L2)",
+        "Receipt proof verification API",
+        "Public receipt explorer",
       ],
     },
   ];
@@ -99,15 +91,7 @@ const Roadmap = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-steel text-base sm:text-lg max-w-3xl mx-auto font-body mb-2"
           >
-            How ZXORA evolves from a browser-hosted Shadow Console into a multi-client analysis environment with deeper tooling and growing ZXO-powered utility.
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-dim-steel text-xs sm:text-sm max-w-2xl mx-auto font-body"
-          >
-            Timelines are indicative and focus on product delivery, not token price.
+            From budget vaults to a full agent economy — the Zxora build plan.
           </motion.p>
         </motion.div>
 
@@ -205,9 +189,9 @@ const Roadmap = () => {
                               
                               {/* Status Pill */}
                               <div className={`px-3 py-1 rounded-full border text-xs font-mono tracking-wider uppercase flex-shrink-0 ml-4 ${
-                                phase.status === "Live"
+                                phase.status === "Complete"
                                   ? "border-emerald/40 bg-emerald/10 text-emerald"
-                                  : phase.status === "Next"
+                                  : phase.status === "In Progress"
                                   ? "border-alert/40 bg-alert/10 text-alert"
                                   : "border-slate/60 bg-slate/20 text-steel/70"
                               }`}>
@@ -244,44 +228,6 @@ const Roadmap = () => {
                   </motion.div>
                 );
               })}
-            </div>
-          </motion.div>
-
-          {/* ZXO Utility Callout */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-16 max-w-4xl mx-auto"
-          >
-            <div className="relative rounded-2xl bg-gradient-to-br from-graphite to-card border border-emerald/15 shadow-[0_8px_32px_rgba(0,0,0,0.4),0_0_24px_rgba(0,227,140,0.08)] p-6 sm:p-8 overflow-hidden">
-              {/* Subtle noise texture */}
-              <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=')]" />
-              
-              <div className="relative z-10">
-                <h3 className="text-xs sm:text-sm font-mono tracking-[0.12em] uppercase text-emerald mb-4">
-                  ZXO UTILITY TRACKS THE ROADMAP
-                </h3>
-                <p className="text-steel text-sm sm:text-base font-body leading-relaxed mb-6">
-                  From Phase I onwards, holding any amount of ZXO grants access to the Shadow Console. As ZXORA climbs through the Research Engine, Workflows, Clients, and Teams phases, heavier features—higher Agent capacity, saved workflows, multi-workspace setups, encrypted sync, curated tools and integrations—are designed to unlock first for serious ZXO holders and participants.
-                </p>
-                <div className="flex justify-end">
-                  <a 
-                    href="#" 
-                    className="text-xs sm:text-sm text-emerald hover:text-emerald-deep font-body transition-colors duration-200 inline-flex items-center gap-1 group"
-                  >
-                    Read full ZXO token utility
-                    <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-                  </a>
-                </div>
-              </div>
-
-              {/* Metallic sweep */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald/[0.02] to-transparent pointer-events-none"
-                animate={{ x: ["-100%", "200%"] }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              />
             </div>
           </motion.div>
         </div>

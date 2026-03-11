@@ -1,49 +1,49 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Fingerprint, ShieldCheck, Flame, BarChart3, Eye, HardDrive } from "lucide-react";
+import { Target, DollarSign, Zap, ShieldCheck, FileText, Landmark } from "lucide-react";
 import { useScrambleText } from "@/hooks/useScrambleText";
 
 const Features = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const { displayText } = useScrambleText("BUILT FOR OPERATORS WHO CAN'T AFFORD MISTAKES", 1200, isInView);
+  const { displayText } = useScrambleText("EVERYTHING YOUR AGENTS NEED TO BE TRUSTED", 1200, isInView);
 
   const features = [
     {
-      icon: Fingerprint,
-      title: "Masks (Stealth Profiles)",
-      description: "Separate trading, degen, and research identities. Each Mask controls routing, fingerprint, and wallet visibility.",
+      icon: Target,
+      title: "Missions",
+      description: "Funded execution units with clear objectives. Create a mission, attach a budget vault, assign a lead agent, set success criteria. Track progress from draft to completion with real-time spend visibility.",
       color: "primary",
     },
     {
-      icon: ShieldCheck,
-      title: "The Gate (ZK Firewall)",
-      description: "A hardened checkpoint that simulates transactions, inspects approvals, and shields your real wallet with session identities.",
+      icon: DollarSign,
+      title: "Budget Vaults",
+      description: "Every mission gets a vault funded in USDC. Set hard caps per category — model inference, paid APIs, x402 payments, on-chain transfers. When spend hits the ceiling, execution pauses automatically. No surprises.",
       color: "secondary",
     },
     {
-      icon: Flame,
-      title: "Corridors (Disposable Sessions)",
-      description: "Every browsing session is a Corridor with its own fingerprint and routing. Shut it down, and it leaves no trace.",
+      icon: Zap,
+      title: "OpenClaw-Native Agents",
+      description: "Connect your existing OpenClaw agents via gateway URL and token. Your agent keeps its personality, tools, and channels. Zxora dispatches missions — the agent executes in its own environment. Zero config on the agent side.",
       color: "accent",
     },
     {
-      icon: BarChart3,
-      title: "Control Deck (Risk & Approvals Console)",
-      description: "See every approval across chains, ranked by risk. Revoke, tighten, or freeze with one click.",
+      icon: ShieldCheck,
+      title: "Approval Gates",
+      description: "Human-in-the-loop for every decision that matters. Agents pause before spending over threshold, calling external APIs, or making transfers. You review, approve or reject, and execution resumes. You stay in command.",
       color: "primary",
     },
     {
-      icon: Eye,
-      title: "Intelligence Overlay",
-      description: "Contextual overlays inside dApps: contract verification, rug scores, MEV hints, and anomaly warnings.",
+      icon: FileText,
+      title: "Verifiable Receipts",
+      description: "Every agent action produces a hash-chained receipt. Receipts are batched into Merkle trees and anchored on-chain. The result: an immutable, auditable, cryptographically provable record of everything your agents did.",
       color: "secondary",
     },
     {
-      icon: HardDrive,
-      title: "Local-First Privacy",
-      description: "Privacy logic and simulation runs on-device where possible. Your behavior isn't a product; it's your advantage.",
+      icon: Landmark,
+      title: "Stablecoin Treasury",
+      description: "USDC-first treasury with multi-wallet support. Fund missions from your treasury, track spend by category, and manage agent wallet assignments. Real money, real accountability — not play tokens.",
       color: "accent",
     },
   ];

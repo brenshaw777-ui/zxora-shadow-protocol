@@ -15,11 +15,10 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { label: "Story", id: "story" },
-    { label: "How It Works", id: "how-it-works" },
     { label: "Features", id: "features" },
+    { label: "How It Works", id: "how-it-works" },
     { label: "Roadmap", id: "roadmap" },
-    { label: "Agent", id: "agent" },
+    { label: "Treasury", id: "treasury" },
     { label: "FAQ", id: "faq" },
   ];
 
@@ -54,13 +53,18 @@ const Navigation = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300" />
               </button>
             ))}
-            <Button
-              onClick={() => scrollToSection("cta")}
-              className="font-display font-azonix tracking-[0.08em] text-xs uppercase"
-              size="sm"
+            <a
+              href="https://app.zxora.tech"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              JOIN EARLY ACCESS
-            </Button>
+              <Button
+                className="font-display font-azonix tracking-[0.08em] text-xs uppercase"
+                size="sm"
+              >
+                LAUNCH APP
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -85,12 +89,18 @@ const Navigation = () => {
               </button>
             ))}
             <div className="px-4">
-              <Button
-                onClick={() => scrollToSection("cta")}
-                className="w-full font-display font-azonix tracking-[0.08em] text-xs uppercase"
+              <a
+                href="https://app.zxora.tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
               >
-                JOIN EARLY ACCESS
-              </Button>
+                <Button
+                  className="w-full font-display font-azonix tracking-[0.08em] text-xs uppercase"
+                >
+                  LAUNCH APP
+                </Button>
+              </a>
             </div>
           </div>
         )}
