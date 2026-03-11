@@ -31,7 +31,7 @@ const CTA = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto font-body font-medium"
           >
-            Budgeted. Approved. Verified. Already running. The dashboard is live — connect your OpenClaw gateway and start running missions with real economic controls.
+            Budgeted. Approved. Verified. Already running. The dashboard is live. Connect your OpenClaw gateway and start running missions with real economic controls.
           </motion.p>
         </motion.div>
 
