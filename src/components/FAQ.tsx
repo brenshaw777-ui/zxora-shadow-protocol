@@ -25,7 +25,7 @@ const FAQ = () => {
     },
     {
       question: "Does Zxora run my AI models?",
-      answer: "No. Zxora never calls model APIs directly. OpenClaw owns all model routing — Claude, GPT, Gemini, Codex, whatever you configure. Zxora manages the money side: how much each agent can spend, on what, and whether it needs approval first.",
+      answer: "No. Zxora never calls model APIs directly. OpenClaw owns all model routing: Claude, GPT, Gemini, Codex, whatever you configure. Zxora manages the money side: how much each agent can spend, on what, and whether it needs approval first.",
     },
     {
       question: "How do budgets work?",
