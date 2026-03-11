@@ -7,6 +7,8 @@ import AnimationsShowcase from "@/components/AnimationsShowcase";
 import Roadmap from "@/components/Roadmap";
 import FAQ from "@/components/FAQ";
 import Tokenomics from "@/components/Tokenomics";
+import Treasury from "@/components/Treasury";
+import LinksHub from "@/components/LinksHub";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import DataStreamBackground from "@/components/DataStreamBackground";
@@ -28,6 +30,8 @@ const Index = () => {
           <AnimationsShowcase />
           <Roadmap />
           <Tokenomics />
+          <Treasury />
+          <LinksHub />
           <FAQ />
           <CTA />
         </main>
