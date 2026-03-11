@@ -183,7 +183,7 @@ const Tokenomics = () => {
               Token Utility
             </h2>
             <p className="text-steel text-sm sm:text-base font-body font-normal max-w-3xl mx-auto">
-              How the ZXO token connects to real usage inside ZXORA's Shadow Console—today and as the product evolves.
+              How the ZXO token connects to real usage inside ZXORA's Shadow Console, today and as the product evolves.
             </p>
           </div>
 
