@@ -29,7 +29,7 @@ const FAQ = () => {
     },
     {
       question: "How do budgets work?",
-      answer: "Each mission gets a budget vault funded in USDC. You set caps per spend category — model inference, paid APIs, x402 payments, on-chain transfers. Agents reserve budget before spending, commit on execution, and release unused funds. When a vault hits its ceiling, execution pauses automatically.",
+      answer: "Each mission gets a budget vault funded in USDC. You set caps per spend category: model inference, paid APIs, x402 payments, on-chain transfers. Agents reserve budget before spending, commit on execution, and release unused funds. When a vault hits its ceiling, execution pauses automatically.",
     },
     {
       question: "What are verifiable receipts?",
