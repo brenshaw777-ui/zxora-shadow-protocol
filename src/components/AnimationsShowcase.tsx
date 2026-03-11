@@ -394,7 +394,7 @@ const BudgetVaultSimulation = ({
                 }`}
                 animate={{ opacity: isPaused ? 0.8 : 1 }}
               >
-                {isPaused ? 'paused — ceiling hit' : 'active'}
+                {isPaused ? 'paused, ceiling hit' : 'active'}
               </motion.span>
             </div>
 
