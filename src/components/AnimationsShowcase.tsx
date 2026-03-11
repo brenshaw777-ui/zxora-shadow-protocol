@@ -394,7 +394,7 @@ const BudgetVaultSimulation = ({
                 }`}
                 animate={{ opacity: isPaused ? 0.8 : 1 }}
               >
-                {isPaused ? 'paused — ceiling hit' : 'active'}
+                {isPaused ? 'paused, ceiling hit' : 'active'}
               </motion.span>
             </div>
 
@@ -427,7 +427,7 @@ const BudgetVaultSimulation = ({
                 <AnimatePresence mode="wait">
                   {!isPaused ? (
                     <motion.div key="ready" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                      vault_status: <span className="text-titanium">active — tracking spend</span>
+                      vault_status: <span className="text-titanium">active, tracking spend</span>
                     </motion.div>
                   ) : (
                     <motion.div key="paused" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-1">
@@ -438,7 +438,7 @@ const BudgetVaultSimulation = ({
                         agent_execution: <span className="text-titanium">paused</span>
                       </motion.div>
                       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8 }} className="text-safe font-semibold">
-                        status: AUTO-PAUSE — BUDGET ENFORCED ✓
+                        status: AUTO-PAUSE, BUDGET ENFORCED ✓
                       </motion.div>
                     </motion.div>
                   )}

@@ -18,7 +18,7 @@ const Story = () => {
       badge: "Step 1 · Exposure",
       content: (
         <p className="text-steel leading-relaxed font-body font-normal text-base sm:text-lg">
-          Your agents can research, build, trade, and ship — but there's no budget enforcement, no approval gates, no audit trail, and no proof of what they actually did. When an agent spends{" "}
+          Your agents can research, build, trade, and ship, but there's no budget enforcement, no approval gates, no audit trail, and no proof of what they actually did. When an agent spends{" "}
           <span className="text-emerald font-medium">$400 on API calls at 3am</span>, who signed off?
         </p>
       ),
@@ -43,7 +43,7 @@ const Story = () => {
       badge: "Step 3 · Economic Layer",
       content: (
         <p className="text-steel leading-relaxed font-body font-normal text-base sm:text-lg">
-          Zxora adds an <span className="text-emerald font-medium">economic control plane</span> to your agents — mission budgets with hard caps, 
+          Zxora adds an <span className="text-emerald font-medium">economic control plane</span> to your agents. Mission budgets with hard caps, 
           human-in-the-loop approvals for high-risk actions, and hash-chained receipts that prove every action your agent took.{" "}
           <span className="text-titanium font-medium">Accountability isn't optional anymore.</span>
         </p>

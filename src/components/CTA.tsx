@@ -31,7 +31,7 @@ const CTA = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto font-body font-medium"
           >
-            Budgeted. Approved. Verified. Already running. The dashboard is live — connect your OpenClaw gateway and start running missions with real economic controls.
+            Budgeted. Approved. Verified. Already running. The dashboard is live. Connect your OpenClaw gateway and start running missions with real economic controls.
           </motion.p>
         </motion.div>
 
@@ -45,7 +45,7 @@ const CTA = () => {
           <div className="flex justify-center mb-6">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald/5 border border-emerald/20">
               <img src={zxoraIcon} alt="Zxora" className="w-5 h-5" />
-              <span className="text-emerald text-xs font-mono tracking-wider uppercase">Zxora Economic Layer — Live</span>
+              <span className="text-emerald text-xs font-mono tracking-wider uppercase">Zxora Economic Layer, Live</span>
             </div>
           </div>
 

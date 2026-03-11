@@ -19,13 +19,13 @@ const Features = () => {
     {
       icon: DollarSign,
       title: "Budget Vaults",
-      description: "Every mission gets a vault funded in USDC. Set hard caps per category — model inference, paid APIs, x402 payments, on-chain transfers. When spend hits the ceiling, execution pauses automatically. No surprises.",
+      description: "Every mission gets a vault funded in USDC. Set hard caps per category: model inference, paid APIs, x402 payments, on-chain transfers. When spend hits the ceiling, execution pauses automatically. No surprises.",
       color: "secondary",
     },
     {
       icon: Zap,
       title: "OpenClaw-Native Agents",
-      description: "Connect your existing OpenClaw agents via gateway URL and token. Your agent keeps its personality, tools, and channels. Zxora dispatches missions — the agent executes in its own environment. Zero config on the agent side.",
+      description: "Connect your existing OpenClaw agents via gateway URL and token. Your agent keeps its personality, tools, and channels. Zxora dispatches missions, the agent executes in its own environment. Zero config on the agent side.",
       color: "accent",
     },
     {
@@ -43,7 +43,7 @@ const Features = () => {
     {
       icon: Landmark,
       title: "Stablecoin Treasury",
-      description: "USDC-first treasury with multi-wallet support. Fund missions from your treasury, track spend by category, and manage agent wallet assignments. Real money, real accountability — not play tokens.",
+      description: "USDC-first treasury with multi-wallet support. Fund missions from your treasury, track spend by category, and manage agent wallet assignments. Real money, real accountability, not play tokens.",
       color: "accent",
     },
   ];

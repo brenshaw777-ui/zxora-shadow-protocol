@@ -64,19 +64,6 @@ const Hero = () => {
           
           {/* Left: Text Content */}
           <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.4 }}
-              className="mb-5"
-            >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald/5 border border-emerald/20">
-                <img src={zxoraIcon} alt="Zxora" className="w-4 h-4" />
-                <span className="text-emerald text-xs font-mono tracking-wider uppercase">OpenClaw-Native Economic Layer</span>
-              </div>
-            </motion.div>
-            
             {/* Headline */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -120,7 +107,7 @@ const Hero = () => {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-xl font-body text-steel mb-6 sm:mb-8"
             >
-              Budgets. Approvals. Treasury. Verifiable receipts. Zxora is the economic control plane that makes AI agents accountable — built natively on OpenClaw.
+              Budgets. Approvals. Treasury. Verifiable receipts. Zxora is the economic control plane that makes AI agents accountable, built natively on OpenClaw.
             </motion.p>
 
             {/* CTAs */}

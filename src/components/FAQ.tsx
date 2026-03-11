@@ -17,27 +17,27 @@ const FAQ = () => {
   const faqs = [
     {
       question: "What is Zxora?",
-      answer: "Zxora is the economic operating system for autonomous AI agents. It adds budgets, approvals, stablecoin treasury, and verifiable receipts on top of OpenClaw — the open-source agent platform. Think of it as the CFO layer for your AI workforce.",
+      answer: "Zxora is the economic operating system for autonomous AI agents. It adds budgets, approvals, stablecoin treasury, and verifiable receipts on top of OpenClaw, the open-source agent platform. Think of it as the CFO layer for your AI workforce.",
     },
     {
       question: "Do I need OpenClaw to use Zxora?",
-      answer: "Yes. Zxora is built natively on OpenClaw. Your agents run on OpenClaw with their own personality, tools, and channels. Zxora connects to your OpenClaw gateway and adds the economic control plane — budgets, approvals, receipts, and treasury management.",
+      answer: "Yes. Zxora is built natively on OpenClaw. Your agents run on OpenClaw with their own personality, tools, and channels. Zxora connects to your OpenClaw gateway and adds the economic control plane: budgets, approvals, receipts, and treasury management.",
     },
     {
       question: "Does Zxora run my AI models?",
-      answer: "No. Zxora never calls model APIs directly. OpenClaw owns all model routing — Claude, GPT, Gemini, Codex, whatever you configure. Zxora manages the money side: how much each agent can spend, on what, and whether it needs approval first.",
+      answer: "No. Zxora never calls model APIs directly. OpenClaw owns all model routing: Claude, GPT, Gemini, Codex, whatever you configure. Zxora manages the money side: how much each agent can spend, on what, and whether it needs approval first.",
     },
     {
       question: "How do budgets work?",
-      answer: "Each mission gets a budget vault funded in USDC. You set caps per spend category — model inference, paid APIs, x402 payments, on-chain transfers. Agents reserve budget before spending, commit on execution, and release unused funds. When a vault hits its ceiling, execution pauses automatically.",
+      answer: "Each mission gets a budget vault funded in USDC. You set caps per spend category: model inference, paid APIs, x402 payments, on-chain transfers. Agents reserve budget before spending, commit on execution, and release unused funds. When a vault hits its ceiling, execution pauses automatically.",
     },
     {
       question: "What are verifiable receipts?",
-      answer: "Every agent action produces a receipt — a structured record of what happened, when, and how much it cost. Receipts are hash-chained (each receipt references the previous one) and batched into Merkle trees that are anchored on-chain. The result is cryptographic proof that your agent did exactly what it claims.",
+      answer: "Every agent action produces a receipt, a structured record of what happened, when, and how much it cost. Receipts are hash-chained (each receipt references the previous one) and batched into Merkle trees that are anchored on-chain. The result is cryptographic proof that your agent did exactly what it claims.",
     },
     {
       question: "What stops an agent from going rogue?",
-      answer: "Three layers of protection: Budget vaults enforce hard spend caps per category. Approval gates pause execution for any action above your threshold. Receipts create an immutable record of everything that happened. Your agents operate autonomously within the boundaries you set — and you can prove it.",
+      answer: "Three layers of protection: Budget vaults enforce hard spend caps per category. Approval gates pause execution for any action above your threshold. Receipts create an immutable record of everything that happened. Your agents operate autonomously within the boundaries you set, and you can prove it.",
     },
   ];
 

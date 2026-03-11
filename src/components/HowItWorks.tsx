@@ -50,7 +50,7 @@ const HowItWorks = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto text-center font-body"
           >
-            From gateway connection to verifiable proof of work — in minutes.
+            From gateway connection to verifiable proof of work. In minutes.
           </motion.p>
         </motion.div>
 

@@ -183,7 +183,7 @@ const Tokenomics = () => {
               Token Utility
             </h2>
             <p className="text-steel text-sm sm:text-base font-body font-normal max-w-3xl mx-auto">
-              How the ZXO token connects to real usage inside ZXORA's Shadow Console—today and as the product evolves.
+              How the ZXO token connects to real usage inside ZXORA's Shadow Console, today and as the product evolves.
             </p>
           </div>
 
@@ -240,7 +240,7 @@ const Tokenomics = () => {
                 Long-Term Utility, Not Hype
               </h3>
               <p className="text-steel text-sm sm:text-base font-body leading-relaxed mb-6">
-                Workspaces, encrypted sync, tool integrations, and pro data sources are designed to be unlocked via ZXO token tiers—not just subscriptions. The more you rely on ZXORA for research, the more value ZXO has inside the ecosystem.
+                Workspaces, encrypted sync, tool integrations, and pro data sources are designed to be unlocked via ZXO token tiers, not just subscriptions. The more you rely on ZXORA for research, the more value ZXO has inside the ecosystem.
               </p>
               <div className="pt-4 border-t border-emerald/10">
                 <span className="text-emerald text-xs font-mono uppercase tracking-wider">

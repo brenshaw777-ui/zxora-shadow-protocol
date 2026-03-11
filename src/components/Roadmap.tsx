@@ -91,7 +91,7 @@ const Roadmap = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-steel text-base sm:text-lg max-w-3xl mx-auto font-body mb-2"
           >
-            From budget vaults to a full agent economy — the Zxora build plan.
+            From budget vaults to a full agent economy. The Zxora build plan.
           </motion.p>
         </motion.div>
 
