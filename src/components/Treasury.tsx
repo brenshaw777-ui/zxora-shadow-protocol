@@ -125,26 +125,6 @@ const Treasury = () => {
               })}
             </div>
 
-            {/* Connecting arrows (desktop) */}
-            <div className="hidden sm:flex justify-between items-center px-[17%] -mt-[72px] mb-[48px] pointer-events-none">
-              {[0, 1].map(i => (
-                <motion.div
-                  key={i}
-                  initial={{ scaleX: 0 }}
-                  animate={isInView ? { scaleX: 1 } : {}}
-                  transition={{ duration: 0.6, delay: 0.6 + i * 0.2 }}
-                  className="flex-1 mx-4"
-                >
-                  <div className="h-px bg-gradient-to-r from-emerald/40 to-emerald/10 relative">
-                    <motion.div
-                      animate={{ x: ['-100%', '200%'] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: i * 0.5 }}
-                      className="absolute top-0 left-0 w-8 h-px bg-gradient-to-r from-transparent via-emerald/60 to-transparent"
-                    />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </motion.div>
 
