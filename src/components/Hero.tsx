@@ -107,7 +107,7 @@ const Hero = () => {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-xl font-body text-steel mb-6 sm:mb-8"
             >
-              Budgets. Approvals. Treasury. Verifiable receipts. Zxora is the economic control plane that makes AI agents accountable — built natively on OpenClaw.
+              Budgets. Approvals. Treasury. Verifiable receipts. Zxora is the economic control plane that makes AI agents accountable, built natively on OpenClaw.
             </motion.p>
 
             {/* CTAs */}
