@@ -21,22 +21,28 @@ const Footer = () => {
           {/* Links */}
           <div className="flex items-center space-x-8 text-sm">
             <a
-              href="#"
+              href="https://app.zxora.tech"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
-              Privacy
+              Dashboard
             </a>
             <a
-              href="#"
+              href="https://docs.zxora.tech"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
-              Security
+              Docs
             </a>
             <a
-              href="#"
+              href="https://github.com/vultrdev"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
-              Contact
+              GitHub
             </a>
           </div>
 
@@ -57,7 +63,9 @@ const Footer = () => {
               <Send className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
             <a
-              href="#"
+              href="https://github.com/vultrdev"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-lg bg-muted hover:bg-primary/20 flex items-center justify-center transition-colors group"
               aria-label="GitHub"
             >
@@ -68,7 +76,7 @@ const Footer = () => {
 
         <div className="mt-8 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            © 2025 Zxora. Built for operators who value privacy.
+            © 2025 Zxora. The economic operating system for autonomous agents.
           </p>
         </div>
       </div>

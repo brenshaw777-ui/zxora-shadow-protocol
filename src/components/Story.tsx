@@ -7,7 +7,7 @@ import zxoraIcon from "@/assets/zxora-icon.png";
 const Story = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
-  const { displayText } = useScrambleText("WHY ZXORA EXISTS", 1200, isInView);
+  const { displayText } = useScrambleText("THE PROBLEM", 1200, isInView);
   const [activeStep, setActiveStep] = useState(0);
 
   const steps = [
@@ -18,34 +18,34 @@ const Story = () => {
       badge: "Step 1 · Exposure",
       content: (
         <p className="text-steel leading-relaxed font-body font-normal text-base sm:text-lg">
-          Every time you connect a wallet, visit a dApp, or sign a transaction, you're{" "}
-          <span className="text-emerald font-medium">leaking identity markers</span>. 
-          Your IP, device fingerprint, wallet history, and interaction patterns create a permanent trail.
+          Your agents can research, build, trade, and ship — but there's no budget enforcement, no approval gates, no audit trail, and no proof of what they actually did. When an agent spends{" "}
+          <span className="text-emerald font-medium">$400 on API calls at 3am</span>, who signed off?
         </p>
       ),
     },
     {
       id: 1,
-      label: "The Old Way",
-      title: "THE OLD WAY",
-      badge: "Step 2 · Fragmentation",
+      label: "Without Zxora",
+      title: "WITHOUT ZXORA",
+      badge: "Step 2 · No Controls",
       content: (
         <p className="text-steel leading-relaxed font-body font-normal text-base sm:text-lg">
-          Fragmented tools. VPNs that don't understand crypto. Wallets that expose everything. 
-          <span className="text-emerald font-medium"> No unified layer</span> to control your exposure or manage approvals across chains.
+          Agents operate with zero financial accountability.{" "}
+          <span className="text-emerald font-medium">No budget caps</span>, no approval gates, no audit trail, no spend tracking. 
+          Every dollar is unaccounted for and every action is unverifiable.
         </p>
       ),
     },
     {
       id: 2,
-      label: "Our Approach",
-      title: "OUR APPROACH",
-      badge: "Step 3 · Shadow Layer",
+      label: "With Zxora",
+      title: "WITH ZXORA",
+      badge: "Step 3 · Economic Layer",
       content: (
         <p className="text-steel leading-relaxed font-body font-normal text-base sm:text-lg">
-          We don't believe users should have to expose themselves just to interact with DeFi, NFTs, or dApps. 
-          Zxora creates a <span className="text-emerald font-medium">shadow layer</span> that sits between 
-          you and the chain, giving you <span className="text-titanium font-medium">control, privacy, and safety</span>.
+          Zxora adds an <span className="text-emerald font-medium">economic control plane</span> to your agents — mission budgets with hard caps, 
+          human-in-the-loop approvals for high-risk actions, and hash-chained receipts that prove every action your agent took.{" "}
+          <span className="text-titanium font-medium">Accountability isn't optional anymore.</span>
         </p>
       ),
     },
@@ -53,16 +53,16 @@ const Story = () => {
 
   const principles = [
     {
-      title: "Wallet ≠ Identity",
-      description: "Your wallet should be a tool, not a permanent tattoo on every interaction.",
+      title: "Budget Vaults",
+      description: "Every mission gets a funded vault with per-category spend caps.",
     },
     {
-      title: "Sessions Burn Cleanly",
-      description: "Every browsing session leaves traces. They should be disposable and untraceable.",
+      title: "Approval Gates",
+      description: "High-risk actions pause and wait for human approval.",
     },
     {
-      title: "Approvals Have Memory",
-      description: "Token approvals across chains should be visible, manageable, and revocable in one place.",
+      title: "Verifiable Receipts",
+      description: "Hash-chained, Merkle-anchored proof of every agent action.",
     },
   ];
 
@@ -80,7 +80,7 @@ const Story = () => {
             {displayText}
           </h2>
           <p className="text-steel text-base sm:text-lg font-body font-normal">
-            A single shadow layer between you and the chain.
+            One economic layer between your agents and chaos.
           </p>
         </motion.div>
 
@@ -188,7 +188,7 @@ const ExposureMeter = () => (
   <div className="flex gap-8 items-center">
     {/* Left: Meter */}
     <div className="flex flex-col items-center gap-3">
-      <span className="text-steel text-xs font-mono font-normal tracking-wider uppercase">Exposure</span>
+      <span className="text-steel text-xs font-mono font-normal tracking-wider uppercase">Risk</span>
       <div className="relative w-12 h-64 bg-slate/30 rounded-full overflow-hidden border border-emerald/10">
         <motion.div
           initial={{ height: "20%" }}
@@ -203,10 +203,10 @@ const ExposureMeter = () => (
     {/* Right: Warning List */}
     <div className="flex-1 space-y-2">
       {[
-        { label: "ip_address", status: "visible" },
-        { label: "device_fingerprint", status: "logged" },
-        { label: "wallet_history", status: "profiled" },
-        { label: "interaction_trail", status: "permanent" },
+        { label: "budget_control", status: "none" },
+        { label: "approval_gates", status: "missing" },
+        { label: "audit_trail", status: "nonexistent" },
+        { label: "agent_accountability", status: "zero" },
       ].map((item, index) => (
         <motion.div
           key={item.label}
@@ -224,12 +224,12 @@ const ExposureMeter = () => (
   </div>
 );
 
-// Step 2: Fragmented Tools Map
+// Step 2: Without Zxora
 const FragmentedToolsMap = () => (
   <div className="space-y-6">
     {/* Node Map */}
     <div className="flex items-center justify-between relative py-8">
-      {["VPN", "Browser", "Wallet", "dApp"].map((node, index) => (
+      {["Agent", "API", "Wallet", "Model"].map((node, index) => (
         <motion.div
           key={node}
           initial={{ opacity: 0, scale: 0.8 }}
@@ -268,10 +268,10 @@ const FragmentedToolsMap = () => (
     {/* Log */}
     <div className="space-y-2 p-4 rounded-xl bg-slate/30 border border-dim-steel/10">
       {[
-        { label: "vpn_scope", value: "network_only" },
-        { label: "wallet_exposure", value: "full" },
-        { label: "approvals_view", value: "scattered" },
-        { label: "control_layer", value: "none" },
+        { label: "spend_tracking", value: "manual" },
+        { label: "budget_enforcement", value: "none" },
+        { label: "receipt_chain", value: "nonexistent" },
+        { label: "accountability", value: "zero" },
       ].map((item, index) => (
         <motion.div
           key={item.label}
@@ -289,12 +289,12 @@ const FragmentedToolsMap = () => (
   </div>
 );
 
-// Step 3: Shadow Layer Reveal
+// Step 3: With Zxora
 const ShadowLayerReveal = ({ principles }: { principles: Array<{ title: string; description: string }> }) => (
   <div className="space-y-6">
     {/* Node Diagram */}
     <div className="flex items-center justify-center gap-4 relative py-8">
-      {/* You */}
+      {/* Operator */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -304,7 +304,7 @@ const ShadowLayerReveal = ({ principles }: { principles: Array<{ title: string; 
         <span className="text-steel text-xs font-machina font-medium">You</span>
       </motion.div>
 
-      {/* Zxora Shadow Layer */}
+      {/* Zxora Economic Layer */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -323,14 +323,14 @@ const ShadowLayerReveal = ({ principles }: { principles: Array<{ title: string; 
         />
       </motion.div>
 
-      {/* dApps */}
+      {/* Agents */}
       <motion.div
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.4, delay: 0.4 }}
         className="w-16 h-16 rounded-full bg-slate/50 border border-dim-steel/30 flex items-center justify-center"
       >
-        <span className="text-steel text-xs font-machina font-medium text-center leading-tight">dApps</span>
+        <span className="text-steel text-xs font-machina font-medium text-center leading-tight">Agents</span>
       </motion.div>
 
       {/* Rails */}
@@ -373,10 +373,10 @@ const ShadowLayerReveal = ({ principles }: { principles: Array<{ title: string; 
     {/* Log */}
     <div className="space-y-2 p-4 rounded-xl bg-slate/30 border border-emerald/10">
       {[
-        { label: "identity_link", value: "severed" },
-        { label: "sessions", value: "disposable" },
-        { label: "approvals", value: "centralized_view" },
-        { label: "status", value: "shadow_layer_online ✓" },
+        { label: "budget_vaults", value: "enforced" },
+        { label: "approval_gates", value: "active" },
+        { label: "receipt_chain", value: "recording" },
+        { label: "accountability", value: "provable ✓" },
       ].map((item, index) => (
         <motion.div
           key={item.label}
@@ -387,7 +387,7 @@ const ShadowLayerReveal = ({ principles }: { principles: Array<{ title: string; 
         >
           <span className="text-steel">{item.label}</span>
           <span className="text-dim-steel"> → </span>
-          <span className={item.label === "status" ? "text-safe" : "text-emerald"}>{item.value}</span>
+          <span className={item.label === "accountability" ? "text-safe" : "text-emerald"}>{item.value}</span>
         </motion.div>
       ))}
     </div>

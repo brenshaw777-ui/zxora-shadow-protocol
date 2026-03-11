@@ -12,36 +12,32 @@ import { useScrambleText } from "@/hooks/useScrambleText";
 const FAQ = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
-  const { displayText } = useScrambleText("QUESTIONS, ANSWERED", 1200, isInView);
+  const { displayText } = useScrambleText("QUESTIONS ABOUT THE ECONOMIC LAYER", 1200, isInView);
 
   const faqs = [
     {
-      question: "Is Zxora a browser, a wallet, or something else?",
-      answer: "Zxora is a shadow client—a privacy layer that sits between you and every dApp, wallet, and blockchain. It's not a browser or wallet replacement, but rather an intermediary that masks your identity, manages sessions, and enforces a zk-powered firewall on all your crypto interactions.",
+      question: "What is Zxora?",
+      answer: "Zxora is the economic operating system for autonomous AI agents. It adds budgets, approvals, stablecoin treasury, and verifiable receipts on top of OpenClaw — the open-source agent platform. Think of it as the CFO layer for your AI workforce.",
     },
     {
-      question: "How is Zxora different from using Tor + MetaMask?",
-      answer: "Tor provides network anonymity, but doesn't understand crypto-specific threats like wallet fingerprinting, transaction patterns, or approval risks. Zxora is purpose-built for crypto: it manages profiles (Masks), isolates sessions (Corridors), simulates transactions through The Gate, and gives you a unified control deck for all approvals across chains.",
+      question: "Do I need OpenClaw to use Zxora?",
+      answer: "Yes. Zxora is built natively on OpenClaw. Your agents run on OpenClaw with their own personality, tools, and channels. Zxora connects to your OpenClaw gateway and adds the economic control plane — budgets, approvals, receipts, and treasury management.",
     },
     {
-      question: "Do you store any logs or analytics on your servers?",
-      answer: "No. Zxora is local-first by design. Privacy logic and transaction simulation run on your device. We don't track your behavior, wallet connections, or browsing patterns. Your data isn't our product—it's your advantage.",
+      question: "Does Zxora run my AI models?",
+      answer: "No. Zxora never calls model APIs directly. OpenClaw owns all model routing — Claude, GPT, Gemini, Codex, whatever you configure. Zxora manages the money side: how much each agent can spend, on what, and whether it needs approval first.",
     },
     {
-      question: "What does 'zk-powered' actually mean in Zxora?",
-      answer: "Zero-knowledge proofs allow you to prove ownership of assets or wallet credentials without revealing your actual wallet address. In Zxora, The Gate uses zk techniques to verify your identity and permissions while keeping your real wallet hidden from dApps and external observers.",
+      question: "How do budgets work?",
+      answer: "Each mission gets a budget vault funded in USDC. You set caps per spend category — model inference, paid APIs, x402 payments, on-chain transfers. Agents reserve budget before spending, commit on execution, and release unused funds. When a vault hits its ceiling, execution pauses automatically.",
     },
     {
-      question: "Will Zxora have a token?",
-      answer: "We're focused on building the product first. Token discussions are premature. If a token makes sense for decentralized relay operations or governance down the line, we'll be transparent about it.",
+      question: "What are verifiable receipts?",
+      answer: "Every agent action produces a receipt — a structured record of what happened, when, and how much it cost. Receipts are hash-chained (each receipt references the previous one) and batched into Merkle trees that are anchored on-chain. The result is cryptographic proof that your agent did exactly what it claims.",
     },
     {
-      question: "Which chains and wallets will you support first?",
-      answer: "Phase 1 will support Ethereum and EVM-compatible chains with MetaMask, Coinbase Wallet, and WalletConnect. We'll expand to other ecosystems (Solana, Cosmos, etc.) and wallets based on operator demand and technical readiness.",
-    },
-    {
-      question: "How can I get early access?",
-      answer: "Zxora is in private build. If you're a serious operator, builder, fund, or researcher who needs better privacy and safety tooling, submit your email below. We're onboarding in small, controlled batches.",
+      question: "What stops an agent from going rogue?",
+      answer: "Three layers of protection: Budget vaults enforce hard spend caps per category. Approval gates pause execution for any action above your threshold. Receipts create an immutable record of everything that happened. Your agents operate autonomously within the boundaries you set — and you can prove it.",
     },
   ];
 
