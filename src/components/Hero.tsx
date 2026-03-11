@@ -161,31 +161,29 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="flex-1 flex items-center justify-center relative"
+            className="flex-1 flex items-center justify-center relative min-h-[400px] sm:min-h-[500px] lg:min-h-[560px]"
           >
-            {/* Multi-layer glow behind logo */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <motion.div
-                animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.6, 0.4] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="w-[70%] h-[70%] rounded-full blur-[80px]"
-                style={{ background: 'radial-gradient(circle, hsla(159, 100%, 44%, 0.25), hsla(165, 80%, 40%, 0.1), transparent 70%)' }}
-              />
-            </div>
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <motion.div
-                animate={{ scale: [1.05, 0.95, 1.05], opacity: [0.2, 0.35, 0.2] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                className="w-[90%] h-[90%] rounded-full blur-[120px]"
-                style={{ background: 'radial-gradient(circle, hsla(155, 90%, 50%, 0.15), hsla(170, 70%, 35%, 0.06), transparent 65%)' }}
-              />
-            </div>
+            {/* Core glow - bright and visible */}
+            <motion.div
+              animate={{ scale: [1, 1.15, 1], opacity: [0.6, 0.9, 0.6] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] lg:w-[500px] lg:h-[500px] rounded-full pointer-events-none"
+              style={{ background: 'radial-gradient(circle, hsla(159, 100%, 44%, 0.4), hsla(159, 100%, 44%, 0.15) 50%, transparent 70%)', filter: 'blur(60px)' }}
+            />
+            {/* Outer ambient glow */}
+            <motion.div
+              animate={{ scale: [1.1, 0.95, 1.1], opacity: [0.3, 0.5, 0.3] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute w-[450px] h-[450px] sm:w-[550px] sm:h-[550px] lg:w-[650px] lg:h-[650px] rounded-full pointer-events-none"
+              style={{ background: 'radial-gradient(circle, hsla(165, 80%, 40%, 0.2), hsla(155, 90%, 50%, 0.08) 45%, transparent 70%)', filter: 'blur(90px)' }}
+            />
 
             {/* Logo */}
             <motion.img
               src={zxora3dLogo}
               alt="Zxora"
-              className="relative z-10 w-[280px] sm:w-[360px] md:w-[420px] lg:w-[480px] h-auto drop-shadow-2xl"
+              className="relative z-10 w-[340px] sm:w-[440px] md:w-[520px] lg:w-[580px] h-auto"
+              style={{ filter: 'drop-shadow(0 0 40px hsla(159, 100%, 44%, 0.35))' }}
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             />
