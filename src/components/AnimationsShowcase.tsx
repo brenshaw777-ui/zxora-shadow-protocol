@@ -427,7 +427,7 @@ const BudgetVaultSimulation = ({
                 <AnimatePresence mode="wait">
                   {!isPaused ? (
                     <motion.div key="ready" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                      vault_status: <span className="text-titanium">active — tracking spend</span>
+                      vault_status: <span className="text-titanium">active, tracking spend</span>
                     </motion.div>
                   ) : (
                     <motion.div key="paused" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="space-y-1">
