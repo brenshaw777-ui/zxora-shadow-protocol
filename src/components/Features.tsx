@@ -25,7 +25,7 @@ const Features = () => {
     {
       icon: Zap,
       title: "OpenClaw-Native Agents",
-      description: "Connect your existing OpenClaw agents via gateway URL and token. Your agent keeps its personality, tools, and channels. Zxora dispatches missions — the agent executes in its own environment. Zero config on the agent side.",
+      description: "Connect your existing OpenClaw agents via gateway URL and token. Your agent keeps its personality, tools, and channels. Zxora dispatches missions, the agent executes in its own environment. Zero config on the agent side.",
       color: "accent",
     },
     {
