@@ -21,7 +21,7 @@ const FAQ = () => {
     },
     {
       question: "Do I need OpenClaw to use Zxora?",
-      answer: "Yes. Zxora is built natively on OpenClaw. Your agents run on OpenClaw with their own personality, tools, and channels. Zxora connects to your OpenClaw gateway and adds the economic control plane — budgets, approvals, receipts, and treasury management.",
+      answer: "Yes. Zxora is built natively on OpenClaw. Your agents run on OpenClaw with their own personality, tools, and channels. Zxora connects to your OpenClaw gateway and adds the economic control plane: budgets, approvals, receipts, and treasury management.",
     },
     {
       question: "Does Zxora run my AI models?",
