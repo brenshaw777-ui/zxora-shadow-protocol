@@ -37,7 +37,7 @@ const FAQ = () => {
     },
     {
       question: "What stops an agent from going rogue?",
-      answer: "Three layers of protection: Budget vaults enforce hard spend caps per category. Approval gates pause execution for any action above your threshold. Receipts create an immutable record of everything that happened. Your agents operate autonomously within the boundaries you set — and you can prove it.",
+      answer: "Three layers of protection: Budget vaults enforce hard spend caps per category. Approval gates pause execution for any action above your threshold. Receipts create an immutable record of everything that happened. Your agents operate autonomously within the boundaries you set, and you can prove it.",
     },
   ];
 

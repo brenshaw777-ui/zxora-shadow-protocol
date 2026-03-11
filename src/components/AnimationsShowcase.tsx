@@ -438,7 +438,7 @@ const BudgetVaultSimulation = ({
                         agent_execution: <span className="text-titanium">paused</span>
                       </motion.div>
                       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8 }} className="text-safe font-semibold">
-                        status: AUTO-PAUSE — BUDGET ENFORCED ✓
+                        status: AUTO-PAUSE, BUDGET ENFORCED ✓
                       </motion.div>
                     </motion.div>
                   )}
