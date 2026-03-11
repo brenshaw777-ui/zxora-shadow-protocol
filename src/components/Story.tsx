@@ -18,7 +18,7 @@ const Story = () => {
       badge: "Step 1 · Exposure",
       content: (
         <p className="text-steel leading-relaxed font-body font-normal text-base sm:text-lg">
-          Your agents can research, build, trade, and ship — but there's no budget enforcement, no approval gates, no audit trail, and no proof of what they actually did. When an agent spends{" "}
+          Your agents can research, build, trade, and ship, but there's no budget enforcement, no approval gates, no audit trail, and no proof of what they actually did. When an agent spends{" "}
           <span className="text-emerald font-medium">$400 on API calls at 3am</span>, who signed off?
         </p>
       ),
